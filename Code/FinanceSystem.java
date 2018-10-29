@@ -28,9 +28,9 @@ public class FinanceSystem {
      * @param float amount 
      * @return
      */
-    public bool expense(void float amount) {
+    public boolean expense(void float amount) {
         // TODO implement here
-        return null;
+        return false;
     }
 
     /**

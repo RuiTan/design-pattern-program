@@ -25,7 +25,7 @@ public class KitchenManagement {
     /**
      * 
      */
-    public MaterialManagement MaterialManager;
+    public MaterialManagement materialManager;
 
     /**
      * 
@@ -44,12 +44,12 @@ public class KitchenManagement {
     }
 
     /**
-     * @param Dish 
+     * @param AbstractDish 
      * @return
      */
-    public bool cooking(void Dish) {
+    public boolean cooking(void AbstractDish) {
         // TODO implement here
-        return null;
+        return false;
     }
 
     /**

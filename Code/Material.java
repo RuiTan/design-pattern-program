@@ -25,7 +25,7 @@ public class Material {
     /**
      * 
      */
-    private string name;
+    private String name;
 
 
 
@@ -34,9 +34,9 @@ public class Material {
     /**
      * @return
      */
-    public string getName() {
+    public String getName() {
         // TODO implement here
-        return null;
+        return "";
     }
 
     /**
@@ -51,9 +51,9 @@ public class Material {
      * @param float 
      * @return
      */
-    public bool setPrice(void float) {
+    public boolean setPrice(void float) {
         // TODO implement here
-        return null;
+        return false;
     }
 
     /**
@@ -68,18 +68,18 @@ public class Material {
      * @param int 
      * @return
      */
-    public bool increaseAmount(void int) {
+    public boolean increaseAmount(void int) {
         // TODO implement here
-        return null;
+        return false;
     }
 
     /**
      * @param int 
      * @return
      */
-    public bool decreaseAmount(void int) {
+    public boolean decreaseAmount(void int) {
         // TODO implement here
-        return null;
+        return false;
     }
 
 }

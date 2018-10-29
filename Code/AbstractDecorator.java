@@ -15,7 +15,7 @@ public abstract class AbstractDecorator extends AbstractDish {
     /**
      * 
      */
-    private Dish Dish;
+    private AbstractDish dish;
 
     /**
      * 
@@ -25,18 +25,8 @@ public abstract class AbstractDecorator extends AbstractDish {
     }
 
     /**
-     * 
-     */
-    public abstract void getName();
-
-    /**
-     * 
-     */
-    public abstract void getPrice();
-
-    /**
      * @return
      */
-    public abstract list getMaterials();
+    public abstract List getMaterials();
 
 }

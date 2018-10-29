@@ -15,7 +15,7 @@ public class MaterialManagement {
     /**
      * 
      */
-    private static map<string;Material> materialmap;
+    private static Map<string;Material> materialmap;
 
     /**
      * 
@@ -50,16 +50,16 @@ public class MaterialManagement {
     /**
      * @return
      */
-    public map getMaterialsMap() {
+    public Map<string;Material> getMaterialsMap() {
         // TODO implement here
         return null;
     }
 
     /**
-     * @param string 
+     * @param String 
      * @return
      */
-    public int getMaterialAmount(void string) {
+    public int getMaterialAmount(void String) {
         // TODO implement here
         return 0;
     }
@@ -72,25 +72,25 @@ public class MaterialManagement {
     }
 
     /**
-     * @param string
+     * @param String
      */
-    public void deleteMaterial(void string) {
+    public void deleteMaterial(void String) {
         // TODO implement here
     }
 
     /**
-     * @param string 
+     * @param String 
      * @param int
      */
-    public void reduceMaterial(void string, void int) {
+    public void reduceMaterial(void String, void int) {
         // TODO implement here
     }
 
     /**
-     * @param string 
+     * @param String 
      * @param int
      */
-    public void purchaseMaterial(void string, void int) {
+    public void purchaseMaterial(void String, void int) {
         // TODO implement here
     }
 

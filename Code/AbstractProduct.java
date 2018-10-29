@@ -38,10 +38,10 @@ public abstract class AbstractProduct implements IAcceptor {
     public abstract Product clone();
 
     /**
-     * @param string 
+     * @param String 
      * @return
      */
-    public Product findAndClone(void string) {
+    public Product findAndClone(void String) {
         // TODO implement here
         return null;
     }
@@ -49,9 +49,9 @@ public abstract class AbstractProduct implements IAcceptor {
     /**
      * @return
      */
-    public bool addPrototype() {
+    public boolean addPrototype() {
         // TODO implement here
-        return null;
+        return false;
     }
 
     /**

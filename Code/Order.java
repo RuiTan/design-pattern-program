@@ -15,7 +15,7 @@ public class Order {
     /**
      * 
      */
-    private list productList;
+    private List productList;
 
     /**
      * 
@@ -36,24 +36,15 @@ public class Order {
     /**
      * @return
      */
-    public bool createOrder() {
+    public boolean createOrder() {
         // TODO implement here
-        return null;
+        return false;
     }
 
     /**
      * @return
      */
-    public list getProductList() {
-        // TODO implement here
-        return null;
-    }
-
-    /**
-     * @param Product 
-     * @return
-     */
-    public bool addProduct(void Product) {
+    public List getProductList() {
         // TODO implement here
         return null;
     }
@@ -62,18 +53,27 @@ public class Order {
      * @param Product 
      * @return
      */
-    public bool deleteProduct(void Product) {
+    public boolean addProduct(void Product) {
         // TODO implement here
-        return null;
+        return false;
+    }
+
+    /**
+     * @param Product 
+     * @return
+     */
+    public boolean deleteProduct(void Product) {
+        // TODO implement here
+        return false;
     }
 
     /**
      * @param State 
      * @return
      */
-    public bool setState(void State) {
+    public boolean setState(void State) {
         // TODO implement here
-        return null;
+        return false;
     }
 
     /**

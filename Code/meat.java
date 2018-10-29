@@ -30,9 +30,9 @@ public class meat extends Material {
     /**
      * @return
      */
-    public string getName() {
+    public String getName() {
         // TODO implement here
-        return null;
+        return "";
     }
 
     /**

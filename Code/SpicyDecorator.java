@@ -15,7 +15,7 @@ public class SpicyDecorator extends AbstractDecorator {
     /**
      * 
      */
-    private Dish Dish;
+    private AbstractDish dish;
 
     /**
      * 

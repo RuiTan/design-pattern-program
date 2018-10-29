@@ -13,18 +13,8 @@ public class NonCookNeededDish extends AbstractDish {
     }
 
     /**
-     * 
-     */
-    public abstract void getName();
-
-    /**
-     * 
-     */
-    public abstract void getPrice();
-
-    /**
      * @return
      */
-    public abstract list getMaterials();
+    public abstract List getMaterials();
 
 }

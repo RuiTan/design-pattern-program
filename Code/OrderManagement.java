@@ -15,7 +15,7 @@ public class OrderManagement {
     /**
      * 
      */
-    private list orderList;
+    private List orderList;
 
 
     /**
@@ -23,18 +23,18 @@ public class OrderManagement {
      * @param Order 
      * @return
      */
-    public bool addOrder(void Order) {
+    public boolean addOrder(void Order) {
         // TODO implement here
-        return null;
+        return false;
     }
 
     /**
      * @param int id 
      * @return
      */
-    public bool deleteOrder(void int id) {
+    public boolean deleteOrder(void int id) {
         // TODO implement here
-        return null;
+        return false;
     }
 
     /**

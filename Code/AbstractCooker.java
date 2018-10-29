@@ -15,7 +15,7 @@ public class AbstractCooker {
     /**
      * 
      */
-    public string name;
+    public String name;
 
     /**
      * 
@@ -41,27 +41,27 @@ public class AbstractCooker {
      * @param AbstractCooker 
      * @return
      */
-    public bool setNextCooker(void AbstractCooker) {
+    public boolean setNextCooker(void AbstractCooker) {
         // TODO implement here
-        return null;
+        return false;
     }
 
     /**
      * @param AbstractCooker 
      * @return
      */
-    public bool getWork(void AbstractCooker) {
+    public boolean getWork(void AbstractCooker) {
         // TODO implement here
-        return null;
+        return false;
     }
 
     /**
      * @param AbstractCooker 
      * @return
      */
-    public bool work(void AbstractCooker) {
+    public boolean work(void AbstractCooker) {
         // TODO implement here
-        return null;
+        return false;
     }
 
 }
