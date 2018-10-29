@@ -44,10 +44,10 @@ public class KitchenManagement {
     }
 
     /**
-     * @param AbstractDish 
+     * @param dish
      * @return
      */
-    public boolean cooking(void AbstractDish) {
+    public boolean cooking(AbstractDish dish) {
         // TODO implement here
         return false;
     }

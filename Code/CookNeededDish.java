@@ -15,17 +15,27 @@ public class CookNeededDish extends AbstractDish {
     /**
      * 
      */
-    public void name;
+    public String name;
 
     /**
      * 
      */
-    public void price;
+    public Double price;
 
     /**
      * 
      */
-    public List materialsList;
+    public ArrayList<Material> materialsList;
+
+    @Override
+    public void accept() {
+
+    }
+
+    @Override
+    public AbstractProduct clone() {
+        return null;
+    }
 
     /**
      * @return
@@ -38,22 +48,16 @@ public class CookNeededDish extends AbstractDish {
     /**
      * @return
      */
-    public float getPrice() {
+    public Double getPrice() {
         // TODO implement here
-        return 0.0f;
+        return price;
     }
 
     /**
      * @return
      */
-    public List getMaterials() {
+    public ArrayList<Material> getMaterials() {
         // TODO implement here
-        return null;
+        return materialsList;
     }
-
-    /**
-     * @return
-     */
-    public abstract List getMaterials();
-
 }

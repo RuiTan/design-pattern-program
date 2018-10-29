@@ -15,6 +15,28 @@ public class NonCookNeededDish extends AbstractDish {
     /**
      * @return
      */
-    public abstract List getMaterials();
+    public List getMaterials() {
+        return null;
+    }
+
+    @Override
+    public String getName() {
+        return null;
+    }
+
+    @Override
+    public Double getPrice() {
+        return null;
+    }
+
+    @Override
+    public void accept() {
+
+    }
+
+    @Override
+    public AbstractProduct clone() {
+        return null;
+    }
 
 }

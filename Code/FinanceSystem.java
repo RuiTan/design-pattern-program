@@ -15,20 +15,20 @@ public class FinanceSystem {
     /**
      * 
      */
-    private float finance;
+    private Double finance;
 
     /**
-     * @param float amount
+     * @param amount
      */
-    public void earn(void float amount) {
+    public void earn(Double amount) {
         // TODO implement here
     }
 
     /**
-     * @param float amount 
+     * @param amount
      * @return
      */
-    public boolean expense(void float amount) {
+    public boolean expense(Double amount) {
         // TODO implement here
         return false;
     }
@@ -36,9 +36,9 @@ public class FinanceSystem {
     /**
      * @return
      */
-    public float getFinance() {
+    public Double getFinance() {
         // TODO implement here
-        return 0.0f;
+        return finance;
     }
 
 }

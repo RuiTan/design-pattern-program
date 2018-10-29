@@ -15,17 +15,17 @@ public class Vegetable extends Material {
     /**
      * 
      */
-    public void amount;
+    public int amount;
 
     /**
      * 
      */
-    public void name;
+    public String name;
 
     /**
      * 
      */
-    public void price;
+    public Double price;
 
     /**
      * @return
@@ -38,9 +38,9 @@ public class Vegetable extends Material {
     /**
      * @return
      */
-    public float getPrice() {
+    public Double getPrice() {
         // TODO implement here
-        return 0.0f;
+        return this.price;
     }
 
     /**
@@ -48,7 +48,7 @@ public class Vegetable extends Material {
      */
     public int getAmount() {
         // TODO implement here
-        return 0;
+        return amount;
     }
 
 }

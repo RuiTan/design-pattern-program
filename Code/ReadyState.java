@@ -19,11 +19,4 @@ public class ReadyState implements IState {
         // TODO implement here
     }
 
-    /**
-     * 
-     */
-    public void doAction() {
-        // TODO implement here
-    }
-
 }

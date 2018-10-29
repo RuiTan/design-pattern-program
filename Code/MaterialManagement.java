@@ -15,7 +15,7 @@ public class MaterialManagement {
     /**
      * 
      */
-    private static Map<string;Material> materialmap;
+    private static HashMap<String, Material> materialmap;
 
     /**
      * 
@@ -43,54 +43,54 @@ public class MaterialManagement {
     /**
      * @param name
      */
-    public void getMaterial(void name) {
+    public void getMaterial(String name) {
         // TODO implement here
     }
 
     /**
      * @return
      */
-    public Map<string;Material> getMaterialsMap() {
+    public Map<String, Material> getMaterialsMap() {
         // TODO implement here
         return null;
     }
 
     /**
-     * @param String 
+     * @param materialName
      * @return
      */
-    public int getMaterialAmount(void String) {
+    public int getMaterialAmount(String materialName) {
         // TODO implement here
         return 0;
     }
 
     /**
-     * @param Material
+     * @param material
      */
-    public void addMeterial(void Material) {
+    public void addMeterial(Material material) {
         // TODO implement here
     }
 
     /**
-     * @param String
+     * @param materialName
      */
-    public void deleteMaterial(void String) {
+    public void deleteMaterial(String materialName) {
         // TODO implement here
     }
 
     /**
-     * @param String 
-     * @param int
+     * @param materialName
+     * @param amount
      */
-    public void reduceMaterial(void String, void int) {
+    public void reduceMaterial(String materialName, int amount) {
         // TODO implement here
     }
 
     /**
-     * @param String 
-     * @param int
+     * @param materialName
+     * @param amount
      */
-    public void purchaseMaterial(void String, void int) {
+    public void purchaseMaterial(String materialName, int amount) {
         // TODO implement here
     }
 

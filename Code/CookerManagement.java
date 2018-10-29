@@ -28,37 +28,37 @@ public class CookerManagement {
     }
 
     /**
-     * @param AbstractCooker 
+     * @param cooker 
      * @return
      */
-    public boolean useCooker(void AbstractCooker) {
+    public boolean useCooker(AbstractCooker cooker) {
         // TODO implement here
         return false;
     }
 
     /**
-     * @param AbstractCooker 
+     * @param cooker 
      * @return
      */
-    public boolean freeCooker(void AbstractCooker) {
+    public boolean freeCooker(AbstractCooker cooker) {
         // TODO implement here
         return false;
     }
 
     /**
-     * @param AbstractCooker 
+     * @param cooker 
      * @return
      */
-    public boolean addCooker(void AbstractCooker) {
+    public boolean addCooker(AbstractCooker cooker) {
         // TODO implement here
         return false;
     }
 
     /**
-     * @param AbtractCooker 
+     * @param cooker
      * @return
      */
-    public boolean reduceCooker(void AbtractCooker) {
+    public boolean reduceCooker(AbstractCooker cooker) {
         // TODO implement here
         return false;
     }

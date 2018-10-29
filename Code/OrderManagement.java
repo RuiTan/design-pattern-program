@@ -20,19 +20,19 @@ public class OrderManagement {
 
     /**
      * 提前创建好一个Order对象（传入productList&id），然后将其加入orderMap
-     * @param Order 
+     * @param order
      * @return
      */
-    public boolean addOrder(void Order) {
+    public boolean addOrder(Order order) {
         // TODO implement here
         return false;
     }
 
     /**
-     * @param int id 
+     * @param id
      * @return
      */
-    public boolean deleteOrder(void int id) {
+    public boolean deleteOrder(int id) {
         // TODO implement here
         return false;
     }
