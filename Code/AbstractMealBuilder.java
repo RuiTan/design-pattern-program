@@ -14,16 +14,16 @@ public abstract class AbstractMealBuilder {
 
 
     /**
-     * @param Dish
+     * @param AbstractDish
      */
-    public void addDish(void Dish) {
+    public void addDish(void AbstractDish) {
         // TODO implement here
     }
 
     /**
-     * @param Dish
+     * @param AbstractDish
      */
-    public void deleteDish(void Dish) {
+    public void deleteDish(void AbstractDish) {
         // TODO implement here
     }
 

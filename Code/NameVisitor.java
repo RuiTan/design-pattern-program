@@ -15,25 +15,25 @@ public class NameVisitor extends AbstractVisitor {
     /**
      * @param m
      */
-    public void visit(Meal m) {
+    public void visit(AbstractMeal m) {
         // TODO implement here
     }
 
     /**
      * @param d
      */
-    public void visit(Dish d) {
+    public void visit(AbstractDish d) {
         // TODO implement here
     }
 
     /**
      * @param m
      */
-    public abstract void visit(Meal m);
+    public abstract void visit(AbstractMeal m);
 
     /**
      * @param d
      */
-    public abstract void visit(Dish d);
+    public abstract void visit(AbstractDish d);
 
 }

@@ -25,14 +25,14 @@ public class CookNeededDish extends AbstractDish {
     /**
      * 
      */
-    public void materialsList;
+    public List materialsList;
 
     /**
      * @return
      */
-    public string getName() {
+    public String getName() {
         // TODO implement here
-        return null;
+        return "";
     }
 
     /**
@@ -46,24 +46,14 @@ public class CookNeededDish extends AbstractDish {
     /**
      * @return
      */
-    public list getMaterials() {
+    public List getMaterials() {
         // TODO implement here
         return null;
     }
 
     /**
-     * 
-     */
-    public abstract void getName();
-
-    /**
-     * 
-     */
-    public abstract void getPrice();
-
-    /**
      * @return
      */
-    public abstract list getMaterials();
+    public abstract List getMaterials();
 
 }

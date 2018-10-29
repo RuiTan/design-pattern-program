@@ -15,7 +15,7 @@ public abstract class AbstractDish extends AbstractProduct {
     /**
      * 
      */
-    private list materialList;
+    private List materialList;
 
     /**
      * 
@@ -32,26 +32,16 @@ public abstract class AbstractDish extends AbstractProduct {
 
 
     /**
-     * 
+     * @return
      */
-    public abstract void getName();
-
-    /**
-     * 
-     */
-    public abstract void getPrice();
+    public abstract List getMaterials();
 
     /**
      * @return
      */
-    public abstract list getMaterials();
-
-    /**
-     * @return
-     */
-    public string getCookingMethod() {
+    public String getCookingMethod() {
         // TODO implement here
-        return null;
+        return "";
     }
 
     /**
@@ -62,12 +52,12 @@ public abstract class AbstractDish extends AbstractProduct {
     }
 
     /**
-     * @param State 
+     * @param IState 
      * @return
      */
-    public bool setState(void State) {
+    public boolean setState(void IState) {
         // TODO implement here
-        return null;
+        return false;
     }
 
     /**

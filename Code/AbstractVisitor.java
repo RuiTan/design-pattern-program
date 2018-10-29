@@ -16,11 +16,11 @@ public abstract class AbstractVisitor {
     /**
      * @param m
      */
-    public abstract void visit(Meal m);
+    public abstract void visit(AbstractMeal m);
 
     /**
      * @param d
      */
-    public abstract void visit(Dish d);
+    public abstract void visit(AbstractDish d);
 
 }

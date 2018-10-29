@@ -20,12 +20,12 @@ public class Menu {
     /**
      * 原型，存所有菜名和对象
      */
-    private static map<string;Product> prototype;
+    private static map<String;Product> prototype;
 
     /**
      * 存储menu的map<菜名，菜价>
      */
-    public static HashMap<string;float> menu;
+    public static HashMap<String;float> menu;
 
 
 
@@ -49,18 +49,18 @@ public class Menu {
      * @param Product 
      * @return
      */
-    public bool addProduct(void Product) {
+    public boolean addProduct(void Product) {
         // TODO implement here
-        return null;
+        return false;
     }
 
     /**
-     * @param string 
+     * @param String 
      * @return
      */
-    public bool deleteProduct(void string) {
+    public boolean deleteProduct(void String) {
         // TODO implement here
-        return null;
+        return false;
     }
 
     /**
@@ -79,10 +79,10 @@ public class Menu {
     }
 
     /**
-     * @param string 
+     * @param String 
      * @return
      */
-    public float getProductPrice(void string) {
+    public float getProductPrice(void String) {
         // TODO implement here
         return 0.0f;
     }

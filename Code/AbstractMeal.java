@@ -15,7 +15,7 @@ public class AbstractMeal extends AbstractProduct {
     /**
      * 
      */
-    private list dishList;
+    private List dishList;
 
 
     /**
