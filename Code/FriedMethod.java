@@ -19,11 +19,5 @@ public class FriedMethod implements ICookingMethod {
         // TODO implement here
     }
 
-    /**
-     * 
-     */
-    public void operate() {
-        // TODO implement here
-    }
 
 }

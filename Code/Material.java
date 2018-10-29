@@ -20,7 +20,7 @@ public class Material {
     /**
      * 
      */
-    private float price;
+    private Double price;
 
     /**
      * 
@@ -42,16 +42,16 @@ public class Material {
     /**
      * @return
      */
-    public float getPrice() {
+    public Double getPrice() {
         // TODO implement here
-        return 0.0f;
+        return price;
     }
 
     /**
-     * @param float 
+     * @param price
      * @return
      */
-    public boolean setPrice(void float) {
+    public boolean setPrice(Double price) {
         // TODO implement here
         return false;
     }
@@ -65,19 +65,19 @@ public class Material {
     }
 
     /**
-     * @param int 
+     * @param amount
      * @return
      */
-    public boolean increaseAmount(void int) {
+    public boolean increaseAmount(int amount) {
         // TODO implement here
         return false;
     }
 
     /**
-     * @param int 
+     * @param amount
      * @return
      */
-    public boolean decreaseAmount(void int) {
+    public boolean decreaseAmount(int amount) {
         // TODO implement here
         return false;
     }

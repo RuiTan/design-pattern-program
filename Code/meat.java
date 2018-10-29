@@ -15,32 +15,32 @@ public class meat extends Material {
     /**
      * 
      */
-    public void amount;
+    public int amount;
+
+    /**
+     *
+     */
+    public String name;
 
     /**
      * 
      */
-    public void name;
-
-    /**
-     * 
-     */
-    public void price;
+    public Double price;
 
     /**
      * @return
      */
     public String getName() {
         // TODO implement here
-        return "";
+        return this.name;
     }
 
     /**
      * @return
      */
-    public float getPrice() {
+    public Double getPrice() {
         // TODO implement here
-        return 0.0f;
+        return this.price;
     }
 
     /**
@@ -48,7 +48,7 @@ public class meat extends Material {
      */
     public int getAmount() {
         // TODO implement here
-        return 0;
+        return this.amount;
     }
 
 }

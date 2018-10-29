@@ -21,7 +21,6 @@ public abstract class AbstractDecorator extends AbstractDish {
      * 
      */
     public void decorate() {
-        // TODO implement here
     }
 
     /**

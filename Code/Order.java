@@ -23,8 +23,6 @@ public class Order {
     public IState state;
 
 
-
-
     /**
      * @return
      */
@@ -50,28 +48,28 @@ public class Order {
     }
 
     /**
-     * @param Product 
+     * @param product
      * @return
      */
-    public boolean addProduct(void Product) {
+    public boolean addProduct(AbstractProduct product) {
         // TODO implement here
         return false;
     }
 
     /**
-     * @param Product 
+     * @param product
      * @return
      */
-    public boolean deleteProduct(void Product) {
+    public boolean deleteProduct(AbstractProduct product) {
         // TODO implement here
         return false;
     }
 
     /**
-     * @param State 
+     * @param state
      * @return
      */
-    public boolean setState(void State) {
+    public boolean setState(IState state) {
         // TODO implement here
         return false;
     }

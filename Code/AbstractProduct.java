@@ -1,6 +1,3 @@
-
-import java.util.*;
-
 /**
  * 继承acceptor接口，和visitor抽象类构成visitor模式
  */
@@ -13,35 +10,26 @@ public abstract class AbstractProduct implements IAcceptor {
     }
 
 
-
-
-
+    /**
+     * 
+     */
+    public abstract String getName();
 
     /**
      * 
      */
-    public abstract void getName();
-
-    /**
-     * 
-     */
-    public abstract void getPrice();
-
-    /**
-     * 
-     */
-    public abstract void accept();
+    public abstract Double getPrice();
 
     /**
      * @return
      */
-    public abstract Product clone();
+    public abstract AbstractProduct clone();
 
     /**
-     * @param String 
+     * @param productName
      * @return
      */
-    public Product findAndClone(void String) {
+    public AbstractProduct findAndClone(String productName) {
         // TODO implement here
         return null;
     }

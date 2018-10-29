@@ -4,7 +4,10 @@ import java.util.*;
 /**
  * 
  */
-public class AbstractMeal extends AbstractProduct {
+public abstract class AbstractMeal extends AbstractProduct {
+
+    private String name;
+    private Double price;
 
     /**
      * Default constructor
@@ -21,15 +24,15 @@ public class AbstractMeal extends AbstractProduct {
     /**
      * 
      */
-    public void getName() {
-        // TODO implement here
+    public String getName() {
+        return this.name;
     }
 
     /**
      * 
      */
-    public void getPrice() {
-        // TODO implement here
+    public Double getPrice() {
+        return price;
     }
 
     /**
@@ -38,25 +41,9 @@ public class AbstractMeal extends AbstractProduct {
     public void accept() {
         // TODO implement here
     }
-
-    /**
-     * 
-     */
-    public abstract void getName();
-
-    /**
-     * 
-     */
-    public abstract void getPrice();
-
-    /**
-     * 
-     */
-    public abstract void accept();
-
     /**
      * @return
      */
-    public abstract Product clone();
+    public abstract AbstractProduct clone();
 
 }

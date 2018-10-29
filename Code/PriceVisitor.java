@@ -26,14 +26,4 @@ public class PriceVisitor extends AbstractVisitor {
         // TODO implement here
     }
 
-    /**
-     * @param m
-     */
-    public abstract void visit(AbstractMeal m);
-
-    /**
-     * @param d
-     */
-    public abstract void visit(AbstractDish d);
-
 }

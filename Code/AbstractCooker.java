@@ -41,8 +41,17 @@ public class AbstractCooker {
      * @param AbstractCooker 
      * @return
      */
-    public boolean setNextCooker(void AbstractCooker) {
-        // TODO implement here
+    public boolean setNextCooker(AbstractCooker nextCooker) {
+        this.nextCooker = nextCooker;
+        return nextCooker == null;
+    }
+
+    /**
+     * @param AbstractCooker 
+     * @return
+     */
+    public boolean getWork(AbstractCooker cooker) {
+        
         return false;
     }
 
@@ -50,17 +59,8 @@ public class AbstractCooker {
      * @param AbstractCooker 
      * @return
      */
-    public boolean getWork(void AbstractCooker) {
-        // TODO implement here
-        return false;
-    }
-
-    /**
-     * @param AbstractCooker 
-     * @return
-     */
-    public boolean work(void AbstractCooker) {
-        // TODO implement here
+    public boolean work(AbstractCooker cooker) {
+        
         return false;
     }
 

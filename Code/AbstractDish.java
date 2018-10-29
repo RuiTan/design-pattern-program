@@ -28,9 +28,6 @@ public abstract class AbstractDish extends AbstractProduct {
     public IState state;
 
 
-
-
-
     /**
      * @return
      */
@@ -40,23 +37,16 @@ public abstract class AbstractDish extends AbstractProduct {
      * @return
      */
     public String getCookingMethod() {
-        // TODO implement here
+         
         return "";
     }
 
     /**
-     * 
-     */
-    public void accept() {
-        // TODO implement here
-    }
-
-    /**
-     * @param IState 
+     * @param state
      * @return
      */
-    public boolean setState(void IState) {
-        // TODO implement here
+    public boolean setState(IState state) {
+        
         return false;
     }
 
@@ -64,19 +54,19 @@ public abstract class AbstractDish extends AbstractProduct {
      * @return
      */
     public IState getState() {
-        // TODO implement here
+        
         return null;
     }
 
     /**
      * 
      */
-    public abstract void getName();
+    public abstract String getName();
 
     /**
      * 
      */
-    public abstract void getPrice();
+    public abstract Double getPrice();
 
     /**
      * 
@@ -86,6 +76,6 @@ public abstract class AbstractDish extends AbstractProduct {
     /**
      * @return
      */
-    public abstract Product clone();
+    public abstract AbstractProduct clone();
 
 }
