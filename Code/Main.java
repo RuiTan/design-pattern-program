@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(String []args){
+
         AbstractMeal meal1 = getMeal("MEALONE");
         AbstractMeal meal2 = getMeal("MEALTWO");
         createMaterial(MaterialType.meat, 100,  10.0, "牛肉");

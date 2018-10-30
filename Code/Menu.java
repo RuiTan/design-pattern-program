@@ -9,6 +9,8 @@ public class Menu {
     private Menu() {
     }
 
+    private static final String PRINT = "Menu.java : ";
+
     /**
      * 菜单实例，存所有菜名和价格
      */
@@ -27,6 +29,7 @@ public class Menu {
      * @return
      */
     public static Menu getInstance() {
+        System.out.println(PRINT + "获取单例成功");
         return instance;
     }
 
@@ -35,21 +38,13 @@ public class Menu {
      * @return
      */
     public boolean addProduct(AbstractProduct product) {
-
         if (prototype.containsKey(product.getName())){
+            System.out.println(PRINT + "无法添加产品'" + product.getName() + "',已存在");
             return false;
         }
         else{
-
-        }
-
-        AbstractProduct a = prototype.get(product);
-        if(a != null){
-            return false;
-        }
-        else{
-            prototype.put(product.getName(),product);
-            menu.put(product.getName(),product.getPrice());
+            prototype.put(product.getName(), product);
+            System.out.println(PRINT + "添加产品'" + product.getName() + "'成功");
             return true;
         }
     }
@@ -59,17 +54,26 @@ public class Menu {
      * @return
      */
     public boolean deleteProduct(String productName) {
-        prototype.remove(productName);
-        menu.remove(productName);
-        return true;
+        if (prototype.containsKey(productName)){
+            System.out.println(PRINT + "删除产品'" + productName + "'成功");
+            prototype.remove(productName);
+            return true;
+        }
+        System.out.println(PRINT + "删除产品'" + productName + "'失败");
+        return false;
     }
 
     /**打印菜品
      * 
      */
     public void printMenu() {
-        for(HashMap.Entry<String, Double> entry : menu.entrySet() ){
-            System.out.println("Name: "+entry.getKey()+"  Price: "+entry.getValue());
+        for (HashMap.Entry<String, AbstractProduct> entry : prototype.entrySet()){
+            if (entry.getValue() instanceof AbstractMeal){
+                new PriceVisitor().visit((AbstractMeal) entry.getValue(), "");
+            }
+            else{
+                new PriceVisitor().visit((AbstractDish) entry.getValue(), "");
+            }
         }
     }
 
@@ -77,13 +81,11 @@ public class Menu {
      * @param productName
      * @return
      */
-    public float getProductPrice(String productName) {
-        AbstractProduct a = prototype.get(productName);
-        if(a == null){
-            return 0;
-        }
-        else{
-            return a.getPrice().floatValue();
+    public Double getProductPrice(String productName) {
+        if (prototype.containsKey(productName)){
+            return prototype.get(productName).getPrice();
+        }else {
+            return -1.0;
         }
     }
 
