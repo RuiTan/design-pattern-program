@@ -13,7 +13,7 @@ public class FriedMethod implements ICookingMethod {
     }
 
     /**
-     * 
+     * 炸
      */
     public String operate() {
         return ("炸");

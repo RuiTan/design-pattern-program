@@ -1,6 +1,4 @@
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 
 public class MealOne extends AbstractMeal {
 
@@ -16,11 +14,10 @@ public class MealOne extends AbstractMeal {
     private static int count = 1;
 
     /**
-     * 私有构造函数，外部无法调用
+     * 构造函数，外部无法调用
      */
     protected MealOne(){
         addPrototype(this);
-        initDishes();
     }
 
     protected MealOne(String name, Double price){
@@ -34,6 +31,10 @@ public class MealOne extends AbstractMeal {
         count++;
     }
 
+    /**
+     *
+     * @return MealOne套餐中的菜
+     */
     @Override
     public HashMap<String, AbstractProduct> getDishes() {
         return dishList;
@@ -78,10 +79,6 @@ public class MealOne extends AbstractMeal {
         }
     }
 
-    @Override
-    public void initDishes() {
-
-    }
 
     public static HashMap<String, AbstractProduct> getDishList(){
         return dishList;

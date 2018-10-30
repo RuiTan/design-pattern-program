@@ -11,5 +11,8 @@ public class Pan extends AbstractCooker {
      */
     public Pan() {
     }
+    public Pan(String Name, float Price){
+        super(Name,Price);
+    }
 
 }

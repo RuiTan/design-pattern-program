@@ -13,21 +13,26 @@ public class Material {
     }
 
     /**
-     * 
+     * 原料数量
      */
     private int amount;
 
     /**
-     * 
+     * 原料价格
      */
     private Double price;
 
     /**
-     * 
+     * 原料名称
      */
     private String name;
 
-
+    /**
+     *
+     * @param amount
+     * @param price
+     * @param name
+     */
     public Material(int amount, Double price, String name) {
         this.amount = amount;
         this.price = price;
@@ -45,43 +50,29 @@ public class Material {
     /**
      * @return
      */
-    public String getName() {
-        // TODO implement here
-        return name;
-    }
+    public String getName() { return name; }
 
     /**
      * @return
      */
-    public Double getPrice() {
-        // TODO implement here
-        return price;
-    }
+    public Double getPrice() { return price; }
 
     /**
      * @param price
      * @return
      */
-    public boolean setPrice(Double price) {
-        // TODO implement here
-        this.price = price;
-        return true;
-    }
+    public boolean setPrice(Double price) { this.price = price; return true; }
 
     /**
      * @return
      */
-    public int getAmount() {
-        // TODO implement here
-        return amount;
-    }
+    public int getAmount() { return amount; }
 
     /**
      * @param amount
      * @return
      */
     public boolean increaseAmount(int amount) {
-        // TODO implement here
         this.amount += amount;
         return true;
     }

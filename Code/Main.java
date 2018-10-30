@@ -57,14 +57,14 @@ public class Main {
     /**
      * 原料类型
      */
-    private static enum MaterialType {
+    public static enum MaterialType {
         meat, vegetable
     }
 
     /**
      * 制作方法
      */
-    private static enum CookingMethod{
+    public static enum CookingMethod{
         steam, fried
     }
 
@@ -73,7 +73,7 @@ public class Main {
      * @param mealName
      * @return
      */
-    private static AbstractMeal getMeal(String mealName){
+    public static AbstractMeal getMeal(String mealName){
         return AbstractMeal.findAndClone(mealName);
     }
 
@@ -85,7 +85,7 @@ public class Main {
      * @param name
      * @return
      */
-    private static void createMaterial(MaterialType t, int amount, Double price, String name){
+    public static void createMaterial(MaterialType t, int amount, Double price, String name){
         MaterialManagement instance =  MaterialManagement.getInstance();
         switch (t){
             case meat:{
@@ -109,11 +109,10 @@ public class Main {
      * @param amount
      * @return
      */
-    private static Material getMaterial(String name, int amount){
+    public static Material getMaterial(String name, int amount){
         MaterialManagement instance = MaterialManagement.getInstance();
         return instance.getMaterial(name, amount);
     }
-
 
     /**
      * 创建一种DishOne的菜
@@ -122,7 +121,7 @@ public class Main {
      * @param materials
      * @return
      */
-    private static DishOne createDish(String name, Double price, HashMap<String, Integer> materials, CookingMethod method){
+    public static DishOne createDish(String name, Double price, HashMap<String, Integer> materials, CookingMethod method){
         DishOne dishOne = new DishOne(name, price);
         ArrayList<Material> materialArrayList = new ArrayList<>();
         for (HashMap.Entry<String, Integer> entry : materials.entrySet()){
@@ -146,7 +145,7 @@ public class Main {
     /**
      * 查看原料仓库
      */
-    private static void showMaterials(){
+    public static void showMaterials(){
         MaterialManagement instance = MaterialManagement.getInstance();
         HashMap<String, Material> materialMap = instance.getMaterialMap();
         for (HashMap.Entry material : materialMap.entrySet()){

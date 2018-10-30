@@ -1,67 +1,52 @@
 
+
 import java.util.*;
 
-/**
- * 
- */
-public class AbstractCooker {
+abstract class AbstractCooker {
+    public String name;
+    public float price;
+    public int available;
+    public AbstractCooker nextCooker;
+    AbstractCooker(){
 
-    /**
-     * Default constructor
-     */
-    public AbstractCooker() {
+    }
+    AbstractCooker(String Name, float Price){
+        name = Name;
+        price = Price;
+        available= 0;
+        nextCooker = null;
     }
 
     /**
-     * 
-     */
-    public String name;
-
-    /**
-     * 
-     */
-    public float price;
-
-    /**
-     * 
-     */
-    public int amount;
-
-    /**
-     * 
-     */
-    public int available;
-
-    /**
-     * 
-     */
-    public AbstractCooker nextCooker;
-
-    /**
-     * @param AbstractCooker 
-     * @return
+     * 设置下一个厨具
      */
     public boolean setNextCooker(AbstractCooker nextCooker) {
         this.nextCooker = nextCooker;
         return nextCooker == null;
     }
-
     /**
-     * @param AbstractCooker 
-     * @return
+     * 判断是否在工作
      */
     public boolean getWork(AbstractCooker cooker) {
-        
-        return false;
+        if(available == 0) {
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 
     /**
-     * @param AbstractCooker 
-     * @return
+     * 使该厨具工作
      */
     public boolean work(AbstractCooker cooker) {
-        
-        return false;
+        if(available != 0){
+            return false;
+        }
+        else{
+            available = 1;
+            return true;
+        }
     }
 
 }
