@@ -15,8 +15,8 @@ public class FriedMethod implements ICookingMethod {
     /**
      * 
      */
-    public void operate() {
-        // TODO implement here
+    public String operate() {
+        return ("炸");
     }
 
 

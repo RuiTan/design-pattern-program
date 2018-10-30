@@ -15,8 +15,8 @@ public class SteamMethod implements ICookingMethod {
     /**
      * 
      */
-    public void operate() {
-        // TODO implement here
+    public String operate() {
+        return "蒸";
     }
 
 

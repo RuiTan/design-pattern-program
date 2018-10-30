@@ -28,15 +28,26 @@ public class Material {
     private String name;
 
 
+    public Material(int amount, Double price, String name) {
+        this.amount = amount;
+        this.price = price;
+        this.name = name;
+    }
 
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
     /**
      * @return
      */
     public String getName() {
         // TODO implement here
-        return "";
+        return name;
     }
 
     /**
@@ -53,7 +64,8 @@ public class Material {
      */
     public boolean setPrice(Double price) {
         // TODO implement here
-        return false;
+        this.price = price;
+        return true;
     }
 
     /**
@@ -61,7 +73,7 @@ public class Material {
      */
     public int getAmount() {
         // TODO implement here
-        return 0;
+        return amount;
     }
 
     /**
@@ -70,7 +82,8 @@ public class Material {
      */
     public boolean increaseAmount(int amount) {
         // TODO implement here
-        return false;
+        this.amount += amount;
+        return true;
     }
 
     /**
@@ -79,7 +92,16 @@ public class Material {
      */
     public boolean decreaseAmount(int amount) {
         // TODO implement here
-        return false;
+        if (amount > this.amount){
+            return false;
+        }
+        this.amount -= amount;
+        return true;
+    }
+
+    @Override
+    public String toString(){
+        return "[" + amount + "," + price + "," + name + "]";
     }
 
 }

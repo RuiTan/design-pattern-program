@@ -6,6 +6,8 @@ import java.util.*;
  */
 public class SpicyDecorator extends AbstractDecorator {
 
+    private AbstractDish dish;
+
     /**
      * Default constructor
      */
@@ -15,23 +17,18 @@ public class SpicyDecorator extends AbstractDecorator {
     /**
      * 
      */
-    private AbstractDish dish;
-
-    /**
-     * 
-     */
     public void decorate() {
         // TODO implement here
     }
 
     @Override
-    public List getMaterials() {
+    public HashMap getMaterials() {
         return null;
     }
 
     @Override
     public String getName() {
-        return null;
+        return "";
     }
 
     @Override
@@ -39,14 +36,15 @@ public class SpicyDecorator extends AbstractDecorator {
         return null;
     }
 
-    @Override
-    public void accept() {
-
-    }
 
     @Override
     public AbstractProduct clone() {
         return null;
+    }
+
+    @Override
+    public void accept(AbstractVisitor visitor, String retract) {
+        visitor.visit(this, retract);
     }
 
 }

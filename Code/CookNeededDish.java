@@ -25,16 +25,17 @@ public class CookNeededDish extends AbstractDish {
     /**
      * 
      */
-    public ArrayList<Material> materialsList;
+    public HashMap<String, Material> materialsList;
 
-    @Override
-    public void accept() {
-
-    }
 
     @Override
     public AbstractProduct clone() {
         return null;
+    }
+
+    @Override
+    public void accept(AbstractVisitor visitor, String retract) {
+        visitor.visit(this, retract);
     }
 
     /**
@@ -56,7 +57,7 @@ public class CookNeededDish extends AbstractDish {
     /**
      * @return
      */
-    public ArrayList<Material> getMaterials() {
+    public HashMap<String, Material> getMaterials() {
         // TODO implement here
         return materialsList;
     }
