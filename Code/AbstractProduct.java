@@ -25,14 +25,6 @@ public abstract class AbstractProduct implements IAcceptor {
      */
     public abstract AbstractProduct clone();
 
-    /**
-     * @param productName
-     * @return
-     */
-    public AbstractProduct findAndClone(String productName) {
-        // TODO implement here
-        return null;
-    }
 
     /**
      * @return
@@ -45,6 +37,6 @@ public abstract class AbstractProduct implements IAcceptor {
     /**
      * 
      */
-    public abstract void accept();
+    public abstract void accept(AbstractVisitor visitor, String retract);
 
 }

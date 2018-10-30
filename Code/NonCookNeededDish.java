@@ -15,7 +15,7 @@ public class NonCookNeededDish extends AbstractDish {
     /**
      * @return
      */
-    public List getMaterials() {
+    public HashMap<String, Material> getMaterials() {
         return null;
     }
 
@@ -30,13 +30,13 @@ public class NonCookNeededDish extends AbstractDish {
     }
 
     @Override
-    public void accept() {
-
+    public AbstractProduct clone() {
+        return null;
     }
 
     @Override
-    public AbstractProduct clone() {
-        return null;
+    public void accept(AbstractVisitor visitor, String retract) {
+
     }
 
 }

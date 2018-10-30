@@ -6,33 +6,24 @@ import java.util.*;
  */
 public class meat extends Material {
 
+    private String type = "meat";
+
     /**
      * Default constructor
      */
     public meat() {
     }
 
-    /**
-     * 
-     */
-    public int amount;
-
-    /**
-     *
-     */
-    public String name;
-
-    /**
-     * 
-     */
-    public Double price;
+    public meat(int amount, Double price, String name){
+        super(amount, price, name);
+    }
 
     /**
      * @return
      */
     public String getName() {
         // TODO implement here
-        return this.name;
+        return super.getName();
     }
 
     /**
@@ -40,7 +31,7 @@ public class meat extends Material {
      */
     public Double getPrice() {
         // TODO implement here
-        return this.price;
+        return super.getPrice();
     }
 
     /**
@@ -48,7 +39,11 @@ public class meat extends Material {
      */
     public int getAmount() {
         // TODO implement here
-        return this.amount;
+        return super.getAmount();
     }
 
+
+    public String getType(){
+        return type;
+    }
 }

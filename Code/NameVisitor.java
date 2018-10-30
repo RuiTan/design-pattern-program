@@ -15,14 +15,14 @@ public class NameVisitor extends AbstractVisitor {
     /**
      * @param m
      */
-    public void visit(AbstractMeal m) {
+    public void visit(AbstractMeal m, String retract) {
         // TODO implement here
     }
 
     /**
      * @param d
      */
-    public void visit(AbstractDish d) {
+    public void visit(AbstractDish d, String retract) {
         // TODO implement here
     }
 

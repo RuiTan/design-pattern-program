@@ -7,17 +7,6 @@ import java.util.*;
 public abstract class AbstractDish extends AbstractProduct {
 
     /**
-     * Default constructor
-     */
-    public AbstractDish() {
-    }
-
-    /**
-     * 
-     */
-    private List materialList;
-
-    /**
      * 
      */
     public ICookingMethod cookingMethod;
@@ -31,14 +20,21 @@ public abstract class AbstractDish extends AbstractProduct {
     /**
      * @return
      */
-    public abstract List getMaterials();
+    public abstract HashMap<String, Material> getMaterials();
 
     /**
      * @return
      */
-    public String getCookingMethod() {
-         
-        return "";
+    public ICookingMethod getCookingMethod() {
+        return cookingMethod;
+    }
+
+    /**
+     *
+     * @param cookingMethod
+     */
+    public void setCookingMethod(ICookingMethod cookingMethod){
+        this.cookingMethod = cookingMethod;
     }
 
     /**
@@ -46,16 +42,15 @@ public abstract class AbstractDish extends AbstractProduct {
      * @return
      */
     public boolean setState(IState state) {
-        
-        return false;
+        this.state = state;
+        return true;
     }
 
     /**
      * @return
      */
     public IState getState() {
-        
-        return null;
+        return state;
     }
 
     /**
@@ -71,11 +66,24 @@ public abstract class AbstractDish extends AbstractProduct {
     /**
      * 
      */
-    public abstract void accept();
+    public abstract void accept(AbstractVisitor visitor, String retract);
 
     /**
      * @return
      */
     public abstract AbstractProduct clone();
 
+    @Override
+    public String toString(){
+        StringBuilder s = new StringBuilder();
+        s.append("菜名 : ").append(getName()).append(", 菜价格 : ").append(getPrice()).append(", 菜系原料 : 【");
+        for (HashMap.Entry<String, Material> material : getMaterials().entrySet()){
+            s.append(material.toString());
+        }
+        s.append("】");
+        if (getCookingMethod() != null){
+            s.append(", 烹饪方法 : ").append(getCookingMethod().operate());
+        }
+        return s.toString();
+    }
 }

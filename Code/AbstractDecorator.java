@@ -21,11 +21,7 @@ public abstract class AbstractDecorator extends AbstractDish {
      * 
      */
     public void decorate() {
-    }
 
-    /**
-     * @return
-     */
-    public abstract List getMaterials();
+    }
 
 }
