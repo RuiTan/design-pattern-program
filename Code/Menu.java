@@ -19,10 +19,9 @@ public class Menu {
      */
     private static HashMap<String,AbstractProduct> prototype = new HashMap<String, AbstractProduct>();
 
-    /**
-     * 存储menu的map<菜名，菜价>
-     */
-    private static HashMap<String, Double> menu = new HashMap<String, Double>();
+    public HashMap<String, AbstractProduct> getPrototype() {
+        return prototype;
+    }
 
     /**获得菜单实例
      * @return
@@ -36,6 +35,14 @@ public class Menu {
      * @return
      */
     public boolean addProduct(AbstractProduct product) {
+
+        if (prototype.containsKey(product.getName())){
+            return false;
+        }
+        else{
+
+        }
+
         AbstractProduct a = prototype.get(product);
         if(a != null){
             return false;

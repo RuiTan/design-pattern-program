@@ -2,23 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="390cea93-9905-4d70-a8d0-a3026a86038e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Sample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AbstractCooker.java" beforeDir="false" afterPath="$PROJECT_DIR$/AbstractCooker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AbstractDish.java" beforeDir="false" afterPath="$PROJECT_DIR$/AbstractDish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AbstractMeal.java" beforeDir="false" afterPath="$PROJECT_DIR$/AbstractMeal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AbstractProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/AbstractProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CookerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/CookerManagement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DishOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/DishOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FriedMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/FriedMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KitchenManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/KitchenManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/Material.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MaterialManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/MaterialManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MealOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/MealOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MealTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/MealTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microwave.java" beforeDir="false" afterPath="$PROJECT_DIR$/Microwave.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pan.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sample.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sample.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,20 +20,38 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="505">
+              <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1831#1832#0" expanded="true" />
+                <element signature="e#1889#1890#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sample.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Sample.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Sample.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+            <state relative-caret-position="45">
+              <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Menu.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Menu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
+              <folding>
+                <element signature="e#277#302#0" expanded="true" />
+                <element signature="e#496#497#0" expanded="true" />
+                <element signature="e#528#529#0" expanded="true" />
+                <element signature="e#504#505#0" expanded="true" />
+                <element signature="e#535#536#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/MealTwo.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="275">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#526#527#0" expanded="true" />
@@ -77,47 +82,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrderManagement.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OrderManagement.java">
+      <file leaf-file-name="AbstractDish.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AbstractDish.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+            <state relative-caret-position="474">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pan.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pan.java">
+      <file leaf-file-name="AbstractProduct.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AbstractProduct.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
+            <state relative-caret-position="375">
+              <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PreparingState.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PreparingState.java">
+      <file leaf-file-name="DishOne.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DishOne.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+            <state relative-caret-position="55">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RawState.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RawState.java">
+      <file leaf-file-name="AbstractMeal.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AbstractMeal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReadyState.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ReadyState.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="186">
+              <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -165,6 +164,7 @@
       <find>depen</find>
       <find>findAn</find>
       <find>findAnd</find>
+      <find>Tem</find>
     </findStrings>
     <replaceStrings>
       <replace>@param cooker</replace>
@@ -174,6 +174,7 @@
       <replace>mealTwo</replace>
       <replace>MealTwo</replace>
       <replace>AbstractProduct</replace>
+      <replace>Sample</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -206,7 +207,6 @@
         <option value="$PROJECT_DIR$/SteamMethod.java" />
         <option value="$PROJECT_DIR$/ICookingMethod.java" />
         <option value="$PROJECT_DIR$/PriceVisitor.java" />
-        <option value="$PROJECT_DIR$/Main.java" />
         <option value="$PROJECT_DIR$/AbstractDish.java" />
         <option value="$PROJECT_DIR$/AbstractProduct.java" />
         <option value="$PROJECT_DIR$/DishOne.java" />
@@ -215,7 +215,6 @@
         <option value="$PROJECT_DIR$/MaterialManagement.java" />
         <option value="$PROJECT_DIR$/FinanceSystem.java" />
         <option value="$PROJECT_DIR$/AbstractCooker.java" />
-        <option value="$PROJECT_DIR$/Menu.java" />
         <option value="$PROJECT_DIR$/MealOne.java" />
         <option value="$PROJECT_DIR$/AbstractMeal.java" />
         <option value="$PROJECT_DIR$/KitchenManagement.java" />
@@ -224,6 +223,8 @@
         <option value="$PROJECT_DIR$/Pan.java" />
         <option value="$PROJECT_DIR$/MealTwo.java" />
         <option value="$PROJECT_DIR$/Sample.java" />
+        <option value="$PROJECT_DIR$/Main.java" />
+        <option value="$PROJECT_DIR$/Menu.java" />
       </list>
     </option>
   </component>
@@ -350,7 +351,7 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28678304" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.159601" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
@@ -415,12 +416,6 @@
           <line>83</line>
           <properties />
           <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Main.java</url>
-          <line>91</line>
-          <properties />
-          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="15" />
@@ -613,16 +608,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DishOne.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FriedMethod.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -634,27 +619,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="71" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AbstractDish.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AbstractProduct.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AbstractMeal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="25" column="68" lean-forward="true" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
         </state>
       </provider>
     </entry>
@@ -715,17 +679,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
-          <folding>
-            <element signature="e#277#302#0" expanded="true" />
-            <element signature="e#409#425#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Object.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
@@ -769,11 +722,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/PreparingState.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -816,7 +765,7 @@
     <entry file="file://$PROJECT_DIR$/MealTwo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#526#527#0" expanded="true" />
@@ -837,20 +786,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main.java">
+    <entry file="file://$PROJECT_DIR$/DishOne.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="55">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1831#1832#0" expanded="true" />
+            <element signature="e#1889#1890#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AbstractMeal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AbstractProduct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AbstractDish.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Sample.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+        <state relative-caret-position="45">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="e#277#302#0" expanded="true" />
+            <element signature="e#496#497#0" expanded="true" />
+            <element signature="e#528#529#0" expanded="true" />
+            <element signature="e#504#505#0" expanded="true" />
+            <element signature="e#535#536#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
