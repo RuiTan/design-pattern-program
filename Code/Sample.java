@@ -7,7 +7,6 @@ public class Sample {
     public void SingletonSample(){
         Menu menu = Menu.getInstance();
 
-
     }
 
     public void VisitorSample(){
