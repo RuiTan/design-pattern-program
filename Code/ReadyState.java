@@ -6,17 +6,15 @@ import java.util.*;
  */
 public class ReadyState implements IState {
 
-    /**
-     * Default constructor
-     */
-    public ReadyState() {
+
+
+    public void doAction(Order o) {
+        o.setState(this);
+
     }
 
-    /**
-     * 
-     */
-    public void doAction() {
-        // TODO implement here
+    @Override
+    public String toString(){
+        return "ready";
     }
-
 }

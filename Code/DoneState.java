@@ -6,17 +6,15 @@ import java.util.*;
  */
 public class DoneState implements IState {
 
-    /**
-     * Default constructor
-     */
-    public DoneState() {
+
+
+    public void doAction(Order o) {
+        o.setState(this);
     }
 
-    /**
-     * 
-     */
-    public void doAction() {
-        // TODO implement here
+    @Override
+    public String toString(){
+        return "done";
     }
 
 }
