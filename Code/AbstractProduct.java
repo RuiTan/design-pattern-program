@@ -25,15 +25,6 @@ public abstract class AbstractProduct implements IAcceptor {
      */
     public abstract AbstractProduct clone();
 
-
-    /**
-     * @return
-     */
-    public boolean addPrototype() {
-        // TODO implement here
-        return false;
-    }
-
     /**
      * 
      */

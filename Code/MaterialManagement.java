@@ -13,21 +13,25 @@ public class MaterialManagement {
     }
 
     /**
-     * 
+     * 原料的Map
      */
     private static HashMap<String, Material> materialMap;
 
+    /**
+     *
+     * @return 返回原料的Map
+     */
     public HashMap<String, Material> getMaterialMap() {
         return materialMap;
     }
 
     /**
-     * 
+     * MaterialManagement的单例
      */
     private static MaterialManagement instance;
 
     /**
-     * @return
+     * @return 获取单例
      */
     public static MaterialManagement getInstance() {
         if (instance == null){
@@ -38,17 +42,20 @@ public class MaterialManagement {
     }
 
     /**
+     * 获取一定数量的某原料，会在仓库中减去相应量
      * @param name
+     * @param amount
      */
     public Material getMaterial(String name, int amount) {
         // TODO implement here
         if (materialMap.containsKey(name)){
             Material material = materialMap.get(name);
             if (material.getAmount() >= amount){
-                material.setAmount(material.getAmount()-amount);
+                reduceMaterial(name, amount);
                 System.out.println("原料'" + material.getName() + "'使用了" + amount + ",还剩" + material.getAmount());
             }else {
                 System.out.println("原料'" + material.getName() + "'需要" + amount + ",仓库仅剩" + material.getAmount() + ",需要购入原料");
+                return null;
             }
             return material;
         }
@@ -56,8 +63,9 @@ public class MaterialManagement {
     }
 
     /**
-     * @param materialName
-     * @return
+     * 获取某原料的数量
+     * @param materialName 原料名
+     * @return 当原料不存在时返回-1
      */
     public int getMaterialAmount(String materialName) {
         // TODO implement here
@@ -68,6 +76,7 @@ public class MaterialManagement {
     }
 
     /**
+     * 新购入某种原料
      * @param material
      */
     public void addMaterial(Material material) {
@@ -77,6 +86,7 @@ public class MaterialManagement {
     }
 
     /**
+     * 删除某原料
      * @param materialName
      */
     public void deleteMaterial(String materialName) {
@@ -85,6 +95,7 @@ public class MaterialManagement {
     }
 
     /**
+     * 减少原料的数量
      * @param materialName
      * @param amount
      */
@@ -96,6 +107,7 @@ public class MaterialManagement {
     }
 
     /**
+     * 增加原料的数量
      * @param materialName
      * @param amount
      */

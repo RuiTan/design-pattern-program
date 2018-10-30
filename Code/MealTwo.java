@@ -20,7 +20,6 @@ public class MealTwo extends AbstractMeal {
      */
     protected MealTwo(){
         addPrototype(this);
-        initDishes();
     }
 
     protected MealTwo(String name, Double price){
@@ -78,10 +77,6 @@ public class MealTwo extends AbstractMeal {
         }
     }
 
-    @Override
-    public void initDishes() {
-
-    }
 
     public static HashMap<String, AbstractProduct> getDishList(){
         return dishList;

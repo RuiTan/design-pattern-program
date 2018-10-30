@@ -15,16 +15,10 @@ public class CookerManagement {
     /**
      * 
      */
-    public AbstractCooker cookerChain;
+    private AbstractCooker cookerChain;
 
-
-
-    /**
-     * @return
-     */
     public AbstractCooker getCookerChain() {
-        // TODO implement here
-        return null;
+       return cookerChain;
     }
 
     /**
@@ -32,7 +26,6 @@ public class CookerManagement {
      * @return
      */
     public boolean useCooker(AbstractCooker cooker) {
-        // TODO implement here
         return false;
     }
 

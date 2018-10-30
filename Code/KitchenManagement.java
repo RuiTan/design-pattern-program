@@ -1,63 +1,45 @@
 
 import java.util.*;
-
 /**
  * 
  */
 public class KitchenManagement {
+    private static KitchenManagement instance = new KitchenManagement();
+    static public Menu menu = Menu.getInstance();
 
     /**
-     * Default constructor
+     * 
      */
-    public KitchenManagement() {
+    static public MaterialManagement materialManager = MaterialManagement.getInstance();
+
+    /**
+     * 
+     */
+    static public CookerManagement cookerManager;
+
+    private KitchenManagement() {
+
     }
 
     /**
-     * 
-     */
-    private static KitchenManagement instance;
-
-    /**
-     * 
-     */
-    public Menu menu;
-
-    /**
-     * 
-     */
-    public MaterialManagement materialManager;
-
-    /**
-     * 
-     */
-    public CookerManagement cookerManager;
-
-
-
-
-
-    /**
-     * 
-     */
-    private void KitchenManagement() {
-        // TODO implement here
-    }
-
-    /**
-     * @param dish
-     * @return
+     * 做一个菜品
      */
     public boolean cooking(AbstractDish dish) {
-        // TODO implement here
-        return false;
+        HashMap<String, Material> material = dish.getMaterials();
+        System.out.print("做'" + dish.getName() + "'的原料是 : ");
+        for(HashMap.Entry<String, Material> entry : material.entrySet()){
+            System.out.print(entry.getKey() + " ");
+        }
+        dish.getCookingMethod();
+        return true;
     }
 
     /**
      * @return
+     *
      */
-    public KitchenManagement getInstance() {
-        // TODO implement here
-        return null;
+    public static KitchenManagement getInstance() {
+       return instance;
     }
 
 }

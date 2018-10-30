@@ -4,9 +4,21 @@ import java.util.List;
 
 public class DishOne extends AbstractDish {
 
+    /**
+     * 此菜系的基本信息
+     */
     private String name;
     private Double price;
+    /**
+     * 菜需要的原料
+     */
+    private HashMap<String, Material> materialList;
 
+    /**
+     *  构造函数
+     * @param name
+     * @param price
+     */
     public DishOne(String name, Double price) {
         this.name = name;
         this.price = price;
@@ -15,14 +27,17 @@ public class DishOne extends AbstractDish {
 
     /**
      *
+     * @return 原料
      */
-    private HashMap<String, Material> materialList;
-
     @Override
     public HashMap<String, Material> getMaterials() {
         return materialList;
     }
 
+    /**
+     *
+     * @param materials 添加菜需要的原料
+     */
     public void setMaterials(ArrayList<Material> materials){
         for (Material material : materials){
             materialList.put(material.getName(), material);
