@@ -10,12 +10,13 @@ public class OrderManagement {
      * Default constructor
      */
     public OrderManagement() {
+        orderList=new LinkedList<Order>();
     }
 
     /**
-     * 
+     * 由于增删操作较多，所以改用List的实例LinkedList类作为订单表数据结构
      */
-    private List orderList;
+    private static LinkedList<Order> orderList;
 
 
     /**
@@ -23,25 +24,40 @@ public class OrderManagement {
      * @param order
      * @return
      */
-    public boolean addOrder(Order order) {
-        // TODO implement here
-        return false;
+    public static boolean addOrder(Order order) {
+        if(order==null){
+            System.out.println("New order is empty");
+            return false;
+        }
+        /**
+         * 在列表末尾加入
+         */
+        orderList.addLast(order);
+        System.out.println("New order has been created");
+        return true;
     }
 
     /**
      * @param id
-     * @return
+     * 移除
      */
     public boolean deleteOrder(int id) {
-        // TODO implement here
-        return false;
+        if(orderList.size()<id || id<1){
+            System.out.println("Order"+id+"has been removed successfully");
+            return false;
+        }
+        orderList.remove(id-1);
+        System.out.println("Order"+id+"has been removed successfully");
+        return true;
     }
 
     /**
-     * 
+     * @desription 对整个列表内的单子进行内容打印
      */
     public void getOrderList() {
-        // TODO implement here
+        for (Order o:orderList) {
+            System.out.println(o);
+        }
     }
 
 }

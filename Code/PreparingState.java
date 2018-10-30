@@ -7,16 +7,15 @@ import java.util.*;
 public class PreparingState implements IState {
 
     /**
-     * Default constructor
-     */
-    public PreparingState() {
-    }
-
-    /**
      * 
      */
-    public void doAction() {
-        // TODO implement here
+    public void doAction(Order o) {
+       o.setState(this);
+    }
+
+    @Override
+    public String toString(){
+        return "preparing";
     }
 
 }
