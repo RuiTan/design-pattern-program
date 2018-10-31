@@ -12,11 +12,9 @@ public class CookingState implements IState {
     public CookingState() {
     }
 
-    /**
-     * 
-     */
-    public void doAction() {
-        // TODO implement here
-    }
 
+    @Override
+    public void doAction(Order o) {
+
+    }
 }

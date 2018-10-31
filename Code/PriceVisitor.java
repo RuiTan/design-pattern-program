@@ -17,14 +17,10 @@ public class PriceVisitor extends AbstractVisitor {
      * @param m
      */
     public void visit(AbstractMeal m, String retract) {
-
-        String builder = retract +
-                "套餐名 : " + m.getName() + ", " + "套餐价格 : " + m.getPrice() + "\n" +
-                retract +
-                "套餐内容 : \n";
-        System.out.print(builder);
-        for (HashMap.Entry<String, AbstractProduct> productEntry : m.getDishes().entrySet()){
-            productEntry.getValue().accept(this, retract+"  ");
+        String builder =  retract + m.getName() + "(套餐) —— " + m.getPrice() + "元 : ";
+        System.out.println(builder);
+        for (HashMap.Entry<String, AbstractProduct> entry : m.getDishes().entrySet()){
+            entry.getValue().accept(this, retract+"  ");
         }
     }
 
@@ -32,7 +28,7 @@ public class PriceVisitor extends AbstractVisitor {
      * @param d
      */
     public void visit(AbstractDish d, String retract) {
-        System.out.println(d.toString());
+        System.out.println(retract + d.getName() + " —— " + d.getPrice());
     }
 
 }

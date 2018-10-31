@@ -3,32 +3,34 @@ import java.util.HashMap;
 public class MealOne extends AbstractMeal {
 
     private String name;
-    private Double price;
+    private static Double price;
 
     protected static final String DEFAULTNAME = "MEALONE";
-    protected static final Double DEFAULTPRICE = 100.0D;
+    protected static final Double DEFAULTPRICE = 0.0D;
 
     protected static MealOne mealOne = new MealOne();
 
+    private static int count = 0;
+
+
     private static HashMap<String, AbstractProduct> dishList = new HashMap<>();
-    private static int count = 1;
 
     /**
      * 构造函数，外部无法调用
      */
-    protected MealOne(){
-        addPrototype(this);
+    private MealOne(){
+        this.name = DEFAULTNAME;
+        price = DEFAULTPRICE;
+        Menu.getInstance().addProduct(this);
     }
 
-    protected MealOne(String name, Double price){
+
+    public MealOne(String name){
         this.name = name;
-        this.price = price;
-        count++;
     }
 
-    protected MealOne(String name){
-        this(name, DEFAULTPRICE);
-        count++;
+    public static void setPrice(Double price1){
+        price = price1;
     }
 
     /**
@@ -52,22 +54,12 @@ public class MealOne extends AbstractMeal {
 
     @Override
     public AbstractProduct clone() {
-        return new MealOne(DEFAULTNAME, DEFAULTPRICE);
+        return new MealOne(DEFAULTNAME);
     }
 
     @Override
     public void accept(AbstractVisitor visitor, String retract) {
         visitor.visit(this, retract);
-    }
-
-    @Override
-    public AbstractMeal clone(String name) {
-        return new MealOne(name);
-    }
-
-    @Override
-    public AbstractMeal clone(String name, Double price) {
-        return new MealOne(name, price);
     }
 
     @Override
@@ -78,7 +70,6 @@ public class MealOne extends AbstractMeal {
             }
         }
     }
-
 
     public static HashMap<String, AbstractProduct> getDishList(){
         return dishList;
