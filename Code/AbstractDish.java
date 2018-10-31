@@ -14,7 +14,12 @@ public abstract class AbstractDish extends AbstractProduct {
     /**
      * 状态
      */
-    public IState state;
+    private static final ArrayList<IState> timeline=new ArrayList<IState> (){{
+        add(new RawState());
+        add(new CookingState());
+        add(new FinishedState());
+    }};
+    public IState state=new RawState();
 
 
     /**
@@ -42,11 +47,20 @@ public abstract class AbstractDish extends AbstractProduct {
      * @return
      */
     public boolean setState(IState state) {
-        this.state = state;
+        if(state==null && state==timeline.get(timeline.size()-1))
+            return false;
+
+        for (int i=0;i<timeline.size();i++){
+            if(timeline.get(i).getClass()==this.state.getClass()){
+                System.out.println(this.state.getClass().getName());
+                this.state=timeline.get(i+1);
+                System.out.println(this.state.getClass().getName());
+                break;
+            }
+        }
+
         return true;
     }
-
-
 
     /**
      * @return 获取菜的状态
