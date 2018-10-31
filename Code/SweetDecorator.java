@@ -1,10 +1,4 @@
-
-import java.util.*;
-
-/**
- * 
- */
-public class SpicyDecorator extends AbstractDecorator {
+public class SweetDecorator extends AbstractDecorator {
 
     @Override
     public AbstractDish getDish() {
@@ -18,21 +12,21 @@ public class SpicyDecorator extends AbstractDecorator {
 
     private AbstractDish dish;
 
-    private String decorate = "辣";
+    private String decorate = "甜";
 
     /**
      * Default constructor
      */
-    public SpicyDecorator(AbstractDish dish) {
+    public SweetDecorator(AbstractDish dish) {
         super(dish);
     }
 
     /**
-     * 
+     *
      */
     @Override
     public void decorate() {
-        System.out.println(dish.getName() + " : 已设置为辣的口味");
+        System.out.println(dish.getName() + " : 已设置为甜的口味");
     }
 
     @Override
@@ -42,7 +36,7 @@ public class SpicyDecorator extends AbstractDecorator {
 
     @Override
     public AbstractProduct clone() {
-        return new SpicyDecorator(dish);
+        return new SweetDecorator(dish);
     }
 
     @Override
