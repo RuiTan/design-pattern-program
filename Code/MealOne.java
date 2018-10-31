@@ -4,13 +4,12 @@ public class MealOne extends AbstractMeal {
 
     private String name;
     private static Double price;
+    protected static int count = 0;
 
     protected static final String DEFAULTNAME = "MEALONE";
     protected static final Double DEFAULTPRICE = 0.0D;
 
     protected static MealOne mealOne = new MealOne();
-
-    private static int count = 0;
 
 
     private static HashMap<String, AbstractProduct> dishList = new HashMap<>();
@@ -24,9 +23,20 @@ public class MealOne extends AbstractMeal {
         Menu.getInstance().addProduct(this);
     }
 
+    @Override
+    public int getCount() {
+        return count;
+    }
+
+    @Override
+    public void addCount() {
+        count++;
+    }
+
 
     public MealOne(String name){
         this.name = name;
+        addCount();
     }
 
     public static void setPrice(Double price1){

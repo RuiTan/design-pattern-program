@@ -13,6 +13,11 @@ public abstract class AbstractMeal extends AbstractProduct {
     public AbstractMeal() {}
 
 
+    public abstract int getCount();
+
+    public abstract void addCount();
+
+
     /**
      *
      * @return 获取套餐里面菜的map

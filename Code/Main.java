@@ -11,7 +11,11 @@ public class Main {
 //        sample.VisitorSample();
 //        sample.CompositeSample();
 //        sample.BuilderSample();
-        sample.FactorySample();
+//        sample.FactorySample(); //未完成
+//        sample.DecoratorSample();
+//        sample.StrategySample();
+
+        sample.PrototypeSample();
     }
 
 

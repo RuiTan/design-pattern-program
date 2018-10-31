@@ -46,6 +46,8 @@ public abstract class AbstractDish extends AbstractProduct {
         return true;
     }
 
+
+
     /**
      * @return 获取菜的状态
      */
