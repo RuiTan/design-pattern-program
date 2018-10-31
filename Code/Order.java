@@ -1,6 +1,3 @@
-package designPattern;
-
-import designPattern.*;
 
 import java.util.*;
 
@@ -24,6 +21,7 @@ public class Order {
         state = new ReadyState();
 
     }
+
 
     public int getTableId() {
         return tableId;

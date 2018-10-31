@@ -6,6 +6,7 @@ public class MealTwo extends AbstractMeal {
 
     private String name;
     private static Double price;
+    protected static int count = 0;
 
     protected static final String DEFAULTNAME = "MEALTWO";
     protected static final Double DEFAULTPRICE = 0.0D;
@@ -13,7 +14,6 @@ public class MealTwo extends AbstractMeal {
     protected static MealTwo mealTwo = new MealTwo();
 
     private static HashMap<String, AbstractProduct> dishList = new HashMap<>();
-    private static int count = 0;
 
     /**
      * 构造函数，外部无法调用
@@ -24,8 +24,19 @@ public class MealTwo extends AbstractMeal {
         Menu.getInstance().addProduct(this);
     }
 
+    @Override
+    public int getCount() {
+        return count;
+    }
+
+    @Override
+    public void addCount() {
+        count++;
+    }
+
     public MealTwo(String name){
         this.name = name;
+        addCount();
     }
 
     /**

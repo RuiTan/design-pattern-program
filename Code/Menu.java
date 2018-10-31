@@ -39,7 +39,7 @@ public class Menu {
      */
     public boolean addProduct(AbstractProduct product) {
         if (prototype.containsKey(product.getName())){
-            System.out.println(PRINT + "无法添加产品'" + product.getName() + "',已存在");
+            System.out.println(PRINT + "无法添加产品'" + product.getName() + "',原型已存在,将进行克隆操作");
             return false;
         }
         else{
@@ -99,7 +99,12 @@ public class Menu {
     public AbstractProduct findAndClone(String productName){
         if (prototype.containsKey(productName)){
             System.out.println(PRINT + "菜品(" + productName + ")已被克隆");
-            return prototype.get(productName).clone();
+            AbstractProduct product = prototype.get(productName);
+            if (product instanceof DishOne){
+                DishOne dish = (DishOne)product;
+                dish.addCount();
+            }
+            return product.clone();
         }else {
             System.out.println(PRINT + "菜品(" + productName + ")未找到");
             return null;
