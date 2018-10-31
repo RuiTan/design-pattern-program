@@ -6,6 +6,8 @@ import java.util.*;
  */
 public class SteamMethod implements ICookingMethod {
 
+    private String operate = "蒸";
+
     /**
      * Default constructor
      */
@@ -16,7 +18,7 @@ public class SteamMethod implements ICookingMethod {
      * 
      */
     public String operate() {
-        return "蒸";
+        return operate;
     }
 
 

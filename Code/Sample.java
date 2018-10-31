@@ -3,6 +3,13 @@ import java.util.HashMap;
 
 public class Sample {
 
+    HashMap<String, Integer> materials;
+    DishOne dishOne1;
+    DishOne dishOne2;
+    DishOne dishOne3;
+    DishOne dishOne4;
+
+
     public void Initialize(){
 
         System.out.println("Initialize(): 开始初始化");
@@ -17,14 +24,14 @@ public class Sample {
         /**
          * 创建一些菜
          */
-        HashMap<String, Integer> materials = new HashMap<>();
+        materials = new HashMap<>();
         materials.put("牛肉", 5);
         materials.put("小青菜", 10);
 
-        DishOne dishOne1 = createDish("菜1", 20.0, materials, CookingMethod.fried);
-        DishOne dishOne2 = createDish("菜2", 30.0, materials, CookingMethod.fried);
-        DishOne dishOne3 = createDish("菜3", 40.0, materials, CookingMethod.fried);
-        DishOne dishOne4 = createDish("菜4", 50.0, materials, CookingMethod.fried);
+        dishOne1 = createDish("菜1", 20.0, materials, CookingMethod.fried);
+        dishOne2 = createDish("菜2", 30.0, materials, CookingMethod.fried);
+        dishOne3 = createDish("菜3", 40.0, materials, CookingMethod.fried);
+        dishOne4 = createDish("菜4", 50.0, materials, CookingMethod.fried);
 
         /**
          * 创建一些套餐
@@ -102,13 +109,23 @@ public class Sample {
     }
 
     public void FactorySample(){
-
+        System.out.println("\n\n**************************Factory****************************    ");
+        AbstractDish dish = new SpicyDecorator(dishOne4);
+        new MealTwoBuilder().addDish(dish);
+        dish = new SweetDecorator(dishOne1);
+        new MealTwoBuilder().addDish(dish);
+        new DetailVisitor().visit(getMeal(MealType.MealTwo), "");
     }
 
     public void BuilderSample(){
-        System.out.println("\n\n**************************Builder**************************    ");
+        System.out.println("\n\n**************************Builder****************************    ");
         System.out.println("说明 : Builder将一个复杂的构建与其表示相分离，使得同样的构建过程可以创建不同的表示,本例中的套餐Meal的所有菜DishList的创建和修改方法放到了Builder中。");
-        System.out.println("");
+        System.out.println("\nAbstractMeal : 其中套餐中的所有菜DishList构建、修改的方法与套餐的创建分离，用另外一个类(实现了IMealBuilder接口的类)来实现");
+        new DetailVisitor().visit(getMeal(MealType.MealTwo), "");
+        System.out.println("\n为套餐2添加一道菜：new MealOneBuilder().addDish(dishOne4);\n");
+        new MealTwoBuilder().addDish(dishOne4);
+        new DetailVisitor().visit(getMeal(MealType.MealTwo), "");
+        System.out.println("\n************************************************************\n\n");
     }
 
     public void StateSample(){
@@ -116,7 +133,10 @@ public class Sample {
     }
 
     public void DecoratorSample(){
+        System.out.println("\n\n**************************Decorator****************************    ");
+        System.out.println("说明 : Decorator动态地给一个对象添加一些额外的职责，本例中的Dish有一个装饰器AbstractDecorator，它相当于包了一层外壳(Dish的口味)的Dish。");
         
+
     }
 
     public void StrategySample(){

@@ -5,6 +5,7 @@ import java.util.*;
  * 
  */
 public interface ICookingMethod {
+
     /**
      * 
      */

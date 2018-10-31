@@ -6,6 +6,9 @@ import java.util.*;
  */
 public class FriedMethod implements ICookingMethod {
 
+    private String operate = "炸";
+
+
     /**
      * Default constructor
      */
@@ -16,7 +19,7 @@ public class FriedMethod implements ICookingMethod {
      * 炸
      */
     public String operate() {
-        return ("炸");
+        return operate;
     }
 
 

@@ -7,9 +7,11 @@ public class Main {
 
         Sample sample = new Sample();
         sample.Initialize();
-        sample.SingletonSample();
-        sample.VisitorSample();
-        sample.CompositeSample();
+//        sample.SingletonSample();
+//        sample.VisitorSample();
+//        sample.CompositeSample();
+//        sample.BuilderSample();
+        sample.FactorySample();
     }
 
 
