@@ -12,12 +12,9 @@ public class RawState implements IState {
     public RawState() {
     }
 
-    /**
-     * 
-     */
-    public void doAction() {
-        // TODO implement here
+
+    @Override
+    public void doAction(Order o) {
+
     }
-
-
 }

@@ -6,6 +6,9 @@ import java.util.*;
  */
 public interface IMealBuilder {
 
+
+
+
     /**
      * @param dish
      */
@@ -22,5 +25,6 @@ public interface IMealBuilder {
      * @param dishes
      */
     public abstract void addDishes(HashMap<String, AbstractProduct> dishes);
+
 
 }

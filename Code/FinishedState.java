@@ -12,11 +12,9 @@ public class FinishedState implements IState {
     public FinishedState() {
     }
 
-    /**
-     * 
-     */
-    public void doAction() {
-        // TODO implement here
-    }
 
+    @Override
+    public void doAction(Order o) {
+
+    }
 }

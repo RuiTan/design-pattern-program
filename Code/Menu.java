@@ -67,12 +67,14 @@ public class Menu {
      * 
      */
     public void printMenu() {
+        int i = 1;
         for (HashMap.Entry<String, AbstractProduct> entry : prototype.entrySet()){
+            System.out.print(i++); System.out.println(" : ");
             if (entry.getValue() instanceof AbstractMeal){
-                new PriceVisitor().visit((AbstractMeal) entry.getValue(), "");
+                new DetailVisitor().visit((AbstractMeal) entry.getValue(), "");
             }
             else{
-                new PriceVisitor().visit((AbstractDish) entry.getValue(), "");
+                new DetailVisitor().visit((AbstractDish) entry.getValue(), "");
             }
         }
     }
@@ -86,6 +88,21 @@ public class Menu {
             return prototype.get(productName).getPrice();
         }else {
             return -1.0;
+        }
+    }
+
+    /**
+     *
+     * @param productName
+     * @return
+     */
+    public AbstractProduct findAndClone(String productName){
+        if (prototype.containsKey(productName)){
+            System.out.println(PRINT + "菜品(" + productName + ")已被克隆");
+            return prototype.get(productName).clone();
+        }else {
+            System.out.println(PRINT + "菜品(" + productName + ")未找到");
+            return null;
         }
     }
 
