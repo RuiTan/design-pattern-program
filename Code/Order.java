@@ -1,5 +1,7 @@
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
 
 /**
  * 
@@ -21,7 +23,6 @@ public class Order {
         state = new ReadyState();
 
     }
-
 
     public int getTableId() {
         return tableId;
@@ -57,9 +58,7 @@ public class Order {
      * 这是一种设死状态切换的实现方式，是否有别种方式是通过设置常量
      */
     private static final ArrayList<IState> timeline=new ArrayList<IState> (){{
-        //add(new designPattern.RawState());
-        //add(new CookingState());
-        //add(new FinishedState());
+
         add(new ReadyState());
         add(new PreparingState());
         add(new DoneState());
@@ -145,16 +144,15 @@ public class Order {
         if(state==null && state==timeline.get(timeline.size()-1))
             return false;
 
-//        for (int i=0;i<timeline.size();i++){
-//            if(timeline.get(i).getClass()==this.state.getClass()){
-//                if(timeline.get(i+1).getClass()==state.getClass()){
-//                    this.state=state;
-//                    System.out.println("change");
-//                    return true;
-//                }
-//            }
-//        }
-        this.state = state;
+        for (int i=0;i<timeline.size();i++){
+            if(timeline.get(i).getClass()==this.state.getClass()){
+                //System.out.println("origin state:"+this.state.getClass().getName());
+                this.state=timeline.get(i+1);
+               // System.out.println("now state:"+this.state.getClass().getName());
+                break;
+            }
+        }
+
         return true;
     }
 

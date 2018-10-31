@@ -1,20 +1,13 @@
-
-import java.util.*;
-
 /**
  * 
  */
 public class FinishedState implements IState {
 
-    /**
-     * Default constructor
-     */
-    public FinishedState() {
-    }
-
+    public void doAction(Order o){}
 
     @Override
-    public void doAction(Order o) {
-
+    public void doAction(AbstractDish a) {
+        a.setState(this);
     }
+
 }

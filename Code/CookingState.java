@@ -1,20 +1,14 @@
-
-import java.util.*;
-
 /**
  * 
  */
 public class CookingState implements IState {
 
-    /**
-     * Default constructor
-     */
-    public CookingState() {
-    }
 
+    public void doAction(Order o){}
 
     @Override
-    public void doAction(Order o) {
-
+    public void doAction(AbstractDish a) {
+        a.setState(this);
     }
+
 }
