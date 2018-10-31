@@ -1,3 +1,4 @@
+package designPattern;
 
 import java.util.*;
 
@@ -10,13 +11,13 @@ public class OrderManagement {
      * Default constructor
      */
     public OrderManagement() {
-        orderList=new LinkedList<Order>();
+
     }
 
     /**
      * 由于增删操作较多，所以改用List的实例LinkedList类作为订单表数据结构
      */
-    private static LinkedList<Order> orderList;
+    private static LinkedList<Order> orderList =new LinkedList<Order>();;
 
 
     /**
@@ -41,23 +42,23 @@ public class OrderManagement {
      * @param id
      * 移除
      */
-    public boolean deleteOrder(int id) {
-        if(orderList.size()<id || id<1){
-            System.out.println("Order"+id+"has been removed successfully");
-            return false;
+    public static boolean deleteOrder(int id) {
+        for (Order order: orderList) {
+            if (order.getTableId() == id) {
+                orderList.remove(order);
+                System.out.printf("Order %s has been deleted successfully!\n", id);
+                return true;
+            }
         }
-        orderList.remove(id-1);
-        System.out.println("Order"+id+"has been removed successfully");
-        return true;
+        System.out.printf("Order %s do not exist!\n", id);
+        return false;
     }
 
     /**
      * @desription 对整个列表内的单子进行内容打印
      */
-    public void getOrderList() {
-        for (Order o:orderList) {
-            System.out.println(o);
-        }
+    public LinkedList<Order> getOrderList() {
+       return orderList;
     }
 
 }

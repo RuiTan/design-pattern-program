@@ -1,3 +1,6 @@
+package designPattern;
+
+import designPattern.*;
 
 import java.util.*;
 
@@ -11,10 +14,19 @@ public class Order {
      */
     private int tableId;
     public Order(int tableId) {
+
+        productList = new LinkedList<OrderItem>();
         if(tableId>=1 && tableId<100)
             this.tableId=tableId;
         else
-            tableId=0;
+            tableId = 0;
+
+        state = new ReadyState();
+
+    }
+
+    public int getTableId() {
+        return tableId;
     }
 
     /**
@@ -27,6 +39,18 @@ public class Order {
             this.num=num;
             this.product=product;
         }
+
+        public int getNum() {
+            return num;
+        }
+
+        public AbstractProduct getProduct() {
+            return product;
+        }
+
+        public void setNum(int num) {
+            this.num = num;
+        }
     }
     private LinkedList<OrderItem> productList;
 
@@ -35,7 +59,7 @@ public class Order {
      * 这是一种设死状态切换的实现方式，是否有别种方式是通过设置常量
      */
     private static final ArrayList<IState> timeline=new ArrayList<IState> (){{
-        //add(new RawState());
+        //add(new designPattern.RawState());
         //add(new CookingState());
         //add(new FinishedState());
         add(new ReadyState());
@@ -50,6 +74,8 @@ public class Order {
      */
     public double getPrice() {
         double sum=0;
+        if (productList == null)
+            return sum;
         for (OrderItem item:productList) {
             sum+=item.product.getPrice()*item.num;
         }
@@ -61,14 +87,19 @@ public class Order {
      */
     public boolean createOrder() {
         OrderManagement.addOrder(this);
-        return false;
+        return true;
     }
 
     /**
      * @return
      */
-    public LinkedList<OrderItem> getProductList() {
-        return productList;
+    public Map<String, Integer> getProductList() {
+        Map<String, Integer> tempMap = new HashMap<String, Integer>();
+        for (OrderItem item: productList) {
+            tempMap.put(item.getProduct().getName(), item.getNum());
+        }
+        return tempMap;
+
     }
 
     /**
@@ -78,9 +109,10 @@ public class Order {
     public boolean addProduct(AbstractProduct product,int num) {
         if(product==null || num==0)
             return false;
+
         for (OrderItem item:productList) {
-            if(item.product.getName()==product.getName()){
-                item.num+=num;
+            if(item != null && item.product.getName().equals(product.getName())){
+                item.num += num;
                 return true;
             }
         }
@@ -96,9 +128,12 @@ public class Order {
         if(product==null || num==0)
             return false;
         for (OrderItem item:productList) {
-            if(item.product.getName()==product.getName() && item.num<=num){
-                productList.remove(item);
-                return true;
+            if(item.product.getName()==product.getName()){
+                if (num >= item.getNum()) {
+                    productList.remove(item);
+                } else {
+                    item.setNum(item.getNum() - num);
+                }
             }
         }
         return false;
@@ -112,23 +147,25 @@ public class Order {
         if(state==null && state==timeline.get(timeline.size()-1))
             return false;
 
-        for (int i=0;i<timeline.size();i++){
-            if(timeline.get(i).getClass()==this.state.getClass()){
-                if(timeline.get(i+1).getClass()==state.getClass()){
-                    this.state=state;
-                    return true;
-                }
-            }
-        }
-        return false;
+//        for (int i=0;i<timeline.size();i++){
+//            if(timeline.get(i).getClass()==this.state.getClass()){
+//                if(timeline.get(i+1).getClass()==state.getClass()){
+//                    this.state=state;
+//                    System.out.println("change");
+//                    return true;
+//                }
+//            }
+//        }
+        this.state = state;
+        return true;
     }
 
     /**
      * 返回订单当前状态
      * table 74 's order is preparing/ready/done
      */
-    public void getState() {
-        System.out.println("table" +tableId+" 's oder is "+this.state.toString());
+    public IState getState() {
+        return state;
     }
 
 }
