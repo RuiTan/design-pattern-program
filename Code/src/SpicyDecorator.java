@@ -41,6 +41,16 @@ public class SpicyDecorator extends AbstractDecorator {
     }
 
     @Override
+    public void flavor() {
+
+    }
+
+    @Override
+    public Boolean setPrice(Double newPrice) {
+        return false;
+    }
+
+    @Override
     public AbstractProduct clone() {
         return new SpicyDecorator(dish);
     }

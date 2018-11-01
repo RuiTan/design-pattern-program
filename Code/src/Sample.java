@@ -294,9 +294,12 @@ public class Sample {
             System.out.println("\n说明 : Mediator定义一个中介对象来封装系列对象之间的交互。中介者使各个对象不需要显示地相互引用，从而使其耦合性松散，而且可以独立地改变他们之间的交互。");
             System.out.println("RestMediator继承自Mediator，实现了Mediator的notify()用于一个角色通知并接受他人回答和chat()实现两个角色对话。");
             System.out.println("先是由服务员询问两个顾客吃什么");
+            Waiter waiter1 = new Waiter("谈瑞"), waiter2 = new Waiter("梁程伟");
+            Customer customer1 = new Customer("陈超"), customer2 = new Customer("陈润乾");
             waiter1.setContent("\n请问你们要吃什么？");
             customer1.setContent("猪排饭");
             customer2.setContent("牛肉饭");
+            RestMediator rm = new RestMediator();
             rm.notify(waiter1);
             System.out.println("\n接着两个顾客互相聊天");
             customer1.setContent("这里的菜好吃");
@@ -308,18 +311,30 @@ public class Sample {
         System.out.println(header("AbstractFactory"));
         System.out.println("\n说明 : AbstractFactory提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类，简而言之，就是创建工厂的工厂。");
         System.out.println("本例中，我们对食材的创建和厨具的创建使用的都是工厂模式，因此我们将两个工厂抽象出来为AbstractFactory，此便为抽象工厂方法");
-        
+        CookerFactory cookerFactory = AbstractFactory.getCookerFactory();
+        AbstractCooker cooker1 = cookerFactory.createCooker(CookerType.Fryer);
+        AbstractCooker cooker2 = cookerFactory.createCooker(CookerType.Pan);
+        MaterialFactory materialFactory = AbstractFactory.getMaterialFactory();
+        Material material1 = materialFactory.createMaterial(MaterialType.meat, 10000, 50.0, "海参");
+        Material material2 = materialFactory.createMaterial(MaterialType.vegetable, 50000, 1.6, "香菜");
+        System.out.println("CookerFactory cookerFactory = AbstractFactory.getCookerFactory();\n" +
+                "AbstractCooker cooker1 = cookerFactory.createCooker(CookerType.Fryer);\n" +
+                "AbstractCooker cooker2 = cookerFactory.createCooker(CookerType.Pan);\n" +
+                "MaterialFactory materialFactory = AbstractFactory.getMaterialFactory();\n" +
+                "Material material1 = materialFactory.createMaterial(MaterialType.meat, 10000, 50.0, \"海参\");\n" +
+                "Material material2 = materialFactory.createMaterial(MaterialType.vegetable, 50000, 1.6, \"香菜\");");
+        System.out.println(footer());
     }
 
     public void ObservorSample() {
-        System.out.println(header("Observor"));
-        System.out.println("\n说明 : Observortest");
-        MealOne meal1 = getMeal(MealType.MealOne);
+        System.out.println(header("Observer"));
+        System.out.println("\n说明 : Observer");
+        MealOne meal1 = (MealOne) getMeal(MealType.MealOne);
         new MealOneBuilder().addDish(dishOne1);
         
-        System.out.println(meal1.getName + " : " + meal1.getPrice());
+        System.out.println(meal1.getName() + " : " + meal1.getPrice());
         dishOne1.setPrice(15.0);
-        System.out.println(meal1.getName + " : " + meal1.getPrice());
+        System.out.println(meal1.getName() + " : " + meal1.getPrice());
     }
 
     public void InterpreterSample(){
@@ -334,7 +349,7 @@ public class Sample {
         }
         System.out.println(footer());
     }
-    
+
     public void BridgeSample(){
         System.out.println(header("Bridge"));
         System.out.println("\n说明: Bridge 是用于把抽象化与实现化解耦，使得二者可以独立变化。这种类型的设计模式属于结构型模式，它通过提供抽象化和实现化之间的桥接结构，来实现二者的解耦。 ");
@@ -346,6 +361,30 @@ public class Sample {
         sweetDishOne.flavor();
         saltyDishOne.flavor();
         System.out.println(footer());
+    }
+
+    public void CommandSample(){
+        System.out.println(header("Command"));
+        System.out.println("\n说明 : Command 是对调用者和接收者的分离，使得请求发送者与请求接收者消除彼此之间的耦合，让对象之间的调用关系更加灵活");
+        CookerManagement cm = CookerManagement.getInstance();
+        // 四个command
+        AddCookerCommand add_cmd = new AddCookerCommand(cm);
+        UseCookerCommand use_cmd = new UseCookerCommand(cm);
+        FreeCookerCommand free_cmd = new FreeCookerCommand(cm);
+        // invoker调用者
+        CommandInvoker invoker = new CommandInvoker(add_cmd);
+        Pan pan1 = new Pan();
+        Pan pan2 = new Pan();
+        // 测试
+        System.out.println("添加两个厨具pan");
+        invoker.cookerManagementCall(pan1);
+        invoker.cookerManagementCall(pan2);
+        System.out.println("使用一个厨具pan");
+        invoker.setCommand(use_cmd);
+        invoker.cookerManagementCall(pan1);
+        System.out.println("释放一个厨具pan");
+        invoker.setCommand(free_cmd);
+        invoker.cookerManagementCall(pan1);
     }
 
     /**
@@ -370,7 +409,7 @@ public class Sample {
     }
 
     public enum CookerType {
-        Pan, Fryer
+        Pan, Fryer, Steamer, MicroWave
     }
 
     /**
@@ -400,7 +439,7 @@ public class Sample {
         }
         default: {
             return null;
-        }
+            }
         }
     }
 

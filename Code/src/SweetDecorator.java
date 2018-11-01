@@ -35,6 +35,16 @@ public class SweetDecorator extends AbstractDecorator {
     }
 
     @Override
+    public void flavor() {
+
+    }
+
+    @Override
+    public Boolean setPrice(Double newPrice) {
+        return false;
+    }
+
+    @Override
     public AbstractProduct clone() {
         return new SweetDecorator(dish);
     }

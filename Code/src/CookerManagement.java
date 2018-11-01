@@ -1,15 +1,18 @@
 
 import java.util.*;
-
 /**
  * 
  */
 public class CookerManagement {
 
-    /**
-     * Default constructor
-     */
-    public CookerManagement() {
+    private static CookerManagement instance = new CookerManagement();
+
+    private CookerManagement(){
+
+    }
+
+    public static CookerManagement getInstance(){
+        return instance;
     }
 
     /**
@@ -21,12 +24,26 @@ public class CookerManagement {
        return cookerChain;
     }
 
+    public AbstractCooker getLastCooker(){
+        AbstractCooker lastCooker;
+        if(cookerChain != null){
+            lastCooker = cookerChain;
+            while(lastCooker.getNextCooker() != null){
+                lastCooker = lastCooker.getNextCooker();
+            }
+            return lastCooker;
+        }else{
+            return null;
+        }
+
+    }
+
     /**
      * @param cooker 
      * @return
      */
     public boolean useCooker(AbstractCooker cooker) {
-        return false;
+        return cooker.work();
     }
 
     /**
@@ -34,8 +51,7 @@ public class CookerManagement {
      * @return
      */
     public boolean freeCooker(AbstractCooker cooker) {
-        // TODO implement here
-        return false;
+        return cooker.free();
     }
 
     /**
@@ -43,17 +59,13 @@ public class CookerManagement {
      * @return
      */
     public boolean addCooker(AbstractCooker cooker) {
-        // TODO implement here
-        return false;
-    }
-
-    /**
-     * @param cooker
-     * @return
-     */
-    public boolean reduceCooker(AbstractCooker cooker) {
-        // TODO implement here
-        return false;
+        if (cookerChain == null){
+            cookerChain = cooker;
+        }
+        else{
+            getLastCooker().setNextCooker(cooker); 
+        }
+        return cooker == null;
     }
 
 }

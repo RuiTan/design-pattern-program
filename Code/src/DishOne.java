@@ -7,9 +7,10 @@ public class DishOne extends AbstractDish {
     public DishOne(FlavorAPI flavorAPI){
         this.flavorAPI = flavorAPI;
     }
+
     public void flavor(){
         if(flavorAPI != null){
-            flavorAPI.flavor();
+            flavorAPI.flavorDish();
         }
     }
     /*bridge design pattern end*/
@@ -27,10 +28,6 @@ public class DishOne extends AbstractDish {
      * 菜需要的原料
      */
     private HashMap<String, Material> materialList;
-
-    public DishOne(){
-
-    }
 
     public void addCount() {
         count++;
@@ -58,7 +55,7 @@ public class DishOne extends AbstractDish {
             this.price = price;
             this.materialList = new HashMap<>();
             this.mealList = new ArrayList<AbstractMeal>();
-            this.dishList = new ArrayLIst<AbstractDish>();
+            this.dishList = new ArrayList<AbstractDish>();
             Menu.getInstance().addProduct(this);
             
         }
@@ -73,7 +70,6 @@ public class DishOne extends AbstractDish {
             //notify the meal to change the price
             meal.setPrice(meal.getPrice());
         }
-        
     }
 
     public void addDishToList(AbstractDish dishClone) {

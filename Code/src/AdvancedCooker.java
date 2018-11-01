@@ -1,3 +1,3 @@
 public interface AdvancedCooker  {
-    public void work();
+    public boolean work();
 }
