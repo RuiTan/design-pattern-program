@@ -334,6 +334,19 @@ public class Sample {
         }
         System.out.println(footer());
     }
+    
+    public void BridgeSample(){
+        System.out.println(header("Bridge"));
+        System.out.println("\n说明: Bridge 是用于把抽象化与实现化解耦，使得二者可以独立变化。这种类型的设计模式属于结构型模式，它通过提供抽象化和实现化之间的桥接结构，来实现二者的解耦。 ");
+        System.out.println("DishOne继承自AbstractDish，实现了AbstractDish中的flavor()方法，该方法实现了对DishOne进行调味");
+        DishOne spicyDishOne = new DishOne(new SpicyDish());
+        DishOne sweetDishOne = new DishOne(new SweetDish());
+        DishOne saltyDishOne = new DishOne(new SaltyDish());
+        spicyDishOne.flavor();
+        sweetDishOne.flavor();
+        saltyDishOne.flavor();
+        System.out.println(footer());
+    }
 
     /**
      * 原料类型
@@ -357,7 +370,7 @@ public class Sample {
     }
 
     public enum CookerType {
-        Pan, 
+        Pan, Fryer
     }
 
     /**

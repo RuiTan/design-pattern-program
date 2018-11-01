@@ -5,12 +5,13 @@ public class Main {
 
     static String[] patterns = {"Singleton", "Visitor", "Composite", "Builder", "Factory", "Decorator", "Strategy"
         , "Prototype", "Flyweight", "Iterator", "State", "Template", "Mediator", "AbstractFactory", "Observor", "Interpreter"
+        , "Bridge"
     };
 
     enum Pattern{
         Singleton(0), Visitor(1), Composite(2), Builder(3), Factory(4), Decorator(5), Strategy(6),
         Prototype(7), Flyweight(8), Iterator(9), State(10), Template(11), Mediator(12), AbstractFactory(13), Observor(14)
-        , Interpreter(15);
+        , Interpreter(15), Bridge(16);
 
         private int index;
 
@@ -100,9 +101,11 @@ public class Main {
             case Interpreter:
                 sample.InterpreterSample();
                 break;
+            case Bridge:
+                sample.BridgeSample();
+                break;
             default:
                     return 0;
-
         }
         return 1;
     }
