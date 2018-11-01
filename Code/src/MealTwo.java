@@ -59,6 +59,11 @@ public class MealTwo extends AbstractMeal {
     }
 
     @Override
+    public void setPrice(Double _price) {
+        price = _price;
+    }
+
+    @Override
     public AbstractProduct clone() {
         return new MealTwo(DEFAULTNAME);
     }

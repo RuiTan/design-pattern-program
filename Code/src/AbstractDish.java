@@ -12,6 +12,10 @@ public abstract class AbstractDish extends AbstractProduct {
     }
     public abstract void flavor();
 
+    public AbstractDish(){
+
+    }
+
     /**
      * 制作方法
      */

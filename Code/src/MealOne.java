@@ -39,7 +39,7 @@ public class MealOne extends AbstractMeal {
         addCount();
     }
 
-    public static  void setPrice(Double newPrice){
+    public void setPrice(Double newPrice){
         price = newPrice;
     }
 

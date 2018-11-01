@@ -5,13 +5,15 @@ public class Main {
 
     static String[] patterns = {"Singleton", "Visitor", "Composite", "Builder", "Factory", "Decorator", "Strategy"
         , "Prototype", "Flyweight", "Iterator", "State", "Template", "Mediator", "AbstractFactory", "Observor", "Interpreter"
-        , "Bridge"
+        , "Bridge", "Command"
     };
+
+    static int Max = 18;
 
     enum Pattern{
         Singleton(0), Visitor(1), Composite(2), Builder(3), Factory(4), Decorator(5), Strategy(6),
         Prototype(7), Flyweight(8), Iterator(9), State(10), Template(11), Mediator(12), AbstractFactory(13), Observor(14)
-        , Interpreter(15), Bridge(16);
+        , Interpreter(15), Bridge(16), Command(17);
 
         private int index;
 
@@ -23,7 +25,7 @@ public class Main {
             return index;
         }
     }
-
+    
     public static void main(String []args){
 
         Sample sample = new Sample();
@@ -34,10 +36,10 @@ public class Main {
         do {
             printTitle();
             operate = scanner.nextInt();
-            if (operate > 0 && operate <= 15){
+            if (operate > 0 && operate <= Max){
                 doAction(sample, patterns[operate-1]);
             }
-        }while (operate != 0);
+        }while (operate > 0 && operate <= Max);
 
         System.out.println("\n\n程序成功退出！\n\n");
         scanner.close();
@@ -103,6 +105,12 @@ public class Main {
                 break;
             case Bridge:
                 sample.BridgeSample();
+                break;
+            case AbstractFactory:
+                sample.AbstractFactorySample();
+                break;
+            case Command:
+                sample.CommandSample();
                 break;
             default:
                     return 0;

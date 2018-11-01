@@ -6,6 +6,11 @@ import java.util.*;
  */
 public class CookNeededDish extends AbstractDish {
 
+    @Override
+    public void flavor() {
+
+    }
+
     /**
      * Default constructor
      */
@@ -52,6 +57,11 @@ public class CookNeededDish extends AbstractDish {
     public Double getPrice() {
         // TODO implement here
         return price;
+    }
+
+    @Override
+    public Boolean setPrice(Double newPrice) {
+        return null;
     }
 
     /**
