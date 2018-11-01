@@ -38,9 +38,10 @@ public class MealOne extends AbstractMeal {
         this.name = name;
         addCount();
     }
-
-    public static void setPrice(Double price1){
-        price = price1;
+    
+    @override
+    public static  void setPrice(Double newPrice){
+        price = newPrice;
     }
 
     /**
@@ -59,7 +60,7 @@ public class MealOne extends AbstractMeal {
 
     @Override
     public Double getPrice() {
-        return price;
+        return super.getPrice();
     }
 
     @Override

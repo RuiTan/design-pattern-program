@@ -6,6 +6,12 @@ import java.util.*;
  */
 public abstract class AbstractDish extends AbstractProduct {
 
+    protected FlavorAPI flavorAPI;
+    protected AbstractDish(FlavorAPI flavorAPI){
+        this.flavorAPI = flavorAPI;
+    }
+    public abstract void flavor();
+
     /**
      * 制作方法
      */
@@ -78,6 +84,8 @@ public abstract class AbstractDish extends AbstractProduct {
      * 
      */
     public abstract Double getPrice();
+
+    public abstract Boolean setPrice(Double newPrice);
 
     /**
      *

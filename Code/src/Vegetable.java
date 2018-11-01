@@ -22,7 +22,6 @@ public class Vegetable extends Material {
      * @return
      */
     public String getName() {
-        // TODO implement here
         return super.getName();
     }
 
@@ -30,7 +29,7 @@ public class Vegetable extends Material {
      * @return
      */
     public Double getPrice() {
-        // TODO implement here
+        
         return super.getPrice();
     }
 
@@ -38,7 +37,7 @@ public class Vegetable extends Material {
      * @return
      */
     public int getAmount() {
-        // TODO implement here
+        
         return super.getAmount();
     }
 
