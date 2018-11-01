@@ -1,8 +1,6 @@
 
 import java.util.*;
 
-import Sample.MaterialType;
-
 /**
  * 
  */
@@ -23,7 +21,7 @@ public class MaterialFactory {
      * @param name
      * @return
      */
-    public Material createMaterial(MaterialType t, int amount, Double price, String name){
+    public Material createMaterial(Sample.MaterialType t, int amount, Double price, String name){
         MaterialManagement instance =  MaterialManagement.getInstance();
         Material material;
         switch (t){

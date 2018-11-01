@@ -46,7 +46,7 @@ public abstract class AbstractMeal extends AbstractProduct {
      */
 
     public Double getPrice() {
-        Double sum = 0;                             
+        Double sum = 0.0;
         HashMap<String, AbstractProduct> dishes = getDishes();
         for(HashMap.Entry<String, AbstractProduct> dish: dishes.entrySet()) {
             sum += dish.getValue().getPrice();

@@ -1,12 +1,12 @@
 
 public class CookerFactory{
 
-    public AbstractCooker createCooker(CookerType type){
-        switch(type){
-
-
-        }
-    }
-
+//    public AbstractCooker createCooker(Sample.CookerType type){
+//        switch(type){
+//
+//
+//        }
+//    }
+//
 
 }

@@ -6,10 +6,13 @@ import java.util.*;
  */
 public class NonCookNeededDish extends AbstractDish {
 
-    /**
-     * Default constructor
-     */
-    public NonCookNeededDish() {
+    protected NonCookNeededDish(FlavorAPI flavorAPI) {
+        super(flavorAPI);
+    }
+
+    @Override
+    public void flavor() {
+
     }
 
     /**
@@ -26,6 +29,11 @@ public class NonCookNeededDish extends AbstractDish {
 
     @Override
     public Double getPrice() {
+        return null;
+    }
+
+    @Override
+    public Boolean setPrice(Double newPrice) {
         return null;
     }
 
