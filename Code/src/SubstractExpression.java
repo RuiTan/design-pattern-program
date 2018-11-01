@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public class SubstractExpression implements IExpression {
 
     private IExpression left, right;
@@ -5,8 +7,8 @@ public class SubstractExpression implements IExpression {
         this.left = left;
         this.right = right;
     }
-    public double interpret(Material material) {
-        return left.interpret(material) - right.interpret(material);
+    public double interpret(HashMap<String, Material> materials) {
+        return left.interpret(materials) - right.interpret(materials);
     }
 
 }

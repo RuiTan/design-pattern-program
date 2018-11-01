@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 public class Sample {
 
@@ -274,6 +275,20 @@ public class Sample {
         System.out.println(footer());
     }
 
+    public void InterpreterSample(){
+        System.out.println(header("InterpreterMethod"));
+        System.out.println("\n说明 : InterpreterMethod 提供了评估语言的语法或表达式的方式，实现一个可以解释特定上下文、固定文法的表达式接口。");
+        dishOne6 = createDishByMaterials("菜6", materials, CookingMethod.fried);
+        System.out.println("菜6的价格为" + dishOne6.getPrice());
+        System.out.println("菜6的原料表：");
+        for (HashMap.Entry<String, Material> entry : dishOne6.getMaterials().entrySet()) {
+            System.out.println(entry.getKey()+" : "+ entry.getValue().getAmount() + ",价格 : " + entry.getValue().getPrice());
+        }
+        System.out.println(footer());
+    }
+
+
+
         
 
     /**
@@ -394,6 +409,71 @@ public class Sample {
         }
         return dishOne;
     }
+
+    /**
+     * 利用原材料构建一个菜的实例
+     * @param name
+     * @param materials
+     * @param method
+     * @return
+     */
+    public DishOne createDishByMaterials(String name, HashMap<String, Integer> materials, CookingMethod method){
+
+        MaterialManagement instance = MaterialManagement.getInstance();
+        HashMap<String, Material> materialHashMap = instance.getMaterialMap();
+        ArrayList<String> namelist = new ArrayList<>();
+
+        //从原料表中获取所有需要的原料名并存入list
+        Iterator iter = materials.entrySet().iterator();
+        while (iter.hasNext()){
+            HashMap.Entry entry = (HashMap.Entry) iter.next();
+            String dishName = (String) entry.getKey();
+            namelist.add(dishName);
+        }
+
+        //利用解释器模式计算菜品的价格
+        int i = 0;
+        double price = 0.0;
+        while (i < namelist.size()){
+            String name0 = namelist.get(i);
+            i++;
+            if (i==namelist.size()){//菜品个数为单数
+                price += new NumberExpression(name0).interpret(materialHashMap);
+            }
+            else {//菜品个数为双数
+                String name1 = namelist.get(i);
+                i++;
+                IExpression expression = new AddExpression(new NumberExpression(name0), new NumberExpression(name1));
+                price += expression.interpret(materialHashMap);
+            }
+        }
+
+
+        DishOne dishOne = new DishOne(name, price); //根据名字和价格创建一个dishOne对象
+        ArrayList<Material> materialArrayList = new ArrayList<>();
+        for (HashMap.Entry<String, Integer> entry : materials.entrySet()){
+            materialArrayList.add(getMaterial(entry.getKey(), entry.getValue()));
+        }
+        dishOne.setMaterials(materialArrayList);//设置菜品原材料列表
+
+        //设置菜品的制作方法
+        switch (method){
+            case fried:{
+                dishOne.setCookingMethod(new FriedMethod());
+                break;
+            }
+            case steam:{
+                dishOne.setCookingMethod(new SteamMethod());
+                break;
+            }
+            default:{
+                dishOne.setCookingMethod(new DoNothingMethod());
+                break;
+            }
+        }
+        return dishOne;
+    }
+
 
     /**
      * 查看原料仓库

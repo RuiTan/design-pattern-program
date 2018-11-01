@@ -5,12 +5,12 @@ import java.util.Scanner;
 public class Main {
 
     static String[] patterns = {"Singleton", "Visitor", "Composite", "Builder", "Factory", "Decorator", "Strategy"
-        , "Prototype", "Flyweight", "Iterator", "State", "Template"
+        , "Prototype", "Flyweight", "Iterator", "State", "Template", "Iterpreter"
     };
 
     enum Pattern{
         Singleton(0), Visitor(1), Composite(2), Builder(3), Factory(4), Decorator(5), Strategy(6),
-        Prototype(7), Flyweight(8), Iterator(9), State(10), Template(11);
+        Prototype(7), Flyweight(8), Iterator(9), State(10), Template(11), Iterpreter(12);
 
         private int index;
 
@@ -35,7 +35,7 @@ public class Main {
         do {
             printTitle();
             operate = scanner.nextInt();
-            if (operate > 0 && operate <= 12){
+            if (operate > 0 && operate <= 13){
                 doAction(sample, patterns[operate-1]);
             }
         }while (operate != 0);
@@ -94,6 +94,9 @@ public class Main {
                 break;
             case Builder:
                 sample.BuilderSample();
+                break;
+            case Iterpreter:
+                sample.InterpreterSample();
                 break;
                 default:
                     return 0;
