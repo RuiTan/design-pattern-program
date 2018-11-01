@@ -26,4 +26,10 @@ public class MealOneBuilder implements IMealBuilder {
             }
         }
     }
+
+    
+    @Override
+    public void setPrice(double difference) {
+
+    }
 }

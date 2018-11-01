@@ -1,16 +1,15 @@
 
+import java.util.HashMap;
 import java.util.Scanner;
-
-
 public class Main {
 
     static String[] patterns = {"Singleton", "Visitor", "Composite", "Builder", "Factory", "Decorator", "Strategy"
-        , "Prototype", "Flyweight", "Iterator", "State", "Template"
+        , "Prototype", "Flyweight", "Iterator", "State", "Template", "Mediator", "AbstractFactory", "Observor"
     };
 
     enum Pattern{
         Singleton(0), Visitor(1), Composite(2), Builder(3), Factory(4), Decorator(5), Strategy(6),
-        Prototype(7), Flyweight(8), Iterator(9), State(10), Template(11);
+        Prototype(7), Flyweight(8), Iterator(9), State(10), Template(11), Mediator(12), AbstractFactory(13), Observor(14);
 
         private int index;
 
@@ -22,8 +21,6 @@ public class Main {
             return index;
         }
     }
-
-
 
     public static void main(String []args){
 
@@ -54,8 +51,6 @@ public class Main {
         }
         System.out.print("退出(0)\n");
     }
-
-
 
     public static int doAction(Sample sample, String operate){
         switch (Pattern.valueOf(operate)){
@@ -95,6 +90,13 @@ public class Main {
             case Builder:
                 sample.BuilderSample();
                 break;
+            case Mediator:
+                sample.MediatorSample();
+                break;
+            case Observor:
+                sample.ObservorSample();
+                break;
+
                 default:
                     return 0;
 

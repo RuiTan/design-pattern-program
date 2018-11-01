@@ -39,4 +39,19 @@ public abstract class AbstractMeal extends AbstractProduct {
      */
     public abstract void addDishes(HashMap<String, AbstractProduct> dishes);
 
+      /**
+     *
+     * @param difference 一个实数差值，原有价格加上这个差值得到新的价格
+     * 
+     */
+
+    public Double getPrice() {
+        Double sum = 0;                             
+        HashMap<String, AbstractProduct> dishes = getDishes();
+        for(HashMap.Entry<String, AbstractProduct> dish: dishes.entrySet()) {
+            sum += dish.getValue().getPrice();
+        }
+        return sum;
+    }
+
 }

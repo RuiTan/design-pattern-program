@@ -82,7 +82,6 @@ public class Material {
      * @return
      */
     public boolean decreaseAmount(int amount) {
-        // TODO implement here
         if (amount > this.amount){
             return false;
         }

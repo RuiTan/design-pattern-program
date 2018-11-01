@@ -9,6 +9,8 @@ public class DishOne extends AbstractDish {
     private String name;
     private Double price;
     private int count = 1;
+    private ArrayList<AbstractMeal> mealList;
+    private ArrayList<AbstractDish> dishList;
     /**
      * 菜需要的原料
      */
@@ -32,6 +34,7 @@ public class DishOne extends AbstractDish {
      * @param price
      */
     public DishOne(String name, Double price) {
+        
         AbstractProduct product = Menu.getInstance().findAndClone(name);
         if (product instanceof DishOne){
             this.name = product.getName();
@@ -42,7 +45,39 @@ public class DishOne extends AbstractDish {
             this.name = name;
             this.price = price;
             this.materialList = new HashMap<>();
+            this.mealList = new ArrayList<AbstractMeal>();
+            this.dishList = new ArrayLIst<AbstractDish>();
             Menu.getInstance().addProduct(this);
+            
+        }
+    }
+    /* */
+
+    public void notifyAllMeal() {
+        for (AbstractDish copyDish:dishList) {
+            copyDish.setPrice(this.price);
+        }
+        for(AbstractMeal meal: mealList) {
+            //notify the meal to change the price
+            meal.setPrice(meal.getPrice());
+        }
+        
+    }
+
+    public void addDishToList(AbstractDish dishClone) {
+        this.dishList.add(dishClone);
+    }
+
+    public void addMealToList(AbstractMeal meal) {
+        try {
+            for(AbstractMeal mealItem: mealList) {
+                if (mealItem.getName() == meal.getName()) {
+                    return;
+                }
+            }
+            mealList.add(meal);
+        } catch(Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -75,15 +110,26 @@ public class DishOne extends AbstractDish {
         return price;
     }
 
+    @Override
+    public Boolean setPrice(Double newPrice) {      
+        this.price = newPrice;
+        notifyAllMeal();
+        return false;
+    }
 
     @Override
     public AbstractProduct clone() {
         return null;
     }
 
+
     @Override
     public void accept(AbstractVisitor visitor, String retract) {
         visitor.visit(this, retract);
     }
+   
 
 }
+
+
+    

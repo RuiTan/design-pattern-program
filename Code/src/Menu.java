@@ -100,11 +100,15 @@ public class Menu {
         if (prototype.containsKey(productName)){
             System.out.println(PRINT + "菜品(" + productName + ")已被克隆");
             AbstractProduct product = prototype.get(productName);
+            AbstractProduct clone = product.clone();
             if (product instanceof DishOne){
                 DishOne dish = (DishOne)product;
+                // clone the exist product and add it to the orinal list
+                dish.addDishToList((DishOne)clone);
                 dish.addCount();
             }
-            return product.clone();
+            return clone;
+            
         }else {
             System.out.println(PRINT + "菜品(" + productName + ")未找到");
             return null;
