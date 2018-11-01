@@ -16747,6 +16747,36 @@
 							"headQualifiersCompartment": {
 								"$ref": "AAAAAAFmz58tmZgXv8k="
 							}
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFmz6GVwreZEts=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"fillColor": "#ffebd8",
+							"font": "Arial;13;0",
+							"left": 1304,
+							"top": 1512,
+							"width": 79.2490234375,
+							"height": 25,
+							"text": "interpreter"
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAFmz6G997l+Ioc=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFmz6GVwreZEts="
+							},
+							"tail": {
+								"$ref": "AAAAAAFmz5pFnW1imwY="
+							},
+							"lineStyle": 1,
+							"points": "1265:1525;1303:1524"
 						}
 					]
 				},
