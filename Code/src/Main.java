@@ -29,19 +29,6 @@ public class Main {
 
         Sample sample = new Sample();
         sample.Initialize();
-//        sample.SingletonSample();
-//        sample.VisitorSample();
-//        sample.CompositeSample();
-//        sample.BuilderSample();
-//        sample.FactorySample();
-//        sample.DecoratorSample();
-//        sample.StrategySample();
-
-//        sample.PrototypeSample();
-//        sample.FlyweightSample();
-//        sample.IteratorSample();
-//        sample.StateSample();
-//        sample.TemplateMethodSample();
 
         Scanner scanner = new Scanner(System.in);
         int operate = -1;
@@ -54,6 +41,7 @@ public class Main {
         }while (operate != 0);
 
         System.out.println("\n\n程序成功退出！\n\n");
+        scanner.close();
     }
 
     public static void printTitle(){
