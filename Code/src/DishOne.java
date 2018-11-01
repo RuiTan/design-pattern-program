@@ -3,6 +3,17 @@ import java.util.HashMap;
 
 public class DishOne extends AbstractDish {
 
+    /*bridge design pattern start*/
+    public DishOne(FlavorAPI flavorAPI){
+        this.flavorAPI = flavorAPI;
+    }
+    public void flavor(){
+        if(flavorAPI != null){
+            flavorAPI.flavor();
+        }
+    }
+    /*bridge design pattern end*/
+
     /**
      * 此菜系的基本信息
      */

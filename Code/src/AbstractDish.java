@@ -5,6 +5,18 @@ import java.util.*;
  * 
  */
 public abstract class AbstractDish extends AbstractProduct {
+    
+    /*
+     * start : 使用bridge模式，传入FlavorAPI生成相应的Dish
+     */
+     protected FlavorAPI falvorAPI;
+     protected AbstractDish(FlavorAPI falvorAPI){
+         this.falvorAPI = falvorAPI;
+     }
+     public abstract void flavor();
+    /*
+     * end : 使用bridge模式，传入FlavorAPI生成相应的Dish
+     */
 
     /**
      * 制作方法

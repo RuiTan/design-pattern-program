@@ -6,6 +6,12 @@ import java.util.*;
  */
 public abstract class AbstractDecorator extends AbstractDish {
 
+    /*bridge design pattern start*/
+    public void flavor(){
+    }
+    /*bridge design pattern end*/
+
+
     public AbstractDecorator(AbstractDish dish){
         this.setDish(dish);
         this.setCookingMethod(dish.cookingMethod);

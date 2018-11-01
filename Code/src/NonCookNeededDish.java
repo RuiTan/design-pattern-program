@@ -5,6 +5,12 @@ import java.util.*;
  * 
  */
 public class NonCookNeededDish extends AbstractDish {
+    
+    /*bridge design pattern start*/
+    public void flavor(){
+    }
+    /*bridge design pattern end*/
+
 
     /**
      * Default constructor
