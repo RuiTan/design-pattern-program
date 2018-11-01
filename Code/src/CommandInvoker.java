@@ -11,7 +11,7 @@ public class CommandInvoker {
      */
     public CommandInvoker() { }
     public CommandInvoker(ICommand command) {
-        this.SetCommand(command);
+        this.setCommand(command);
     }
 
     /**
@@ -23,7 +23,7 @@ public class CommandInvoker {
     /**调用 CookerManagement 的方法
      * @return
      */
-    public boolean CookerManagementCall(AbstractCooker cooker) {
+    public boolean cookerManagementCall(AbstractCooker cooker) {
         if (command != null && cooker != null && cooker instanceof AbstractCooker){
             return command.execute(cooker);
         } else {
@@ -35,7 +35,7 @@ public class CommandInvoker {
      * @param command 
      * @return
      */
-    public void SetCommand(ICommand command) {
+    public void setCommand(ICommand command) {
         this.command = command;
     }
 
