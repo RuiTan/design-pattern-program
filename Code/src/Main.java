@@ -95,9 +95,6 @@ public class Main {
             case Builder:
                 sample.BuilderSample();
                 break;
-            case Bridge:
-                sample.BridgeSample();
-                break;
                 default:
                     return 0;
 
