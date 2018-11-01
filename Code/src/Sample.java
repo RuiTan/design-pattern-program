@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 
 public class Sample {
 
@@ -278,6 +277,7 @@ public class Sample {
     public void InterpreterSample(){
         System.out.println(header("InterpreterMethod"));
         System.out.println("\n说明 : InterpreterMethod 提供了评估语言的语法或表达式的方式，实现一个可以解释特定上下文、固定文法的表达式接口。");
+        System.out.println("菜6的原料表：");
         dishOne6 = createDishByMaterials("菜6", materials, CookingMethod.fried);
         System.out.println("菜6的价格为" + dishOne6.getPrice());
         System.out.println("菜6的原料表：");
@@ -438,15 +438,17 @@ public class Sample {
             String name0 = namelist.get(i);
             i++;
             if (i==namelist.size()){//菜品个数为单数
-                price += new NumberExpression(name0).interpret(materialHashMap);
+                price += new PriceExpression(name0,materials.get(name0)).interpret(materialHashMap);//计算价格时使用食材单价乘以食材数量
             }
             else {//菜品个数为双数
                 String name1 = namelist.get(i);
                 i++;
-                IExpression expression = new AddExpression(new NumberExpression(name0), new NumberExpression(name1));
+                IExpression expression = new AddExpression(new PriceExpression(name0, materials.get(name0)), new PriceExpression(name1, materials.get(name1)));
                 price += expression.interpret(materialHashMap);
             }
         }
+
+        price *= 2.5;
 
 
         DishOne dishOne = new DishOne(name, price); //根据名字和价格创建一个dishOne对象
