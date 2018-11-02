@@ -1,44 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4bfbb5b5-0fa0-4dc3-8ac0-9db8768dc45a" name="Default" comment="" />
+    <list default="true" id="4bfbb5b5-0fa0-4dc3-8ac0-9db8768dc45a" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/AbstractCooker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/AbstractCooker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/AbstractDecorator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/AbstractDecorator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/AbstractDish$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/AbstractDish$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/AbstractDish.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/AbstractDish.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/AbstractFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/AbstractFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/AbstractMeal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/AbstractMeal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/AbstractProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/AbstractProduct.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/AbstractVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/AbstractVisitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/AddCookerCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/AddCookerCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/AddExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/AddExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/AdvancedCooker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/AdvancedCooker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/CommandInvoker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/CommandInvoker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/CookNeededDish.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/CookNeededDish.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/CookerAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/CookerAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/CookerFactory$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/CookerFactory$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/CookerFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/CookerFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/CookerManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/CookerManagement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/CookingState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/CookingState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/DetailVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/DetailVisitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/DishOne.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/DishOne.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/DoNothingMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/DoNothingMethod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/DoneState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/DoneState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/FinishedState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/FinishedState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/FlavorAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/FlavorAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/FreeCookerCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/FreeCookerCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/FriedMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/FriedMethod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/Fryer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Fryer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/IAcceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/IAcceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/ICommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/ICommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/ICookingMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/ICookingMethod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/IExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/IExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/IMealBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/IMealBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/IState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/IState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/KitchenManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/KitchenManagement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/Main$Pattern.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Main$Pattern.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/Material.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Material.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/MaterialFactory$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/MaterialFactory$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/MaterialFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/MaterialFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/MaterialManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/MaterialManagement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/MealOne.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/MealOne.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/MealOneBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/MealOneBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/MealTwo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/MealTwo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/MealTwoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/MealTwoBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/Mediator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Mediator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/Microwave.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Microwave.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/MultiplyExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/MultiplyExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/NameVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/NameVisitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/NonCookNeededDish.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/NonCookNeededDish.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/Order$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Order$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/Order$OrderItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Order$OrderItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/OrderManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/OrderManagement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/Pan.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Pan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/PreparingState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/PreparingState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/PriceExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/PriceExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/PriceVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/PriceVisitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/RawState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/RawState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/ReadyState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/ReadyState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/RestMediator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/RestMediator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/SaltyDish.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/SaltyDish.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/Sample$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Sample$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/Sample$CookerType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Sample$CookerType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/Sample$CookingMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Sample$CookingMethod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/Sample$MaterialType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Sample$MaterialType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/Sample$MealType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Sample$MealType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/Sample.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Sample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/SpicyDecorator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/SpicyDecorator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/SpicyDish.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/SpicyDish.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/SteamMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/SteamMethod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/Steamer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Steamer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/SubstractExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/SubstractExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/SweetDecorator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/SweetDecorator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/SweetDish.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/SweetDish.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/UseCookerCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/UseCookerCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/Vegetable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Vegetable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/Waiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Waiter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/designPattern/FinanceSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/designPattern/FinanceSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Code/meat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/meat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sample.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1263519599">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="503" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="503" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.spring.boot.run.usages" />
+      <usages-collector id="statistics.file.types.open" />
+      <usages-collector id="statistics.spring.boot.mvc.usages" />
+      <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.vcs.git.usages" />
+      <usages-collector id="statistics.file.extensions.open" />
+    </session>
+  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Sample.java" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Sample.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="392" column="30" lean-forward="true" selection-start-line="392" selection-start-column="30" selection-end-line="392" selection-end-column="30" />
+            <state relative-caret-position="728">
+              <caret line="389" lean-forward="true" selection-start-line="389" selection-end-line="389" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1541096336778" expanded="true" signature="0:24029" ph="..." />
+                <element signature="e#17239#18218#0" />
+                <element signature="e#18314#18407#0" />
+                <element signature="e#18413#18496#0" />
+                <element signature="e#18577#19421#0" />
+                <element signature="e#19427#19465#0" />
+                <element signature="e#20432#21394#0" />
+                <element signature="e#21761#24026#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommandInvoker.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CommandInvoker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
+            <state relative-caret-position="437">
               <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="109" selection-start-line="109" selection-end-line="109" />
+            <state relative-caret-position="589">
+              <caret line="115" column="29" lean-forward="true" selection-start-line="115" selection-start-column="29" selection-end-line="115" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -46,72 +167,60 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CookerFactory.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CookerFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
+            <state relative-caret-position="209">
               <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Fryer.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Fryer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
+            <state relative-caret-position="76">
               <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pan.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Pan.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
+            <state relative-caret-position="190">
               <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CookerManagement.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CookerManagement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
+            <state relative-caret-position="1121">
               <caret line="67" selection-start-line="67" selection-end-line="67" />
-              <folding>
-                <element signature="e#234#235#0" expanded="true" />
-                <element signature="e#264#265#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Menu.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Menu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="815">
+              <caret line="168" column="7" selection-start-line="168" selection-start-column="7" selection-end-line="168" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#deleteProduct#0;class#Menu#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractCooker.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AbstractCooker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
+            <state relative-caret-position="152">
               <caret line="8" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Double.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Double.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="523" selection-start-line="523" selection-end-line="523" />
-              <folding>
-                <element signature="e#21263#21264#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -124,6 +233,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -151,9 +263,10 @@
         <option value="$PROJECT_DIR$/src/CookNeededDish.java" />
         <option value="$PROJECT_DIR$/src/PriceExtension.java" />
         <option value="$PROJECT_DIR$/src/PriceExpression.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/CookerManagement.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Sample.java" />
+        <option value="$PROJECT_DIR$/src/Menu.java" />
       </list>
     </option>
   </component>
@@ -163,15 +276,20 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-7" />
+    <option name="width" value="1294" />
+    <option name="height" value="1447" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -189,16 +307,19 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="Pan&#9;FILE&#9;file:///Users/tanrui/文件/Homework/软件架构与设计模式/项目/design-pattern-program/Code/src/Pan.java&#10;Fr&#9;FILE&#9;file:///Users/tanrui/文件/Homework/软件架构与设计模式/项目/design-pattern-program/Code/src/Fryer.java&#10;Main&#9;FILE&#9;file:///Users/tanrui/文件/Homework/软件架构与设计模式/项目/design-pattern-program/Code/src/Main.java&#10;pan&#9;PSI&#9;JAVA://Pan&#10;fry&#9;PSI&#9;JAVA://Fryer&#10;sam&#9;PSI&#9;JAVA://Sample&#10;Abstr&#9;FILE&#9;file:///Users/tanrui/文件/Homework/软件架构与设计模式/项目/design-pattern-program/Code/src/AbstractDish.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541100407419" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -217,47 +338,29 @@
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Code" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
       <properties />
       <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
@@ -276,43 +379,45 @@
       <option name="presentableId" value="Default" />
       <updated>1541085529032</updated>
       <workItem from="1541085531083" duration="2838000" />
+      <workItem from="1541098529742" duration="1885000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2838000" />
+    <option name="totallyTimeSpent" value="4723000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="-8" y="-8" width="2576" height="1456" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" weight="0.2795591" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info id="Image Layers" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3296593" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info id="Capture Tool" />
-      <window_info id="Designer" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21428572" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3296593" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21581876" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997996" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3296593" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34065104" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997996" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.27944404" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,7 +442,6 @@
           <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="20" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -520,13 +624,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PriceExtension.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PriceExtension.java" />
     <entry file="file://$PROJECT_DIR$/src/PriceExpression.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -534,86 +632,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Menu.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Double.java" />
+    <entry file="file://$PROJECT_DIR$/src/CommandInvoker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="109" selection-start-line="109" selection-end-line="109" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Double.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="523" selection-start-line="523" selection-end-line="523" />
-          <folding>
-            <element signature="e#21263#21264#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AbstractCooker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Fryer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CookerManagement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
-          <folding>
-            <element signature="e#234#235#0" expanded="true" />
-            <element signature="e#264#265#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="437">
+          <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CookerFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
+        <state relative-caret-position="209">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CommandInvoker.java">
+    <entry file="file://$PROJECT_DIR$/src/Fryer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+        <state relative-caret-position="76">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CookerManagement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1121">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractCooker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="115" column="29" lean-forward="true" selection-start-line="115" selection-start-column="29" selection-end-line="115" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Sample.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="392" column="30" lean-forward="true" selection-start-line="392" selection-start-column="30" selection-end-line="392" selection-end-column="30" />
+        <state relative-caret-position="728">
+          <caret line="389" lean-forward="true" selection-start-line="389" selection-end-line="389" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1541096336778" expanded="true" signature="0:24029" ph="..." />
+            <element signature="e#17239#18218#0" />
+            <element signature="e#18314#18407#0" />
+            <element signature="e#18413#18496#0" />
+            <element signature="e#18577#19421#0" />
+            <element signature="e#19427#19465#0" />
+            <element signature="e#20432#21394#0" />
+            <element signature="e#21761#24026#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="815">
+          <caret line="168" column="7" selection-start-line="168" selection-start-column="7" selection-end-line="168" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#deleteProduct#0;class#Menu#0" />
           </folding>
         </state>
       </provider>
@@ -621,7 +716,78 @@
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Code</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
         <settings>
           <splitter-proportions>
             <option name="proportions">

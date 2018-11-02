@@ -86,6 +86,7 @@ public class Sample {
         // System.out.println();
 
         menu.printMenu();
+        MenuMementoSample();
 
         System.out.println("\n\n||| 初始化完成 |||");
 
@@ -385,6 +386,24 @@ public class Sample {
         System.out.println("释放一个厨具pan");
         invoker.setCommand(free_cmd);
         invoker.cookerManagementCall(pan1);
+    }
+
+    public void MenuMementoSample() {
+        System.out.println(header("Memento"));
+        System.out.println("\n说明：Memento Pattern 保存一个对象的某个状态，以便在适当的时候恢复对象。Memento 属于行为型模式。");
+        System.out.println("Menu 作为单例，实现了 undo() 和 redo() 的方法，方法实现了对 Menu 的 添加和删除Product的功能的记录和恢复。");
+        Menu menu = Menu.getInstance();
+        menu.printMenu();
+        menu.deleteProduct("菜1");
+        menu.printMenu();
+        menu.deleteProduct("菜2");
+        menu.undo();
+        menu.undo();
+        menu.printMenu();
+        menu.redo();
+        menu.redo();
+        menu.redo();
+        menu.printMenu();
     }
 
     /**
