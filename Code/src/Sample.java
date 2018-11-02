@@ -86,7 +86,6 @@ public class Sample {
         // System.out.println();
 
         menu.printMenu();
-        MenuMementoSample();
 
         System.out.println("\n\n||| 初始化完成 |||");
 

@@ -2,93 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bfbb5b5-0fa0-4dc3-8ac0-9db8768dc45a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/AbstractCooker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/AbstractCooker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/AbstractDecorator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/AbstractDecorator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/AbstractDish$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/AbstractDish$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/AbstractDish.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/AbstractDish.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/AbstractFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/AbstractFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/AbstractMeal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/AbstractMeal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/AbstractProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/AbstractProduct.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/AbstractVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/AbstractVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/AddCookerCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/AddCookerCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/AddExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/AddExpression.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/AdvancedCooker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/AdvancedCooker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/CommandInvoker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/CommandInvoker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/CookNeededDish.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/CookNeededDish.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/CookerAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/CookerAdapter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/CookerFactory$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/CookerFactory$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/CookerFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/CookerFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/CookerManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/CookerManagement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/CookingState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/CookingState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/DetailVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/DetailVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/DishOne.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/DishOne.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/DoNothingMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/DoNothingMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/DoneState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/DoneState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/FinishedState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/FinishedState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/FlavorAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/FlavorAPI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/FreeCookerCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/FreeCookerCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/FriedMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/FriedMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/Fryer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Fryer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/IAcceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/IAcceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/ICommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/ICommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/ICookingMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/ICookingMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/IExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/IExpression.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/IMealBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/IMealBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/IState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/IState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/KitchenManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/KitchenManagement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/Main$Pattern.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Main$Pattern.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/Material.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Material.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/MaterialFactory$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/MaterialFactory$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/MaterialFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/MaterialFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/MaterialManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/MaterialManagement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/MealOne.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/MealOne.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/MealOneBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/MealOneBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/MealTwo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/MealTwo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/MealTwoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/MealTwoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/Mediator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Mediator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/Microwave.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Microwave.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/MultiplyExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/MultiplyExpression.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/NameVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/NameVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/NonCookNeededDish.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/NonCookNeededDish.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/Order$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Order$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/Order$OrderItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Order$OrderItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/OrderManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/OrderManagement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/Pan.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Pan.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/PreparingState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/PreparingState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/PriceExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/PriceExpression.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/PriceVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/PriceVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/RawState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/RawState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/ReadyState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/ReadyState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/RestMediator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/RestMediator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/SaltyDish.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/SaltyDish.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/Sample$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Sample$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/Sample$CookerType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Sample$CookerType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/Sample$CookingMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Sample$CookingMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/Sample$MaterialType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Sample$MaterialType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/Sample$MealType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Sample$MealType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/Sample.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Sample.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/SpicyDecorator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/SpicyDecorator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/SpicyDish.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/SpicyDish.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/SteamMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/SteamMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/Steamer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Steamer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/SubstractExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/SubstractExpression.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/SweetDecorator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/SweetDecorator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/SweetDish.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/SweetDish.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/UseCookerCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/UseCookerCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/Vegetable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Vegetable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/Waiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Waiter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/designPattern/FinanceSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/designPattern/FinanceSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/meat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/meat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Sample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sample.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -103,18 +16,19 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="1" />
+          <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="503" />
+          <entry key="java" value="504" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="503" />
+          <entry key="JAVA" value="504" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.run.usages" />
@@ -127,20 +41,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Sample.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="728">
-              <caret line="389" lean-forward="true" selection-start-line="389" selection-end-line="389" />
+            <state relative-caret-position="1691">
+              <caret line="89" column="48" lean-forward="true" selection-start-line="89" selection-start-column="48" selection-end-line="89" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#17239#18218#0" />
-                <element signature="e#18314#18407#0" />
-                <element signature="e#18413#18496#0" />
-                <element signature="e#18577#19421#0" />
-                <element signature="e#19427#19465#0" />
-                <element signature="e#20432#21394#0" />
-                <element signature="e#21761#24026#0" />
               </folding>
             </state>
           </provider>
@@ -158,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="115" column="29" lean-forward="true" selection-start-line="115" selection-start-column="29" selection-end-line="115" selection-end-column="29" />
+            <state relative-caret-position="2109">
+              <caret line="115" column="29" selection-start-line="115" selection-start-column="29" selection-end-line="115" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -203,7 +110,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Menu.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="815">
@@ -265,8 +172,8 @@
         <option value="$PROJECT_DIR$/src/PriceExpression.java" />
         <option value="$PROJECT_DIR$/src/CookerManagement.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/Sample.java" />
         <option value="$PROJECT_DIR$/src/Menu.java" />
+        <option value="$PROJECT_DIR$/src/Sample.java" />
       </list>
     </option>
   </component>
@@ -289,7 +196,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -307,6 +213,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -380,17 +287,18 @@
       <updated>1541085529032</updated>
       <workItem from="1541085531083" duration="2838000" />
       <workItem from="1541098529742" duration="1885000" />
+      <workItem from="1541123710312" duration="270000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4723000" />
+    <option name="totallyTimeSpent" value="4993000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1456" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21581876" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21801706" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -640,6 +548,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2109">
+          <caret line="115" column="29" selection-start-line="115" selection-start-column="29" selection-end-line="115" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/CookerFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -675,33 +593,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="115" column="29" lean-forward="true" selection-start-line="115" selection-start-column="29" selection-end-line="115" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Sample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="728">
-          <caret line="389" lean-forward="true" selection-start-line="389" selection-end-line="389" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#17239#18218#0" />
-            <element signature="e#18314#18407#0" />
-            <element signature="e#18413#18496#0" />
-            <element signature="e#18577#19421#0" />
-            <element signature="e#19427#19465#0" />
-            <element signature="e#20432#21394#0" />
-            <element signature="e#21761#24026#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Menu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="815">
@@ -709,6 +600,16 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#deleteProduct#0;class#Menu#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1691">
+          <caret line="89" column="48" lean-forward="true" selection-start-line="89" selection-start-column="48" selection-end-line="89" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
