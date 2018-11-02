@@ -143,12 +143,17 @@ public class Application {
                     e.printStackTrace();
                 }
             }
+            else {
+                // 用户输入了不符合要求的编号
+                System.out.println("请输入符合要求的编号！");
+                continue;
+            }
         }
         scanner.close();
     }
 
     public static void createMaterials(String name, Double price) {
-        //· 每次创建一个材料，输入材料的名称和价格
+        // 每次创建一个材料，输入材料的名称和价格
     }
 
     public static void createDishes(String name, HashMap<String, Integer> materials, ICookingMethod method) {
