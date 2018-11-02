@@ -458,7 +458,7 @@ public class Sample {
      * @param type
      * @return
      */
-    public AbstractMeal getMeal(MealType type) {
+    public static AbstractMeal getMeal(MealType type) {
         Menu menu = Menu.getInstance();
         switch (type) {
         case MealOne: {
@@ -490,7 +490,7 @@ public class Sample {
      * @param amount
      * @return
      */
-    public Material getMaterial(String name, int amount) {
+    public static Material getMaterial(String name, int amount) {
         MaterialManagement instance = MaterialManagement.getInstance();
         return instance.getMaterial(name, amount);
     }
@@ -503,7 +503,7 @@ public class Sample {
      * @param materials
      * @return
      */
-    public DishOne createDish(String name, Double price, HashMap<String, Integer> materials, CookingMethod method) {
+    public static DishOne createDish(String name, Double price, HashMap<String, Integer> materials, CookingMethod method) {
         DishOne dishOne = new DishOne(name, price);
         ArrayList<Material> materialArrayList = new ArrayList<>();
         for (HashMap.Entry<String, Integer> entry : materials.entrySet()) {
@@ -530,7 +530,7 @@ public class Sample {
     /**
      * 查看原料仓库
      */
-    public void showMaterials() {
+    public static void showMaterials() {
         MaterialManagement instance = MaterialManagement.getInstance();
         HashMap<String, Material> materialMap = instance.getMaterialMap();
         for (HashMap.Entry material : materialMap.entrySet()) {
@@ -546,7 +546,7 @@ public class Sample {
      * @param method
      * @return
      */
-    public DishOne createDishByMaterials(String name, HashMap<String, Integer> materials, CookingMethod method){
+    public static DishOne createDishByMaterials(String name, HashMap<String, Integer> materials, CookingMethod method){
 
         MaterialManagement instance = MaterialManagement.getInstance();
         HashMap<String, Material> materialHashMap = instance.getMaterialMap();
