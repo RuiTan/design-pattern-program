@@ -224,12 +224,12 @@ public class Sample2{
         System.out.println(
                 "\nFlyweight:Use sharing to support large numbers of fine-grained objects efficiently.");
         System.out.println("Material objects in this instance are flyweight. Materials used to make dishes with the same name are actually the same object.");
-        System.out.println("Beef in dish_1：" + dish_1.getMaterials().get("Beef"));
-        System.out.println("Beef in dish_2" + dish_2.getMaterials().get("Beef"));
-        dish_1.getMaterials().get("Beef").decreaseAmount(1);
+        System.out.println("Beef in dish_1：" + dish_1.getMaterials().get("Chicken"));
+        System.out.println("Beef in dish_2" + dish_2.getMaterials().get("Chicken"));
+        dish_1.getMaterials().get("Chicken").decreaseAmount(1);
         System.out.println("Only decrease the amount in dish_1:");
-        System.out.println("Beef in dish_1" + dish_1.getMaterials().get("Beef"));
-        System.out.println("Beef in dish_2:" + dish_2.getMaterials().get("Beef"));
+        System.out.println("Beef in dish_1" + dish_1.getMaterials().get("Chicken"));
+        System.out.println("Beef in dish_2:" + dish_2.getMaterials().get("Chicken"));
         System.out.println("Test Success!");
     }
 
@@ -376,6 +376,17 @@ public class Sample2{
         menu.redo();
         menu.printMenu();
         System.out.println("Redo and undo success. Test Completes!");
+    }
+    public void FacadeSample(){
+        System.out.println("Facade");
+        System.out.println("\nFacade:Provide a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use.");
+        System.out.println("Kitchenmnagement provides a unified interface for cooking Dish:boolean cooking(AbstractDish dish)");
+        System.out.println("From outside it seems like just one interface. But actually it's a set of interfaces.");
+        KitchenManagement management = KitchenManagement.getInstance();
+        System.out.println("Use it to cook dish_1. management.cooking(dish_1)");
+        management.cooking(dish_1);
+        System.out.println("Use the interface successfully. Test Completes!");
+
     }
 //
 //    /**

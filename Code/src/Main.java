@@ -27,7 +27,30 @@ public class Main {
     }
     
     public static void main(String []args){
+//        TestSample();
+//        TestSample2();
+        TestApplication();
+    }
 
+    public static void TestSample(){
+        Sample sample = new Sample();
+        sample.Initialize();
+
+        Scanner scanner = new Scanner(System.in);
+        int operate = -1;
+        do {
+            printTitle();
+            operate = scanner.nextInt();
+            if (operate > 0 && operate <= Max){
+                doAction(sample, patterns[operate-1]);
+            }
+        }while (operate > 0 && operate <= Max);
+
+        System.out.println("\n\n程序成功退出！\n\n");
+        scanner.close();
+    }
+
+    public static void TestSample2(){
         Sample2 sample = new Sample2();
         sample.Initialize();
 
@@ -43,9 +66,10 @@ public class Main {
 
         System.out.println("\n\n程序成功退出！\n\n");
         scanner.close();
+    }
 
-//        Application.main();
-
+    public static void TestApplication(){
+        Application.main();
     }
 
     public static void printTitle(){
@@ -194,9 +218,9 @@ public class Main {
             case Adapter:
                 sample.AdapterSample();
                 break;
-//            case Facade:
-//                sample.FacadeSample();
-//                break;
+            case Facade:
+                sample.FacadeSample();
+                break;
             default:
                 return 0;
         }
