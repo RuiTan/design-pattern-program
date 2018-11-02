@@ -73,14 +73,6 @@ public class Application {
 
     }
 
-    public static void pay() {
-
-    }
-
-    public static void earn() {
-
-    }
-
     public static void purchaseMaterials() {
         /* 用户在循环中输入需要的材料和数量，
         系统会判断是否有足够的金额去购买这些材料，如果足够，购买，不够则报错，继续循环。
