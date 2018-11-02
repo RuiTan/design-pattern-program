@@ -30,7 +30,9 @@ public class KitchenManagement {
         for(HashMap.Entry<String, Material> entry : material.entrySet()){
             System.out.print(entry.getKey() + " ");
         }
-        dish.getCookingMethod();
+        if (dish.getCookingMethod() != null){
+            System.out.println("\n烹饪方法是 : " + dish.getCookingMethod().operate());
+        }
         return true;
     }
 

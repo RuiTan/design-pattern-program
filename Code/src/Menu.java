@@ -41,7 +41,7 @@ public class Menu {
      */
     public AbstractProduct addProduct(AbstractProduct product) {
         if (prototype.containsKey(product.getName())){
-            System.out.println(PRINT + "无法添加产品'" + product.getName() + "',原型已存在,将进行克隆操作");
+            System.out.println(PRINT + "无需在菜单中添加产品'" + product.getName() + "',原型已存在,将进行克隆操作");
             return null;
         }
         else{
@@ -73,6 +73,9 @@ public class Menu {
      */
     public void printMenu() {
         int i = 1;
+        if (prototype.isEmpty()){
+            System.out.println("当前菜单为空");
+        }
         for (HashMap.Entry<String, AbstractProduct> entry : prototype.entrySet()){
             System.out.print(i++); System.out.println(" : ");
             if (entry.getValue() instanceof AbstractMeal){

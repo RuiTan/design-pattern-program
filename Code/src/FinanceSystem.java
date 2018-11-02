@@ -1,4 +1,3 @@
-package designPattern;
 
 import java.util.*;
 

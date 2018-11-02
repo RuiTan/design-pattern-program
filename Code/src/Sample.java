@@ -403,18 +403,28 @@ public class Sample {
 
     public void AdapterSample(){
         System.out.println(header("Adapter"));
-        System.out.println("\n说明 :适配器模式（Adapter Pattern）是作为两个不兼容的接口之间的桥梁。这种模式涉及到一个单一的类，该类负责加入独立的或不兼容的接口功能。");
-        System.out.println("\n说明 :本例中将Dish的CookingMethod的operate()接口转换成使用厨具烹饪的cook()接口。");
-        System.out.println("\n说明 :创建了Target接口，包含想要的cook()方法。");
+        System.out.println("\n说明 : 适配器模式（Adapter Pattern）是作为两个不兼容的接口之间的桥梁。这种模式涉及到一个单一的类，该类负责加入独立的或不兼容的接口功能。");
+        System.out.println("本例中将Dish的CookingMethod的operate()接口转换成使用厨具烹饪的cook()接口。");
+        System.out.println("创建了Target接口，包含想要的cook()方法。");
         DishOne d=new DishOne("炸肉",100.0);
         d.setCookingMethod(new FriedMethod());
-        System.out.println("\n创建一个菜DishOne d=new DishOne(\" 炸肉 \",100.0);");
-        System.out.println("\n菜的烹制方法是炸d.setCookingMethod(new FriedMethod());");
-        System.out.println("\n使用适配器CookerAdapter实现Target将烹饪方法的operate()转成炸锅的cook()");
-        System.out.println("\nCookerAdapter adapter=new CookerAdapter(d.getCookingMethod().operate());");
+        System.out.println("创建一个菜DishOne d=new DishOne(\" 炸肉 \",100.0);");
+        System.out.println("菜的烹制方法是炸d.setCookingMethod(new FriedMethod());");
+        System.out.println("使用适配器CookerAdapter实现Target将烹饪方法的operate()转成炸锅的cook()");
+        System.out.println("CookerAdapter adapter=new CookerAdapter(d.getCookingMethod().operate());");
         CookerAdapter adapter=new CookerAdapter(d.getCookingMethod().operate());
-        System.out.println("\n调用了适配器的cook()的方法");
+        System.out.println("调用了适配器的cook()的方法");
         adapter.cook();
+    }
+
+    public void FacadeSample(){
+        System.out.println(header("Facade"));
+        System.out.println("\n说明 : 为子系统中的一组接口提供一个一致的界面，外观模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。");
+        System.out.println("本例中在KitchenManagement中提供了一个烹饪Dish的统一接口 : boolean cooking(AbstractDish dish)");
+        System.out.println("在外部看起来像是只有一个接口，实际上它调用了一组接口");
+        KitchenManagement management = KitchenManagement.getInstance();
+        management.cooking(dishOne1);
+        System.out.println(footer());
     }
 
     /**
@@ -472,35 +482,6 @@ public class Sample {
             }
         }
     }
-
-    // 已将createMaterial添加至MaterialFactory中
-
-    // /**
-    // * 添加原料，仅当仓库无该原料时添加
-    // * @param t
-    // * @param amount
-    // * @param price
-    // * @param name
-    // * @return
-    // */
-    // public void createMaterial(MaterialType t, int amount, Double price, String
-    // name){
-    // MaterialManagement instance = MaterialManagement.getInstance();
-    // switch (t){
-    // case meat:{
-    // instance.addMaterial(new meat(amount, price, name));
-    // break;
-    // }
-    // case vegetable:{
-    // instance.addMaterial(new Vegetable(amount, price, name));
-    // break;
-    // }
-    // default:{
-    // instance.addMaterial(new Material(amount, price, name));
-    // break;
-    // }
-    // }
-    // }
 
     /**
      * 获得原料，总量将从仓库减少

@@ -1,27 +1,61 @@
 import java.util.*;
 
 public class Application {
+
     private static Map<Integer, Vector<String>> orderMap;
-    private static designPattern.FinanceSystem cashier;
+
+    private static FinanceSystem cashier;
+
     public static void main() {
         initMensa();
+        int operate;
+
+        Scanner scanner = new Scanner(System.in);
+
+        out:
         while(true) {
+
+            System.out.println("\n请输入你要进行的操作: 打印菜单(1) 添加原料(2) 增加原料量(3) 创建一道菜(4) 创建一个套餐(5) 处理订单(6)");
+            operate = scanner.nextInt();
+
             //print the option menu 1.Deal Order 2.Purchase materials 3.Create Dishes 4.Create Meal 5.Cteate materials
-            
+
             //switch case
 
             // dealOrder : if do not have enough materials, alert and continue
 
             //create function: end with -1
 
-
-
-
-
+            switch (operate){
+                case 1:
+                    Menu.getInstance().printMenu();
+                    break;
+                case 2:
+                    try {
+                        createMaterials();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    break;
+                case 3:
+                    purchaseMaterials();
+                    break;
+                case 4:
+                    createDishes();
+                    break;
+                case 5:
+                    createMeal();
+                    break;
+                case 6:
+                    dealOrder();
+                    break;
+                default:
+                    break out;
+            }
 
         }
     }
-    
+
     public static String header(String name){
         return "\n" +
                 "****************************************************************************************************************************"
@@ -42,7 +76,7 @@ public class Application {
 
         // 初始化订单列表，初始值为空
         System.out.println("正在初始化订单列表...");
-        orderList = new HashMap<>();
+        orderMap = new HashMap<>();
 
         //初始化资金管理类，启动资金为RMB1000
         System.out.println("正在初始化资金，餐厅启动资金为1000RMB...");
@@ -57,8 +91,8 @@ public class Application {
         // 菜单不需要初始化，直接打印空菜单内容即可
         System.out.println("正在初始化菜单，当前菜单为空");
         Menu.getInstance().printMenu();
-        
-        // 结束舒适化过程，打印调试信息
+
+        // 结束初始化过程，打印调试信息
         System.out.println("初始化完成");
         System.out.println(footer());
     }
@@ -105,18 +139,20 @@ public class Application {
         /* 用户在循环中输入需要的材料和数量，
         系统会判断是否有足够的金额去购买这些材料，如果足够，购买，不够则报错，继续循环。
         直到用户输入指定的终止符号结束采购。*/
-        
+
         // 打印购买原料的调试信息
         System.out.println(header("Purchase Materials"));
 
         // 创建输入流
         Scanner scanner = new Scanner(System.in);
+        scanner.reset();
 
         // 获取存储原料的哈希表
         MaterialManagement instance = MaterialManagement.getInstance();
         HashMap<String, Material> materials = instance.getMaterialMap();
 
         // 让用户循环输入需要加购的原料和数量
+        inner:
         while (true){
 
             System.out.println("当前原料列表如下：");
@@ -138,10 +174,10 @@ public class Application {
                 // 退出本次操作
                 System.out.println("退出本次操作");
                 System.out.println(footer());
-                break;
+                break inner;
             }
             // 用户选择增加一种现有的原料
-            if ( 0 < number && number < i){
+            if ( 0 < number && number <= i){
                 // 获取用户要添加的原料对象
                 Material material = materials.get(names.get(number-1));
                 // 获取用户要增加的原料数量
@@ -163,7 +199,7 @@ public class Application {
                     }
                     else {
                         System.out.println("当前资金余额为" + finance + "元，无法购买原料，退出本次操作\n\n");
-                        break;
+                        break inner;
                     }
                 }
                 // 捕获异常
@@ -174,25 +210,271 @@ public class Application {
             else {
                 // 用户输入了不符合要求的编号
                 System.out.println("请输入符合要求的编号！\n\n");
-                continue;
             }
         }
-        scanner.close();
+//        scanner.close();
     }
 
-    public static void createMaterials(String name, Double price) {
-        //· 每次创建一个材料，输入材料的名称和价格
+//    public static void createMaterials() throws Exception {
+//        // 每次创建一个材料，输入材料的名称和价格
+//        System.out.println("开始创建新材料：");
+//        MaterialManagement materialManagement = MaterialManagement.getInstance();
+//        HashMap<String, Material> materialMap = materialManagement.getMaterialMap();
+//
+//        while (true){
+//            Scanner scanner = new Scanner(System.in);
+//            System.out.println("请输入要添加的材料名字：(输入 # 退出)");
+//            String materName = scanner.next();
+//            if (materialMap.keySet().contains(materName)){
+//                System.out.println("已经存在该材料。");
+//                continue;
+//            }
+//            if (materName.equals("#")) return;
+//            System.out.println("请输入该材料价格：(输入 # 退出)");
+//            String strPrice = scanner.next();
+//            if (strPrice.equals("#")) return;
+//            Double price = Double.valueOf(strPrice);
+//            materialManagement.addMaterial(new Material(0, price, materName));
+//            System.out.println("添加新材料成功！");
+//            System.out.println("是否购买一定数量的 " + materName +"？Y/N(输入 # 退出)");
+//            String tempOp = scanner.next();
+//            if (tempOp.equals("Y")){
+//                System.out.println("请输入购买的数量: (输入 # 退出)");
+//                String strAmount = scanner.next();
+//                if (strAmount.equals("#")) return;
+//                int amount = Integer.parseInt(strAmount);
+//
+//                Double cost = materialMap.get(materName).getPrice()*amount;
+//                if (cashier.getFinance() >= cost){
+//                    materialManagement.purchaseMaterial(materName, amount);
+//                    cashier.expense(cost);
+//                    System.out.println("购买" + materName + "成功，花费资金: " + cost + ".");
+//                    System.out.println("仓库中现有材料及其数量为：\n名字\t\t数量");
+//                    for (Map.Entry<String, Material> entry : materialMap.entrySet()){
+//                        System.out.println(entry.getKey() + "\t\t" + entry.getValue().getPrice());
+//                    }
+//                }else{
+//                    System.out.println("资金不足！无法购买！");
+//                }
+//            } else if (tempOp.equals("N")){
+//                continue;
+//            }
+//        }
+//    }
+    public static void createMaterials() throws Exception {
+        // 每次创建一个材料，输入材料的名称和价格
+        System.out.println("开始创建新材料：");
+        MaterialManagement materialManagement = MaterialManagement.getInstance();
+        HashMap<String, Material> materialMap = materialManagement.getMaterialMap();
+
+        while (true){
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("请输入要添加的材料名字：(输入 # 退出)");
+            String materName = scanner.next();
+            if (materialMap.keySet().contains(materName)){
+                System.out.println("已经存在该材料。");
+                purchase(materName);
+                continue;
+            }
+            if (materName.equals("#")) return;
+            System.out.println("请输入该材料价格：(输入 # 退出)");
+            String strPrice = scanner.next();
+            if (strPrice.equals("#")) return;
+            Double price = Double.valueOf(strPrice);
+            materialManagement.addMaterial(new Material(0, price, materName));
+            System.out.println("添加新材料成功！");
+            purchase(materName);
+        }
     }
 
-    public static void createDishes(String name, HashMap<String, Integer> materials, Sample.CookingMethod method) {
+    private static void purchase(String materName) throws Exception {
+        Scanner scanner = new Scanner(System.in);
+        MaterialManagement materialManagement = MaterialManagement.getInstance();
+        HashMap<String, Material> materialMap = materialManagement.getMaterialMap();
+
+        System.out.println("您是否想要购买一定数量的 " + materName +"？Y/N(输入 # 退出)");
+        String tempOp = scanner.next();
+        if (tempOp.equals("Y")){
+            System.out.println("请输入购买的数量：(输入 # 退出)");
+            String strAmount = scanner.next();
+            if (strAmount.equals("#")) return;
+            int amount = Integer.parseInt(strAmount);
+
+            Double cost = materialMap.get(materName).getPrice()*amount;
+            if (cashier.getFinance() >= cost){
+                materialManagement.purchaseMaterial(materName, amount);
+                cashier.expense(cost);
+                System.out.println("购买" + materName + "成功，花费资金: [" + cost + "], 剩余资金: [" + cashier.getFinance() + "].");
+                System.out.println("仓库中现有材料及其数量为：\n名字\t\t数量\t\t价格");
+                for (Map.Entry<String, Material> entry : materialMap.entrySet()){
+                    System.out.println(entry.getKey() + "\t\t" +entry.getValue().getAmount() + "\t\t" + entry.getValue().getPrice());
+                }
+            }else{
+                System.out.println("资金不足！无法购买！");
+            }
+        } else if (tempOp.equals("N")){
+
+        }
+    }
+
+    public static void createDishes() {
         // 让用户输入菜名和烹饪方法，然后打印现有的材料列表，让用户进行选择组合，最后以-1（或者特定的符号）结束选择，判断是否有足够的材料来完成这道菜。如果有调用接口创建菜品，没有则报错。
+        //input dish's name
+        MaterialManagement materialManagement = MaterialManagement.getInstance();
+        HashMap<String,Material> materialMap = materialManagement.getMaterialMap();
+        Menu menu = Menu.getInstance();
+        Scanner sc = new Scanner(System.in);
+        while(true){
+            System.out.println("请输入你要添加的菜名： (输入q结束)");
+            String name = (String)sc.next();
+            if(name.toLowerCase().equals("q")){
+                break;
+            }
+            //input dish's cooking method
+            System.out.println("请输入该菜品所需的烹饪方法序号(1.fried 2.steam 3.doNothing： (输入q结束)");
+            String cookingMethod = (String)sc.next();
+            Sample.CookingMethod method = Sample.CookingMethod.doNothing;
+            if(cookingMethod.toLowerCase().equals("q")){
+                break;
+            }else{
+                if(cookingMethod.toLowerCase().equals("1") || cookingMethod.toLowerCase().equals("fried")){
+                    method = Sample.CookingMethod.fried;
+                }else if (cookingMethod.toUpperCase().equals("2") || cookingMethod.toLowerCase().equals("steam")){
+                    method = Sample.CookingMethod.steam;
+                }
+            }
+            //print material list
+            System.out.println("现有的材料列表如下： ");
+            if (materialMap.isEmpty()){
+                System.out.println("当前仓库空荡荡,无法添加新的菜");
+                return;
+            }
+            Iterator<HashMap.Entry<String, Material>> iter = materialMap.entrySet().iterator();
+            Vector<String> materialList = new Vector<String>();
+            HashMap<String, Integer> materials = new HashMap<String,Integer>();
+            Integer No = 1;
+            while(iter.hasNext()){
+                Map.Entry entry = (Map.Entry) iter.next();
+                Object key = (String)entry.getKey();
+                Object value = entry.getValue();
+                materialList.add((String)key);
+                System.out.println(No.toString() + ". " + key);
+                No +=  1;
+            }
+            //select material
+            Double price = 0.0;
+            System.out.println("请输入需要的材料序号,用空格隔开,输入-1结束）：");
+            Integer matNum = 1;
+            Integer matAmount = 1;
+            Integer size = materialList.size();
 
+            while(sc.hasNextInt() && (matNum = sc.nextInt()) != -1){
+//                if(sc.hasNextInt()){
+//                    matAmount = sc.nextInt();
+                    if(matNum > 0 && matNum <= size){
+                        String selectedName = materialList.get(matNum-1);
+                        Material selectedMat = materialMap.get(selectedName);
+                        price += selectedMat.getPrice()*matAmount;
+                        materials.put(selectedName,matAmount);
+                    }else {
+                        System.out.println("输入的序号有错,请重新输入:");
+                    }
+//                }else{
+//                    break;
+//                }
+            }
+
+            if (materials.isEmpty()){
+                System.out.println("输入的材料暂时仓库还没有,请重新点菜！");
+                continue;
+            }
+
+            //check if the material is enough
+            //create the dish
+            price *= 2.5;
+            DishOne dishOne = new DishOne(name, price);
+            ArrayList<Material> materialArrayList = new ArrayList<>();
+            for (HashMap.Entry<String, Integer> entry : materials.entrySet()) {
+                materialArrayList.add(MaterialManagement.getInstance().getMaterial(entry.getKey(), entry.getValue()));
+            }
+            dishOne.setMaterials(materialArrayList);
+            switch (method) {
+                case fried: {
+                    dishOne.setCookingMethod(new FriedMethod());
+                    break;
+                }
+                case steam: {
+                    dishOne.setCookingMethod(new SteamMethod());
+                    break;
+                }
+                default: {
+                    dishOne.setCookingMethod(new DoNothingMethod());
+                    break;
+                }
+            }
+            //add the dish to menu
+            menu.addProduct(dishOne);
+        }
     }
 
-    public static void createMeal(Double price, ArrayList<String> dishes) {
+    public static void createMeal() {
         //让用户输入套餐名称，价格（待定，是否需要自动计算价格），打印菜品列表，让用户进行选择组合，，最后以-1（或者特定的符号）结束选择，判断其中的菜是不是可以做，如果可以调用接口创建套餐，没有则报错。
+        //input meal's name
+        Menu menu = Menu.getInstance();
+        Scanner sc = new Scanner(System.in);
+        while(true){
+            System.out.println("请输入你要添加的套餐名： (输入q结束)");
+            String name = (String)sc.next();
+            if(name.toLowerCase().equals("q")){
+                break;
+            }
+            //print dish list
+            System.out.println("现有的菜品列表如下： ");
+            HashMap<String,AbstractProduct> productMap = menu.getPrototype();
+            if (productMap.isEmpty()){
+                System.out.println("当前菜单空荡荡,无法添加新套餐");
+                return;
+            }
+            Iterator<HashMap.Entry<String, AbstractProduct>> iter = productMap.entrySet().iterator();
+            Vector<String> dishList = new Vector<String>();
+            HashMap<String,AbstractProduct> dishes = new HashMap<String,AbstractProduct>();
+            Integer No = 1;
+            while(iter.hasNext()){
+                HashMap.Entry<String, AbstractProduct> entry = iter.next();
+                Object key = (String)entry.getKey();
+                Object value = entry.getValue();
+                dishList.add((String)key);
+                System.out.println(No.toString() + ". " + key);
+                No +=  1;
+            }
+            //select dish
+            //   Double price = 0.0;
+            System.out.println("请输入需要的菜品序号，(用空格隔开,输入-1结束）：");
+            Integer Num = 1;
+            Integer size = dishList.size();
+            while(sc.hasNextInt()){
+                Num = sc.nextInt();
+                if(Num > 0 && Num <= size){
+                    String productName = dishList.get(Num-1);
+                    AbstractProduct product = productMap.get(productName);
+                    dishes.put(productName, product);
+                }else if(Num == -1){
+                    break;
+                }else {
+                    System.out.println("输入的序号有错,请重新输入:");
+                }
+            }
+            //create the meal
+            //   price *= 2.5;
+            if(dishes.isEmpty()){
+                continue;
+            }
+            MealOne mealOne = new MealOne(name);
+            mealOne.addDishes((HashMap<String, AbstractProduct>) dishes);
+            //add the dish to menu
+            menu.addProduct(mealOne);
+        }
     }
-
 
 
 }
