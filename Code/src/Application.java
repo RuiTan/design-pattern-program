@@ -65,20 +65,23 @@ public class Main {
         //· 每次创建一个材料，输入材料的名称和价格
     }
 
-    public static void createDishes(HashMap<String,Material> materialMap, Menu menu) {
+    public static void createDishes() {
         // 让用户输入菜名和烹饪方法，然后打印现有的材料列表，让用户进行选择组合，最后以-1（或者特定的符号）结束选择，判断是否有足够的材料来完成这道菜。如果有调用接口创建菜品，没有则报错。
         //input dish's name
+        MaterialManagement materialManagement = MaterialManagement.getInstance();
+        HashMap<String,Material> materialMap = materialManagement.getMaterialMap();
+        Menu menu = Menu.getInstance();
         Scanner sc = new Scanner(new Scanner(System.in));
         while(true){
             System.out.println("请输入你要添加的菜名： (输入q结束)");
             String name = (String)sc.next();
-            if(name.toLowerCase() == "q"){
+            if(name.toLowerCase().equals("q")){
                 break;
             }
             //input dish's cooking method
             System.out.println("请输入该菜品所需的烹饪方法： (输入q结束)");
             String cookingMethod = (String)sc.next(); 
-            if(cookingMethod.toLowerCase() == "q"){
+            if(cookingMethod.toLowerCase().equals("q")){
                 break;
             }
             //print material list 
@@ -141,14 +144,15 @@ public class Main {
         }
     }
 
-    public static void createMeal(Menu menu) {
+    public static void createMeal() {
         //让用户输入套餐名称，价格（待定，是否需要自动计算价格），打印菜品列表，让用户进行选择组合，，最后以-1（或者特定的符号）结束选择，判断其中的菜是不是可以做，如果可以调用接口创建套餐，没有则报错。
           //input meal's name
+          Menu menu = Menu.getInstance();
           Scanner sc = new Scanner(new Scanner(System.in));
           while(true){
             System.out.println("请输入你要添加的套餐名： (输入q结束)");
             String name = (String)sc.next();
-            if(name.toLowerCase() == "q"){
+            if(name.toLowerCase().equals("q")){
                 break;
             }
             //print dish list 
