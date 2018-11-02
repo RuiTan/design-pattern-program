@@ -26,7 +26,7 @@ public class Application {
 
     public static String header(String name){
         return "\n" +
-                "**********************************************************************************************************************"
+                "****************************************************************************************************************************"
                 +  "\n*******************************************************" + name + "******************************************************";
     }
 
@@ -89,6 +89,9 @@ public class Application {
         // 打印购买原料的调试信息
         System.out.println(header("Purchase Materials"));
 
+        // 创建输入流
+        Scanner scanner = new Scanner(System.in);
+
         // 获取存储原料的哈希表
         MaterialManagement instance = MaterialManagement.getInstance();
         HashMap<String, Material> materials = instance.getMaterialMap();
@@ -106,12 +109,9 @@ public class Application {
                 i++;
             }
 
-            System.out.println("请输入您要增加的原料编号，或输入[0]退出本次操作");
-            Scanner scanner = new Scanner(System.in);
+            System.out.println("请输入您要增加的原料编号，或输入[0]退出本次操作：");
             int number = -1, amount = 0;
             number = scanner.nextInt();
-            amount = scanner.nextInt();
-            scanner.close();
 
             // 根据用户输入的选项执行对应操作
             if (number == 0){
@@ -124,21 +124,25 @@ public class Application {
             if ( 0 < number && number < i){
                 // 获取用户要添加的原料对象
                 Material material = materials.get(names.get(number-1));
+                // 获取用户要增加的原料数量
+                System.out.println("请输入您要增加的原料数量：");
+                amount = scanner.nextInt();
                 // 计算用户需要花费的金额
-                Double price = material.getPrice() * material.getAmount();
+                Double price = material.getPrice() * amount;
                 // 打印调试信息
-                System.out.println("您要增加的原料为" + names.get(number-1) + "，要购买" + amount + "份，共需要" + price + "元");
+                System.out.println("您要增加的原料为【" + names.get(number-1) + "】，要购买【" + amount + "】份，共需要【" + price + "】元");
                 try {
                     // 获取当前余额
                     Double finance = cashier.getFinance();
                     // 资金足够，则从资金中扣除相应数目，同时购进原料
                     if (finance >= price){
                         cashier.expense(price);
-                        instance.purchaseMaterial(names.get(number), amount);
-                        System.out.println("当前资金余额为" + finance + "元，进行原料购买");
+                        instance.purchaseMaterial(names.get(number-1), amount);
+                        Double new_finance = cashier.getFinance();
+                        System.out.println("当前资金余额为【" + finance + "】元，进行原料购买，购买后的资金余额为【" + new_finance + "】元\n\n");
                     }
                     else {
-                        System.out.println("当前资金余额为" + finance + "元，无法购买原料，退出本次操作");
+                        System.out.println("当前资金余额为" + finance + "元，无法购买原料，退出本次操作\n\n");
                         break;
                     }
                 }
@@ -148,6 +152,7 @@ public class Application {
                 }
             }
         }
+        scanner.close();
     }
 
     public static void createMaterials(String name, Double price) {
