@@ -10,8 +10,8 @@ public class CookerAdapter {
         }
     }
 
-    public void cook(){
-        cooker.work();
+    public boolean cook() {
+        return cooker.work();
     }
 
 }

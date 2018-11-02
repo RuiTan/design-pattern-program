@@ -368,11 +368,10 @@ public class Sample {
         System.out.println("\n说明 : Command 是对调用者和接收者的分离，使得请求发送者与请求接收者消除彼此之间的耦合，让对象之间的调用关系更加灵活");
         CookerManagement cm = CookerManagement.getInstance();
         // 四个command
-        AddCookerCommand add_cmd = new AddCookerCommand(cm);
         UseCookerCommand use_cmd = new UseCookerCommand(cm);
         FreeCookerCommand free_cmd = new FreeCookerCommand(cm);
         // invoker调用者
-        CommandInvoker invoker = new CommandInvoker(add_cmd);
+        CommandInvoker invoker = new CommandInvoker(use_cmd);
         Pan pan1 = new Pan();
         Pan pan2 = new Pan();
         // 测试
@@ -403,6 +402,22 @@ public class Sample {
         menu.redo();
         menu.redo();
         menu.printMenu();
+    }
+
+    public void AdapterSample(){
+        System.out.println(header("Adapter"));
+        System.out.println("\n说明 :适配器模式（Adapter Pattern）是作为两个不兼容的接口之间的桥梁。这种模式涉及到一个单一的类，该类负责加入独立的或不兼容的接口功能。");
+        System.out.println("\n说明 :本例中将Dish的CookingMethod的operate()接口转换成使用厨具烹饪的cook()接口。");
+        System.out.println("\n说明 :创建了Target接口，包含想要的cook()方法。");
+        DishOne d=new DishOne("炸肉",100.0);
+        d.setCookingMethod(new FriedMethod());
+        System.out.println("\n创建一个菜DishOne d=new DishOne(\" 炸肉 \",100.0);");
+        System.out.println("\n菜的烹制方法是炸d.setCookingMethod(new FriedMethod());");
+        System.out.println("\n使用适配器CookerAdapter实现Target将烹饪方法的operate()转成炸锅的cook()");
+        System.out.println("\nCookerAdapter adapter=new CookerAdapter(d.getCookingMethod().operate());");
+        CookerAdapter adapter=new CookerAdapter(d.getCookingMethod().operate());
+        System.out.println("\n调用了适配器的cook()的方法");
+        adapter.cook();
     }
 
     /**
