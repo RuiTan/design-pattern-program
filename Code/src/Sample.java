@@ -367,7 +367,7 @@ public class Sample {
         System.out.println(header("Command"));
         System.out.println("\n说明 : Command 是对调用者和接收者的分离，使得请求发送者与请求接收者消除彼此之间的耦合，让对象之间的调用关系更加灵活");
         CookerManagement cm = CookerManagement.getInstance();
-        // 四个command
+        // 两个command
         UseCookerCommand use_cmd = new UseCookerCommand(cm);
         FreeCookerCommand free_cmd = new FreeCookerCommand(cm);
         // invoker调用者
@@ -375,12 +375,9 @@ public class Sample {
         Pan pan1 = new Pan();
         Pan pan2 = new Pan();
         // 测试
-        System.out.println("添加两个厨具pan");
+        System.out.println("使用两个厨具pan");
         invoker.cookerManagementCall(pan1);
         invoker.cookerManagementCall(pan2);
-        System.out.println("使用一个厨具pan");
-        invoker.setCommand(use_cmd);
-        invoker.cookerManagementCall(pan1);
         System.out.println("释放一个厨具pan");
         invoker.setCommand(free_cmd);
         invoker.cookerManagementCall(pan1);
