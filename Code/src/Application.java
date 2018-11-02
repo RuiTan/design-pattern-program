@@ -57,6 +57,10 @@ public class Application {
         // 菜单不需要初始化，直接打印空菜单内容即可
         System.out.println("正在初始化菜单，当前菜单为空");
         Menu.getInstance().printMenu();
+        
+        // 结束舒适化过程，打印调试信息
+        System.out.println("初始化完成");
+        System.out.println(footer());
     }
 
     /**
