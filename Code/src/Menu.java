@@ -1,4 +1,6 @@
 
+import javafx.util.Pair;
+
 import java.util.*;
 
 /**
@@ -37,15 +39,16 @@ public class Menu {
      * @param product
      * @return
      */
-    public boolean addProduct(AbstractProduct product) {
+    public AbstractProduct addProduct(AbstractProduct product) {
         if (prototype.containsKey(product.getName())){
             System.out.println(PRINT + "无法添加产品'" + product.getName() + "',原型已存在,将进行克隆操作");
-            return false;
+            return null;
         }
         else{
             prototype.put(product.getName(), product);
+            operationsStack.add(new Pair<>(Operations.AddOp, product));
             System.out.println(PRINT + "添加产品'" + product.getName() + "'成功");
-            return true;
+            return product;
         }
     }
 
@@ -53,14 +56,16 @@ public class Menu {
      * @param productName
      * @return
      */
-    public boolean deleteProduct(String productName) {
+    public AbstractProduct deleteProduct(String productName) {
         if (prototype.containsKey(productName)){
             System.out.println(PRINT + "删除产品'" + productName + "'成功");
+            AbstractProduct tempProduct = prototype.get(productName);
+            operationsStack.add(new Pair<>(Operations.DeleteOp, tempProduct));
             prototype.remove(productName);
-            return true;
+            return tempProduct;
         }
         System.out.println(PRINT + "删除产品'" + productName + "'失败");
-        return false;
+        return null;
     }
 
     /**打印菜品
@@ -115,4 +120,68 @@ public class Menu {
         }
     }
 
+    /** 操作符
+     *
+     *
+     */
+    public enum Operations{
+        AddOp, DeleteOp;
+    }
+
+    /**
+     * operationsStack : 操作栈
+     * redoStack : 恢复栈
+     * 无上限
+     */
+    private static Stack<Pair<Operations, AbstractProduct>> operationsStack = new Stack<>();
+    private static Stack<Pair<Operations, AbstractProduct>> redoStack = new Stack<>();
+
+    /**
+     *
+     */
+    public boolean undo(){
+        System.out.println(operationsStack.empty());
+        if (operationsStack.empty()){
+            System.out.println("There isn't operation to be undone.");
+            return false;
+        }
+        Pair<Operations, AbstractProduct> tempPair = operationsStack.pop();
+
+        if (tempPair.getKey()==Operations.AddOp){
+            deleteProduct(tempPair.getValue().getName());
+            operationsStack.pop();
+            redoStack.add(new Pair<>(Operations.AddOp, tempPair.getValue()));
+            System.out.println("Undo: add " + tempPair.getValue().getName() + " successfully!");
+
+        }else {
+            addProduct(tempPair.getValue());
+            operationsStack.pop();
+            redoStack.add(new Pair<>(Operations.DeleteOp, tempPair.getValue()));
+            System.out.println("Undo: delete " + tempPair.getValue().getName() + " successfully!");
+
+        }
+
+        return true;
+    }
+
+    /**
+     *
+     */
+    public boolean redo(){
+        if (redoStack.empty()){
+            System.out.println("There isn't operation to be redone.");
+            return false;
+        }
+        Pair<Operations, AbstractProduct> tempPair = redoStack.pop();
+
+        if (tempPair.getKey()==Operations.AddOp){
+            addProduct(tempPair.getValue());
+            System.out.println("Redo: add " + tempPair.getValue().getName() + " successfully!");
+        }else {
+            deleteProduct(tempPair.getValue().getName());
+            System.out.println("Redo: delete " + tempPair.getValue().getName() + " successfully!");
+        }
+
+        return true;
+    }
 }
