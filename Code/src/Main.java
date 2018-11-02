@@ -27,6 +27,8 @@ public class Main {
 
     public static void main(String []args){
 
+        Application.run();
+
         Sample sample = new Sample();
         sample.Initialize();
 
@@ -41,6 +43,9 @@ public class Main {
         }while (operate != 0);
 
         System.out.println("\n\n程序成功退出！\n\n");
+
+        Application.purchaseMaterials();
+
         scanner.close();
     }
 
