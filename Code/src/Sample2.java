@@ -1,262 +1,560 @@
-// public class Sample2{
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+
+public class Sample2{
+
+    private DishOne dish_1;
+    private DishOne dish_2;
+    private DishOne dish_3;
+    private DishOne dish_4;
+    private DishOne dish_5;
+    private DishOne dish_6;
+    private HashMap<String, Integer> materials_1;
+    private HashMap<String, Integer> materials_2;
+    AbstractMeal meal_1;
+    AbstractMeal meal_2;
+    Waiter waiter_1;
+    Customer customer_1;
+    Customer customer_2;
+    RestMediator rm;
+    Menu menu;
+
+    public void Initialize(){
+        MaterialFactory factory = new MaterialFactory();
+        menu = Menu.getInstance();
+        factory.createMaterial(Sample.MaterialType.meat,2000,10.0,"Chicken");
+        factory.createMaterial(Sample.MaterialType.meat,1000,20.0,"Beef");
+        factory.createMaterial(Sample.MaterialType.meat,3000,15.0,"Pork");
+        factory.createMaterial(Sample.MaterialType.vegetable,1000,10.0,"Cabbage");
+        factory.createMaterial(Sample.MaterialType.vegetable,2000,13.0,"Lettuce");
+
+        materials_1 = new HashMap<>();
+        materials_1.put("Chicken", 5);
+        materials_1.put("Lettuce", 8);
+
+        materials_2 = new HashMap<>();
+        materials_2.put("Beef", 10);
+        materials_2.put("Cabbage", 10);
+
+        dish_1 = createDish("Fried Chicken", 20.0, materials_1, Sample.CookingMethod.fried);
+        dish_2 = createDish("Steam Chicken", 30.0, materials_1, Sample.CookingMethod.steam);
+        dish_3 = createDish("Chicken Hamburger", 40.0, materials_1, Sample.CookingMethod.fried);
+        dish_4 = createDish("Salad", 50.0, materials_2, Sample.CookingMethod.doNothing);
+        dish_5 = createDish("Roasted Beef", 50.0, materials_2, Sample.CookingMethod.steam);
+
+        meal_1 = getMeal(Sample.MealType.MealOne);
+        meal_2 = getMeal(Sample.MealType.MealTwo);
+
+        new MealOneBuilder().addDish(dish_1);
+        new MealOneBuilder().addDish(dish_2);
+        new MealTwoBuilder().addDish(dish_3);
+        new MealTwoBuilder().addDish(meal_1);
+
+        waiter_1 = new Waiter("Satomi");
+        customer_1 = new Customer("Midori");
+        customer_2 = new Customer("Yuki");
+
+        rm = new RestMediator();
+        rm.addRole(waiter_1);
+        rm.addRole(customer_1);
+        rm.addRole(customer_2);
+
+        menu.printMenu();
+    }
+    public void SingletonSample() {
+        System.out.println("Singleton");
+        System.out.println("\nSingleton:Ensure a class only has one instance, and provide a global point of access to it.");
+        System.out.println("Try to get two menu instances:");
+        Menu menu_ = Menu.getInstance();
+        System.out.println("Menu menu = Menu.getInstance() : Memory:(" + menu.toString() + ")");
+        System.out.println("Menu menu_ = Menu.getInstance() : Memory:(" + menu_.toString() + ")");
+        System.out.println("Are menu and menu_ the same?:" + (menu == menu_));
+        System.out.println("menu details:");
+        menu.printMenu();
+        System.out.println("menu_ details:");
+        menu_.printMenu();
+        System.out.println("The same menu. Test Success！");
+    }
+
+    public void VisitorSample() {
+        System.out.println("Visitor");
+        System.out.println("\nVisitor:Represent an operation to be performed on the elements of an object structure.");
+        System.out.println("In this case user visitor to visit dish and meal.");
+        System.out.println("Use NameVisitor to show names of all meal:");
+        new NameVisitor().visit(getMeal(Sample.MealType.MealOne), "");
+        System.out.println("Use PriceVisitor to show price of all meal:");
+        new PriceVisitor().visit(getMeal(Sample.MealType.MealOne), "");
+        System.out.println("Use DetailVisitor to show details of all meal:");
+        new DetailVisitor().visit(getMeal(Sample.MealType.MealOne), "");
+        System.out.println("Visitor test Success!");
+    }
+
+    public void CompositeSample() {
+        System.out.println("Composite");
+        System.out.println("\nComposite:Compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and compositions of objects uniformly.");
+        System.out.println("Dish is regarded to an individual object. Meal is regarded to a composition of objects");
+        System.out.println("new MealOneBuilder().addDish(dishOne1);\n" + "new MealOneBuilder().addDish(dishOne2);\n"
+                + "new MealTwoBuilder().addDish(dishOne3);\n" + "new MealTwoBuilder().addDish(meal1);");
+        System.out.println("Meal_2 includes meal_1. Show meal_2:");
+        new DetailVisitor().visit(getMeal(Sample.MealType.MealTwo), "");
+        System.out.println("Individual objects and compositions are regarded equally. Test Success!");
+    }
+
+    public void FactorySample() {
+        System.out.println("Factory");
+        System.out.println("\nFactory:Define an interface for creating an object, but let subclasses decide which class to instantiate.");
+        System.out.println("meal_1 and meal_2 are both types of AbstractMeal Class. But they are instances of different subclasses.");
+        System.out.println("AbstractMeal meal1 = getMeal(Sample.MealType.MealOne);\n"
+                + "AbstractMeal meal2 = getMeal(Sample.MealType.MealTwo);");
+        System.out.println("meal_1 and meal_2 class types:");
+        System.out.println("meal_1：" + meal_1.getClass());
+        System.out.println("meal_2：" + meal_2.getClass());
+        System.out.println("Created by Factory. Test Success!");
+    }
+
+    public void BuilderSample() {
+        System.out.println("Builder");
+        System.out.println(
+                "\nBuilder:Separate the construction of a complex object from its representation so that the same construction process can create different representations.");
+        System.out.println("The AbstractDish in AbstractMeal can be modified by another class implements IMealBuider.");
+        System.out.println("Show meal_2:");
+        new DetailVisitor().visit(getMeal(Sample.MealType.MealTwo), "");
+        System.out.println("Add a dish to meal_2：new MealOneBuilder().addDish(dish_4);");
+        new MealTwoBuilder().addDish(dish_4);
+        System.out.println("Show meal_2 after:");
+        new DetailVisitor().visit(getMeal(Sample.MealType.MealTwo), "");
+        System.out.println("Add by Builder. Test Success!");
+    }
+
+    public void StateSample() {
+        System.out.println("State");
+        System.out.println(
+                "\nState:Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.");
+        System.out.println("Order has three states: Ready, Preparing, Done.");
+        System.out.println("New an Order object：Order o=new Order(1);");
+        Order o = new Order(1);
+        System.out.println("Change its state：o.getState().doAction(o);");
+        o.getState().doAction(o);
+        System.out.print("Show the state now:");
+        System.out.println(o.getState());
+        System.out.println("State changes. Test Success!");
+    }
+
+    public void DecoratorSample() {
+        System.out.println("Decorator");
+        System.out
+                .println("\nDecorator:Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.");
+        System.out.println("AbstractDish has a decorator to extend its flavour.");
+        System.out.println("Add a spicy dish to meal_1.");
+        System.out.println("AbstractDish dish = new SpicyDecorator(dish_3);\nnew MealOneBuilder().addDish(dish);");
+        AbstractDish dish = new SpicyDecorator(dish_3);
+        new MealOneBuilder().addDish(dish);
+        System.out.println("Show meal_1:");
+        new DetailVisitor().visit(getMeal(Sample.MealType.MealOne), "");
+        System.out.println("Add a sweet dish to meal_2:");
+        System.out.println("dish = new SweetDecorator(dish_2);\nnew MealTwoBuilder().addDish(dish);");
+        dish = new SweetDecorator(dish_2);
+        new MealTwoBuilder().addDish(dish);
+        System.out.println("Show meal_2:");
+        new DetailVisitor().visit(getMeal(Sample.MealType.MealTwo), "");
+        System.out.println("Extend flavour. Test Success!");
+    }
+
+    public void StrategySample() {
+        System.out.println("Strategy");
+        System.out.println(
+                "\nStrategy:Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.");
+        System.out.println("Use Strategy to decide how to make the dish.");
+        materials_1.put("Beef", 50);
+        System.out.println("Steam:");
+        new DetailVisitor().visit(createDish("Steamed Beef", 30.0, materials_1, Sample.CookingMethod.steam), "");
+        System.out.println("Fry:");
+        AbstractDish dish = createDish("Fried Chicken", 30.0, materials_2, Sample.CookingMethod.fried);
+        new DetailVisitor().visit(dish, "");
+        System.out.println("Do nothing to the dish just now:");
+        dish.setCookingMethod(new DoNothingMethod());
+        new DetailVisitor().visit(dish, "");
+        System.out.println("Different ways to make a dish. Test success!");
+    }
+
+    public void PrototypeSample() {
+        System.out.println("Prototype");
+        System.out.println(
+                "\nPrototype:Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.");
+        System.out.println("AbstractDish and AbstractMeal are implemented as Prototype. The prototype of them are placed in Menu.");
+        System.out.println("Every product has a count to show how many times it has been cloned.");
+        Menu.getInstance().printMenu();
+        System.out.println("Create Meals:");
+        System.out.println("AbstractMeal meal1 = getMeal(Sample.MealType.MealOne);\n"
+                + "AbstractMeal meal2 = getMeal(Sample.MealType.MealTwo);\n"
+                + "AbstractMeal meal3 = getMeal(Sample.MealType.MealTwo);");
+        System.out.println("Creating the same meal above will use prototype. The count is:");
+        System.out.println("MealTwo's count：" + MealTwo.count);
+        System.out.println("dish_4 = createDish(\"Salad\", 50.0, materials, Sample.CookingMethod.doNothing);\n"
+                + "dish_5 = createDish(\"Salad\", 50.0, materials, Sample.CookingMethod.steam);");
+        System.out.println("Create the same dish will use prototype. The count is:");
+        System.out.println("Salad's count:" + (((DishOne) Menu.getInstance().getPrototype().get("Salad")).getCount()));
+        System.out.println("dish_6 = createDish(\"Salad\", 50.0, materials, Sample.CookingMethod.fried);");
+        dish_6 = createDish("Salad", 50.0, materials_1, Sample.CookingMethod.fried);
+        System.out.println("Salad's count:" + (((DishOne) Menu.getInstance().getPrototype().get("Salad")).getCount()));
+        System.out.println("Clone from prototype. Test Success!");
+    }
+
+    public void IteratorSample() {
+        System.out.println("Iterator");
+        System.out.println(
+                "\nIterator:Provide a way to access the elements of an aggregate object sequentially without exposing its underlying representation.");
+        System.out.println("Use Iterator to visit all materials.");
+        System.out.println(
+                "   Iterator iterator = MaterialManagement.getInstance().getMaterialMap().entrySet().iterator();\n"
+                        + "   while (iterator.hasNext()){\n"
+                        + "       System.out.print(\" \" + iterator.next().toString());\n" + "   }");
+        Iterator iterator = MaterialManagement.getInstance().getMaterialMap().entrySet().iterator();
+        System.out.println("The output：");
+        while (iterator.hasNext()) {
+            System.out.print(" " + iterator.next().toString());
+        }
+        System.out.println();
+        System.out.println("Visit using Iterator. Test Success!");
+    }
+
+    public void FlyweightSample() {
+        System.out.println("Flyweight");
+        System.out.println(
+                "\nFlyweight:Use sharing to support large numbers of fine-grained objects efficiently.");
+        System.out.println("Material objects in this instance are flyweight. Materials used to make dishes with the same name are actually the same object.");
+        System.out.println("Beef in dish_1：" + dish_1.getMaterials().get("Beef"));
+        System.out.println("Beef in dish_2" + dish_2.getMaterials().get("Beef"));
+        dish_1.getMaterials().get("Beef").decreaseAmount(1);
+        System.out.println("Only decrease the amount in dish_1:");
+        System.out.println("Beef in dish_1" + dish_1.getMaterials().get("Beef"));
+        System.out.println("Beef in dish_2:" + dish_2.getMaterials().get("Beef"));
+        System.out.println("Test Success!");
+    }
+
+    public void TemplateMethodSample() {
+        System.out.println("TemplateMethod");
+        System.out.println(
+                "\nTemplateMethod:Define the skeleton of an algorithm in an operation, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.");
+        System.out.println("DishOne extends AbstractDish and implements AbstractDish's getMaterials().");
+        System.out.println("The method returns a HashMap. We can use key and value to get materials.");
+        System.out.println("for (HashMap.Entry<String, Material> entry : dish_1.getMaterials().entrySet()) {\n"
+                + "   System.out.println(entry.getKey()+\" : \"+ entry.getValue());\n" + "}");
+        System.out.println("Materials in dish_1");
+        for (HashMap.Entry<String, Material> entry : dish_1.getMaterials().entrySet()) {
+            System.out.println(entry.getKey() + " : " + entry.getValue().getAmount());
+        }
+
+        System.out.println("Implement the abstract function. Test Success!");
+    }
+
+    public void AdapterSample(){
+        System.out.println("Adapter");
+        System.out.println("\nAdaptor:Convert the interface of a class into another interface clients expect. Adapter lets classes work together that couldn't otherwise because of incompatible interfaces.");
+        System.out.println("Cook() in cooker can adapt operate() in Sample.CookingMethod of Dish.");
+        System.out.println("Create interface including cook()");
+        DishOne d=new DishOne("Hot dog",100.0);
+        System.out.println("\nNew a DishOne d=new DishOne(\" Hot dog \",100.0);");
+        d.setCookingMethod(new FriedMethod());
+        System.out.println("\nSample.CookingMethod: d.setCookingMethod(new FriedMethod());");
+        System.out.println("\nCookerAdapter implements Target to transfer operate() of Sample.CookingMethod into pan's cook()");
+        System.out.println("\nCookerAdapter adapter=new CookerAdapter(d.getSample.CookingMethod().operate());");
+        CookerAdapter adapter=new CookerAdapter(d.getCookingMethod().operate());
+        System.out.println("\nCall cook(): adapter.cook()");
+        adapter.cook();
+        System.out.println("Transfer success. Test completes!");
+    }
+
+    public void MediatorSample(){
+        System.out.println("Mediator");
+        System.out.println("\nMediator:Define an object that encapsulates how a set of objects interact. Mediator promotes loose coupling by keeping objects from referring to each other explicitly, and it lets you vary their interaction independently.");
+        System.out.println("RestMediator extends Mediator and implents Mediator的notify() to notify others and chat() to have a conversation.");
+        System.out.println("New a waiter, two customers whose class extends both from Role.");
+        System.out.println("New a RestMediator. Add the roles into it");
+        System.out.println("Waiter asks two customers what to eat:rm.notify(waiter1);");
+        waiter_1.setContent("\nHi, what do you want？");
+        customer_1.setContent("Pork Rice.");
+        customer_2.setContent("Beef Rice");
+        rm.notify(waiter_1);
+        System.out.println("\nAnd then two customers are chatting:rm.chat(customer_1,customer_2);");
+        customer_1.setContent("The weather is good today.");
+        customer_2.setContent("Yes. But I prefer staying home.");
+        rm.chat(customer_1,customer_2);
+    }
+    public void AbstractFactorySample() {
+        System.out.println("AbstractFactory");
+        System.out.println("\nAbstractFactory:Provide an interface for creating families of related or dependent objects without specifying their concrete classes.");
+        System.out.println("In this case, the creation of materials and cookers are all Factory. So we make AbstractFactory of these two.");
+        CookerFactory cookerFactory = AbstractFactory.getCookerFactory();
+        AbstractCooker cooker_1 = cookerFactory.createCooker(Sample.CookerType.Fryer);
+        AbstractCooker cooker_2 = cookerFactory.createCooker(Sample.CookerType.Pan);
+        MaterialFactory materialFactory = AbstractFactory.getMaterialFactory();
+        Material material_1 = materialFactory.createMaterial(Sample.MaterialType.meat, 10000, 50.0, "Salmon");
+        Material material_2 = materialFactory.createMaterial(Sample.MaterialType.vegetable, 50000, 1.6, "Cucumber");
+        System.out.println("CookerFactory cookerFactory = AbstractFactory.getCookerFactory();\n" +
+                "AbstractCooker cooker_1 = cookerFactory.createCooker(Sample.CookerType.Fryer);\n" +
+                "AbstractCooker cooker_2 = cookerFactory.createCooker(Sample.CookerType.Pan);\n" +
+                "MaterialFactory materialFactory = AbstractFactory.getMaterialFactory();\n" +
+                "Material material_1 = materialFactory.createMaterial(Sample.MaterialType.meat, 10000, 50.0, \"Salmon\");\n" +
+                "Material material_2 = materialFactory.createMaterial(Sample.MaterialType.vegetable, 50000, 1.6, \"Cucumber\");");
+        System.out.println("Get factory from AbstractFactory. Test Success!");
+    }
+
+    public void ObservorSample() {
+        System.out.println("Observer");
+        System.out.println("\nObserver:Define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.");
+        new MealOneBuilder().addDish(dish_1);
+        System.out.println("Meal_1 includes dish_1.");
+        System.out.println("Show meal_1:");
+        System.out.println(meal_1.getName() + " : " + meal_1.getPrice());
+        System.out.println("Now set a new price to dish_1.");
+        dish_1.setPrice(15.0);
+        System.out.println("Show meal_1 again:");
+        System.out.println(meal_1.getName() + " : " + meal_1.getPrice());
+        System.out.println("Use Observer to change. Test Success!");
+    }
+
+    public void InterpreterSample(){
+        System.out.println("InterpreterMethod");
+        System.out.println("\nInterpreterMethod:Given a language, define a representation for its grammar along with an interpreter that uses the representation to interpret sentences in the language.");
+        System.out.println("The material lists of Sushi：");
+        dish_6 = createDishByMaterials("Sushi", materials_1, Sample.CookingMethod.doNothing);
+        System.out.println("Price of sushi" + dish_6.getPrice());
+        System.out.println("Materials of sushi");
+        for (HashMap.Entry<String, Material> entry : dish_6.getMaterials().entrySet()) {
+            System.out.println(entry.getKey()+" : "+ entry.getValue().getAmount() + ",Price : " + entry.getValue().getPrice());
+        }
+        System.out.println("Test Success!");
+    }
+
+    public void BridgeSample(){
+        System.out.println("Bridge");
+        System.out.println("\nBridge:Decouple an abstraction from its implementation so that the two can vary independently.");
+        System.out.println("DishOne extends AbstractDish and implements AbstractDish's flavor() which add flavor to the dish.");
+        DishOne spicyDishOne = new DishOne(new SpicyDish());
+        DishOne sweetDishOne = new DishOne(new SweetDish());
+        DishOne saltyDishOne = new DishOne(new SaltyDish());
+        spicyDishOne.flavor();
+        sweetDishOne.flavor();
+        saltyDishOne.flavor();
+        System.out.println("Test Success!");
+    }
+
+    public void CommandSample(){
+        System.out.println("Command");
+        System.out.println("\nCommand:Encapsulate a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.");
+        CookerManagement cm = CookerManagement.getInstance();
+        UseCookerCommand use_cmd = new UseCookerCommand(cm);
+        FreeCookerCommand free_cmd = new FreeCookerCommand(cm);
+        CommandInvoker invoker = new CommandInvoker(use_cmd);
+        Pan pan1 = new Pan();
+        Pan pan2 = new Pan();
+        System.out.println("Use two pans of cooker:");
+        invoker.cookerManagementCall(pan1);
+        invoker.cookerManagementCall(pan2);
+        System.out.println("Release a pan cooker:");
+        invoker.setCommand(free_cmd);
+        invoker.cookerManagementCall(pan1);
+        System.out.println("Test Success!");
+    }
+
+    public void MenuMementoSample() {
+        System.out.println("Memento");
+        System.out.println("\nMemento:Without violating encapsulation, capture and externalize an object's internal state so that the object can be restored to this state later.");
+        System.out.println("As an instance, Menu implements undo() and redo(), which reliase the record and recovery of adding and deletions of product in menu.");
+        Menu menu = Menu.getInstance();
+        menu.printMenu();
+        menu.deleteProduct("Fried Chicken");
+        menu.printMenu();
+        menu.deleteProduct("Steamed Chicken");
+        menu.undo();
+        menu.undo();
+        menu.printMenu();
+        menu.redo();
+        menu.redo();
+        menu.redo();
+        menu.printMenu();
+        System.out.println("Redo and undo success. Test Completes!");
+    }
 //
-//     private DishOne dish_1;
-//     private DishOne dish_2;
-//     private DishOne dish_3;
-//     private DishOne dish_4;
-//     private DishOne dish_5;
-//     private DishOne dish_6;
-//     private HashMap<String, Integer> materials_1;
-//     private HashMap<String, Integer> materials_2;
-//     AbstractMeal meal_1;
-//     AbstractMeal meal_2;
-//     Waiter waiter_1;
-//     Customer customer_1;
-//     Customer customer_2;
-//     RestMediator rm;
+//    /**
+//     * 原料类型
+//     */
+//    public enum MaterialType {
+//        meat, vegetable
+//    }
 //
-//     public void Initialize(){
-//         MaterialFactory factory = new MaterialFactory();
-//         Menu menu = Menu.getInstance();
+//    /**
+//     * 制作方法
+//     */
+//    public enum CookingMethod {
+//        steam, fried, doNothing
+//    }
 //
-//         facotry.createMaterial(MaterialType.meat,2000,10.0,"鸡肉");
-//         facotry.createMaterial(MaterialType.meat,1000,20.0,"牛肉");
-//         facotry.createMaterial(MaterialType.meat,3000,15.0,"猪肉");
-//         facotry.createMaterial(MaterialType.vegetable,1000,10.0,"白菜");
-//         facotry.createMaterial(MaterialType.vegetable,2000,13.0,"芹菜");
+//    /**
+//     * Meal种类
+//     */
+//    public enum MealType {
+//        MealOne, MealTwo
+//    }
 //
-//         materials_1 = new HashMap<>();
-//         materials_1.put("鸡肉", 5);
-//         materials_1.put("白菜", 8);
-//
-//         materials_2 = new HashMap<>();
-//         materials_2.put("猪肉", 10);
-//         materials_2.put("芹菜", 10);
-//
-//         dish_1 = createDish("宫保鸡丁", 20.0, materials_1, CookingMethod.fried);
-//         dish_2 = createDish("糖醋里脊", 30.0, materials_1, CookingMethod.steam);
-//         dish_3 = createDish("手撕包菜", 40.0, materials_1, CookingMethod.fried);
-//         dish_4 = createDish("蚝油牛肉", 50.0, materials_2, CookingMethod.doNothing);
-//         dish_5 = createDish("红烧肉", 50.0, materials_2, CookingMethod.steam);
-//
-//         meal_1 = getMeal(MealType.MealOne);
-//         meal_2 = getMeal(MealType.MealTwo);
-//
-//         new MealOneBuilder().addDish(dish_1);
-//         new MealOneBuilder().addDish(dish_2);
-//         new MealTwoBuilder().addDish(dish_3);
-//         new MealTwoBuilder().addDish(meal_1);
-//
-//         waiter_1 = new Waiter("Satomi");
-//         customer_1 = new Customer("Midori");
-//         customer_2 = new Customer("Yuki");
-//
-//         rm = new RestMediator();
-//         rm.addRole(waiter_1);
-//         rm.addRole(customer_1);
-//         rm.addRole(customer_2);
-//
-//         menu.printMenu();
-//     }
-//     public void SingletonSample() {
-//         System.out.println("Singleton");
-//         System.out.println("\nSingleton:保证一个类仅有一个实例，并提供一个访问它的全局访问点,本例中一份菜单仅存在一个实例。");
-//         System.out.println("尝试获得两个菜单实例");
-//         Menu menu_ = Menu.getInstance();
-//         System.out.println("menu是否与menu_相等:" + (menu == menu_));
-//         System.out.println("menu菜单详情:");
-//         menu.printMenu();
-//         System.out.println("menu_菜单详情:");
-//         menu_.printMenu();
-//         System.out.println("menu与menu_不同。测试成功！");
-//     }
-//
-//     public void VisitorSample() {
-//         System.out.println("Visitor");
-//         System.out.println("\nVisitor:主要是将主要将稳定的数据结构与易变的数据操作分离,本例中对Meal和Dish采用观察者模式,通常与Composite一起使用。");
-//         System.out.println("使用观察者查看所有套餐(菜)名:");
-//         new NameVisitor().visit(getMeal(MealType.MealOne), "");
-//         System.out.println("使用观察者查看套餐(菜)价格:");
-//         new PriceVisitor().visit(getMeal(MealType.MealOne), "");
-//         System.out.println("使用观察者查看套餐(菜)详情:");
-//         new DetailVisitor().visit(getMeal(MealType.MealOne), "");
-//         System.out.println("成功使用Visitor。测试成功！");
-//     }
-//
-//     public void CompositeSample() {
-//         System.out.println("Composite");
-//         System.out.println("\nComposite:使得用户对单个对象和组合对象的使用具有一致性,通常与Visitor一起使用,本例中使用在对Meal和Dish的操作时有一致的方法。");
-//         System.out.println("AbstractDish为个别物, AbstractMeal为复合物，二者共同继承自AbstractProduct");
-//         System.out.println("meal2_套餐中包含meal_1套餐,查看meal_2套餐详情 : ");
-//         new DetailVisitor().visit(getMeal(MealType.MealTwo), "");
-//         System.out.println("个别物和聚合物被视为一致。测试成功！");
-//     }
-//
-//     public void FactorySample() {
-//         System.out.println("Factory");
-//         System.out.println("\nFactory:定义一个创建对象的接口，让其子类自己决定实例化哪一个工厂类，工厂模式使其创建过程延迟到子类进行");
-//         System.out.println("meal_1和meal_2都指定为AbstractMeal类型：");
-//         System.out.println("meal_1和meal_2的类格式：");
-//         System.out.println("meal_1：" + meal_1.getClass());
-//         System.out.println("meal_2：" + meal_2.getClass());
-//         System.out.println("AbstractMeal类型。测试成功！");
-//     }
-//
-//     public void BuilderSample() {
-//         System.out.println("Builder");
-//         System.out.println(
-//                 "\nBuilder:将一个复杂的构建与其表示相分离，使得同样的构建过程可以创建不同的表示,本例中的套餐Meal的所有菜DishList的创建和修改方法放到了Builder中。");
-//         System.out.println("查看套餐2:");
-//         new DetailVisitor().visit(getMeal(MealType.MealTwo), "");
-//         System.out.println("为套餐2添加一道菜：new MealOneBuilder().addDish(dish_4);");
-//         new MealTwoBuilder().addDish(dish_4);
-//         System.out.printlin("查看添加后的套餐2:");
-//         new DetailVisitor().visit(getMeal(MealType.MealTwo), "");
-//         System.out.println("添加成功。测试成功！");
-//     }
-//
-//     public void StateSample() {
-//         System.out.println("State");
-//         System.out.println(
-//                 "\nState:模式主要使用一系列ConcreteState类,用以将Context在不同状态下的不同行为进行封装。本例将Order以及Dish在不同完成度状态不同的行为进行了封装。");
-//         System.out.println("一个订单Order被切分成点单Ready，备餐Preparing，完成Done状态下的不同行为");
-//         System.out.println("新建一个订单：Order o=new Order(1);");
-//         Order o = new Order(1);
-//         System.out.println("订单在ready状态下执行状态更改：o.getState().doAction(o);");
-//         o.getState().doAction(o);
-//         System.out.print("于是订单进入了备餐状态：");
-//         System.out.println(o.getState());
-//         System.out.println("状态正常。测试成功！");
-//     }
-//
-//     public void DecoratorSample() {
-//         System.out.println("Decorator");
-//         System.out
-//                 .println("\nDecorator:动态地给一个对象添加一些额外的职责，本例中的Dish有一个装饰器AbstractDecorator，它相当于包了一层外壳(Dish的口味)的Dish。");
-//         System.out.println("套餐1添加一道辣的口味的菜3：");
-//         AbstractDish dish = new SpicyDecorator(dish_3);
-//         new MealOneBuilder().addDish(dish);
-//         System.out.println("查看套餐1:");
-//         new DetailVisitor().visit(getMeal(MealType.MealOne), "");
-//         System.out.println("套餐2添加一道甜的口味的菜2:");
-//         dish = new SweetDecorator(dish_2);
-//         new MealTwoBuilder().addDish(dish);
-//         System.out.println("查看套餐2:");
-//         new DetailVisitor().visit(getMeal(MealType.MealTwo), "");
-//         System.out.println("添加口味成功。测试成功！");
-//     }
-//
-//     public void StrategySample() {
-//         System.out.println("Strategy");
-//         System.out.println(
-//                 "\nStrategy:定义一系列的算法,把它们一个个封装起来, 并且使它们可相互替换，本例中对Dish的制作方法采用策略模式，同类的菜可以使用不同的制作方法，也可以通过某个菜改变自身的制作方法。");
-//         materials_1.put("牛肉", 50);
-//         System.out.println("用蒸做一道菜:");
-//         new DetailVisitor().visit(createDish("红烧牛肉", 30.0, materials_1, CookingMethod.steam), "");
-//         System.out.println("用炸做一道菜:");
-//         AbstractDish dish = createDish("炸鸡翅", 30.0, materials_2, CookingMethod.fried);
-//         new DetailVisitor().visit(dish, "");
-//         System.out.println("更改刚才创建的菜的制作方法为什么都不做：");
-//         dish.setCookingMethod(new DoNothingMethod());
-//         new DetailVisitor().visit(dish, "");
-//         System.out.println("成功指定方法。测试成功！");
-//     }
-//
-//     public void PrototypeSample() {
-//         System.out.println("Prototype");
-//         System.out.println(
-//                 "\nPrototype:用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象，本例中的AbstractMeal和AbstractDish都使用了Prototype，原型列表放置在Menu中（原型列表在外部类，而非放置在父类）。");
-//         System.out.println("        每种Product存在一个count计数器，来记录被克隆的次数");
-//         Menu.getInstance().printMenu();
-//         System.out.println("创建如下套餐：");
-//         System.out.println("AbstractMeal meal1 = getMeal(MealType.MealOne);\n"
-//                 + "AbstractMeal meal2 = getMeal(MealType.MealTwo);\n"
-//                 + "AbstractMeal meal3 = getMeal(MealType.MealTwo);");
-//         System.out.println("如上创建同名的套餐（具有相同的菜），会从原型克隆，原型的计数如下：");
-//         System.out.println("MealTwo的克隆数：" + MealTwo.count);
-//         System.out.println("dishOne4 = createDish(\"菜4\", 50.0, materials, CookingMethod.doNothing);\n"
-//                 + "dishOne5 = createDish(\"菜4\", 50.0, materials, CookingMethod.steam);");
-//         System.out.println("如上创建同名的菜（需要相同的原料），会从原型克隆，原型的计数如下：");
-//         System.out.println("菜4的克隆数：" + (((DishOne) Menu.getInstance().getPrototype().get("菜4")).getCount()));
-//         System.out.println("dishOne6 = createDish(\"菜4\", 50.0, materials, CookingMethod.fried);");
-//         dishOne6 = createDish("菜4", 50.0, materials, CookingMethod.fried);
-//         System.out.println("菜4的克隆数：" + (((DishOne) Menu.getInstance().getPrototype().get("菜4")).getCount()));
-//         System.out.println(footer());
-//     }
-//
-//     public void IteratorSample() {
-//         System.out.println(header("Iterator"));
-//         System.out.println(
-//                 "\n说明 : Iterator提供一种方法顺序访问一个聚合对象中各个元素, 而又无须暴露该对象的内部表示，本例中所有的列表数据结构均使用了Iterator。" + "\n例如遍历仓库中所有原料：");
-//         System.out.println(
-//                 "   Iterator iterator = MaterialManagement.getInstance().getMaterialMap().entrySet().iterator();\n"
-//                         + "   while (iterator.hasNext()){\n"
-//                         + "       System.out.print(\" \" + iterator.next().toString());\n" + "   }");
-//         Iterator iterator = MaterialManagement.getInstance().getMaterialMap().entrySet().iterator();
-//         System.out.println("输出如下：");
-//         while (iterator.hasNext()) {
-//             System.out.print(" " + iterator.next().toString());
-//         }
-//         System.out.println();
-//         System.out.println(footer());
-//     }
-//
-//     public void FlyweightSample() {
-//         System.out.println(header("Flyweight"));
-//         System.out.println(
-//                 "\n说明 : Flyweight运用共享技术有效地支持大量细粒度的对象,本例中的菜的原料Material采用的是Flyweight，不同的菜需要同种原料时，实际上使用的是同一个实体，这里的原料只是原料集合的引用。");
-//         System.out.println("DishOne1中的牛肉：" + dishOne1.getMaterials().get("牛肉"));
-//         System.out.println("DishOne2中的牛肉：" + dishOne2.getMaterials().get("牛肉"));
-//         dishOne1.getMaterials().get("牛肉").decreaseAmount(1);
-//         System.out.println("仅减少DishOne1中的量后：");
-//         System.out.println("DishOne1中的牛肉：" + dishOne1.getMaterials().get("牛肉"));
-//         System.out.println("DishOne2中的牛肉：" + dishOne2.getMaterials().get("牛肉"));
-//         System.out.println(footer());
-//     }
-//
-//     public void TemplateMethodSample() {
-//         System.out.println(header("TemplateMethod"));
-//         System.out.println(
-//                 "\n说明 : TemplateMethod 定义一个操作中的算法骨架，子类可以在不改变算法结构情况下重新定义该算法的某些特定步骤。即把相同的代码放在父类中，把有差异的代码放在子类中去实现。");
-//         System.out.println("DishOne继承自AbstractDish, 实现了AbstracDish中的getMaterials()方法，能够获取Dish中的原料。");
-//         System.out.println("返回的Material是一个HashMap，可以通过键值对的方式去访问材料的名字和数量，我们使用迭代器来访问材料列表中的所有材料及其数量");
-//         System.out.println("for (HashMap.Entry<String, Material> entry : dishOne1.getMaterials().entrySet()) {\n"
-//                 + "   System.out.println(entry.getKey()+\" : \"+ entry.getValue());\n" + "}");
-//         System.out.println("DishOne1中的原料：");
-//         for (HashMap.Entry<String, Material> entry : dishOne1.getMaterials().entrySet()) {
-//             System.out.println(entry.getKey() + " : " + entry.getValue().getAmount());
-//         }
-//
-//         System.out.println(footer());
-//     }
-//
-//     public void AdapterSample(){
-//         System.out.println(header("Adapter"));
-//         System.out.println("\n说明 :适配器模式（Adapter Pattern）是作为两个不兼容的接口之间的桥梁。这种模式涉及到一个单一的类，该类负责加入独立的或不兼容的接口功能。");
-//         System.out.println("\n说明 :本例中将Dish的CookingMethod的operate()接口转换成使用厨具烹饪的cook()接口。");
-//         System.out.println("\n说明 :创建了Target接口，包含想要的cook()方法。");
-//         DishOne d=new DishOne("炸肉",100.0);
-//         System.out.println("\n创建一个菜DishOne d=new DishOne(\" 炸肉 \",100.0);");
-//         System.out.println("\n菜的烹制方法是炸d.setCookingMethod(new FriedMethod());");
-//         System.out.println("\n使用适配器CookerAdapter实现Target将烹饪方法的operate()转成炸锅的cook()");
-//         System.out.println("\nCookerAdapter adapter=new CookerAdapter(d.getCookingMethod().operate());");
-//         CookerAdapter adapter=new CookerAdapter(d.getCookingMethod().operate());
-//         System.out.println("\n调用了适配器的cook()的方法");
-//         adapter.cook();
-//     }
-//
-//     public void MediatorSample(){
-//             System.out.println(header("Mediator"));
-//             System.out.println("\n说明 : Mediator定义一个中介对象来封装系列对象之间的交互。中介者使各个对象不需要显示地相互引用，从而使其耦合性松散，而且可以独立地改变他们之间的交互。");
-//             System.out.println("RestMediator继承自Mediator，实现了Mediator的notify()用于一个角色通知并接受他人回答和chat()实现两个角色对话。");
-//             System.out.println("先是由服务员询问两个顾客吃什么");
-//             waiter1.setContent("\n请问你们要吃什么？");
-//             customer1.setContent("猪排饭");
-//             customer2.setContent("牛肉饭");
-//             rm.notify(waiter1);
-//             System.out.println("\n接着两个顾客互相聊天");
-//             customer1.setContent("这里的菜好吃");
-//             customer2.setContent("我觉得一般");
-//             rm.chat(customer1,customer2);
-//     }
-// }/ }
+//    public enum CookerType {
+//        Pan, Fryer, Steamer, MicroWave
+//    }
+
+    /**
+     * 创建一种套餐
+     *
+     * @param type
+     * @return
+     */
+    public AbstractMeal getMeal(Sample.MealType type) {
+        Menu menu = Menu.getInstance();
+        switch (type) {
+            case MealOne: {
+                AbstractProduct product = menu.findAndClone(MealOne.DEFAULTNAME);
+                if (!(product instanceof MealOne)) {
+                    return new MealOne(MealOne.DEFAULTNAME);
+                } else {
+                    return (MealOne) product;
+                }
+            }
+            case MealTwo: {
+                AbstractProduct product = menu.findAndClone(MealTwo.DEFAULTNAME);
+                if (!(product instanceof MealTwo)) {
+                    return new MealTwo(MealTwo.DEFAULTNAME);
+                } else {
+                    return (MealTwo) product;
+                }
+            }
+            default: {
+                return null;
+            }
+        }
+    }
+
+
+    /**
+     * 获得原料，总量将从仓库减少
+     *
+     * @param name
+     * @param amount
+     * @return
+     */
+    public Material getMaterial(String name, int amount) {
+        MaterialManagement instance = MaterialManagement.getInstance();
+        return instance.getMaterial(name, amount);
+    }
+
+    /**
+     * 创建一种DishOne的菜
+     *
+     * @param name
+     * @param price
+     * @param materials
+     * @return
+     */
+    public DishOne createDish(String name, Double price, HashMap<String, Integer> materials, Sample.CookingMethod method) {
+        DishOne dishOne = new DishOne(name, price);
+        ArrayList<Material> materialArrayList = new ArrayList<>();
+        for (HashMap.Entry<String, Integer> entry : materials.entrySet()) {
+            materialArrayList.add(getMaterial(entry.getKey(), entry.getValue()));
+        }
+        dishOne.setMaterials(materialArrayList);
+        switch (method) {
+            case fried: {
+                dishOne.setCookingMethod(new FriedMethod());
+                break;
+            }
+            case steam: {
+                dishOne.setCookingMethod(new SteamMethod());
+                break;
+            }
+            default: {
+                dishOne.setCookingMethod(new DoNothingMethod());
+                break;
+            }
+        }
+        return dishOne;
+    }
+
+    /**
+     * 查看原料仓库
+     */
+    public void showMaterials() {
+        MaterialManagement instance = MaterialManagement.getInstance();
+        HashMap<String, Material> materialMap = instance.getMaterialMap();
+        for (HashMap.Entry material : materialMap.entrySet()) {
+            System.out.println(material.getValue().toString());
+        }
+    }
+
+
+    /**
+     * 利用原材料构建一个菜的实例
+     * @param name
+     * @param materials
+     * @param method
+     * @return
+     */
+    public DishOne createDishByMaterials(String name, HashMap<String, Integer> materials, Sample.CookingMethod method){
+
+        MaterialManagement instance = MaterialManagement.getInstance();
+        HashMap<String, Material> materialHashMap = instance.getMaterialMap();
+        ArrayList<String> namelist = new ArrayList<>();
+
+        //从原料表中获取所有需要的原料名并存入list
+        Iterator iter = materials.entrySet().iterator();
+        while (iter.hasNext()){
+            HashMap.Entry entry = (HashMap.Entry) iter.next();
+            String dishName = (String) entry.getKey();
+            namelist.add(dishName);
+        }
+
+        //利用解释器模式计算菜品的价格
+        int i = 0;
+        double price = 0.0;
+        while (i < namelist.size()){
+            String name0 = namelist.get(i);
+            i++;
+            if (i==namelist.size()){//菜品个数为单数
+                price += new PriceExpression(name0,materials.get(name0)).interpret(materialHashMap);//计算价格时使用食材单价乘以食材数量
+            }
+            else {//菜品个数为双数
+                String name1 = namelist.get(i);
+                i++;
+                IExpression expression = new AddExpression(new PriceExpression(name0, materials.get(name0)), new PriceExpression(name1, materials.get(name1)));
+                price += expression.interpret(materialHashMap);
+            }
+        }
+
+        price *= 2.5;
+
+
+        DishOne dishOne = new DishOne(name, price); //根据名字和价格创建一个dishOne对象
+        ArrayList<Material> materialArrayList = new ArrayList<>();
+        for (HashMap.Entry<String, Integer> entry : materials.entrySet()){
+            materialArrayList.add(getMaterial(entry.getKey(), entry.getValue()));
+        }
+        dishOne.setMaterials(materialArrayList);//设置菜品原材料列表
+
+        //设置菜品的制作方法
+        switch (method){
+            case fried:{
+                dishOne.setCookingMethod(new FriedMethod());
+                break;
+            }
+            case steam:{
+                dishOne.setCookingMethod(new SteamMethod());
+                break;
+            }
+            default:{
+                dishOne.setCookingMethod(new DoNothingMethod());
+                break;
+            }
+        }
+        return dishOne;
+    }
+
+}
