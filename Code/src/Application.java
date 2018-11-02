@@ -145,7 +145,7 @@ public class Application {
             }
             else {
                 // 用户输入了不符合要求的编号
-                System.out.println("请输入符合要求的编号！");
+                System.out.println("请输入符合要求的编号！\n\n");
                 continue;
             }
         }
