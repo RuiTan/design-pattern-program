@@ -5,7 +5,7 @@ public class Main {
 
     static String[] patterns = {"Singleton", "Visitor", "Composite", "Builder", "Factory", "Decorator", "Strategy"
         , "Prototype", "Flyweight", "Iterator", "State", "Template", "Mediator", "AbstractFactory", "Observor", "Interpreter"
-        , "Bridge", "Command", "Memento", "Adapter", "Facade"
+        , "Bridge", "Command", "Memento", "Adapter", "Facade", "Observer"
     };
 
     static int Max = patterns.length;
@@ -13,7 +13,7 @@ public class Main {
     enum Pattern{
         Singleton(0), Visitor(1), Composite(2), Builder(3), Factory(4), Decorator(5), Strategy(6),
         Prototype(7), Flyweight(8), Iterator(9), State(10), Template(11), Mediator(12), AbstractFactory(13), Observor(14)
-        , Interpreter(15), Bridge(16), Command(17), Memento(18), Adapter(19), Facade(20);
+        , Interpreter(15), Bridge(16), Command(17), Memento(18), Adapter(19), Facade(20), Observer(21);
 
         private int index;
 
@@ -134,7 +134,32 @@ public class Main {
                 sample.BridgeSample();
                 break;
             case AbstractFactory:
-                sample.AbstractFactorySample();
+                sample.AbstractFactorySample(); public void ObserverSample(){
+        System.out.println(header("ObserverMethod"));
+        System.out.println("\n说明 : ObservorMethod 在被观察者中维护一个list，当被观察者被改变时会通知所有观察者");
+        AbstractMeal meal1 = getMeal(MealType.MealOne);
+        new MealOneBuilder.addDish(dishOne1);
+        System.out.println("查看套餐meal1中的菜：");
+        HashMap<String, AbstractProduct> dishes = meal1.getDishes;
+        for (HashMap.Entry<String, AbstractProduct> dish: dishes.entrySet()) {
+            System.out.println(dish.getKey());
+        }
+        System.out.print("\n套餐meal1的价格：");
+
+        System.out.println(meal1.getPrice());
+
+        System.out.print("\ndishOne1的价格：");
+
+        System.out.println(dishOne1.getPrice());
+        System.out.println("修改dishOne1的价格为40");
+        dishOne1.setPrice(40.0);
+        System.out.print("\n现在套餐meal1的价格为：");
+
+        System.out.println(meal1.getPrice());
+
+
+        System.out.println(footer());
+    }
                 break;
             case Command:
                 sample.CommandSample();
@@ -148,6 +173,8 @@ public class Main {
             case Facade:
                 sample.FacadeSample();
                 break;
+            case Observer:
+                sample.OberserSample();
             default:
                     return 0;
         }
